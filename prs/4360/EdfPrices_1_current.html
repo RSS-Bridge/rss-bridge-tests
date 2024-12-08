@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>EDF tarifs</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://www.jechange.fr" target="_blank">EDF tarifs</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-EdfPricesBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="http://localhost:3000/?action=display&amp;bridge=EdfPricesBridge&amp;contract=%2Fenergie%2Fedf%2Ftarifs%2Ftempo&amp;format=Html"
+                    >Bridge returned error 0! (20065)</a>
+                </h2>
+
+                                    <time datetime="2024-12-08 14:57:21">
+                        2024-12-08 14:57:21                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+<div class="error">
+
+            
+            
+    <h2>Details</h2>
+
+    <div style="margin-bottom: 15px">
+        <div class="error-type">
+            <strong>Type:</strong> Error        </div>
+
+        <div>
+            <strong>Code:</strong> 0        </div>
+
+        <div class="error-message">
+            <strong>Message:</strong> Call to a member function nextSibling() on null        </div>
+
+        <div>
+            <strong>File:</strong> bridges/EdfPricesBridge.php        </div>
+
+        <div>
+            <strong>Line:</strong> 48        </div>
+    </div>
+
+    <h2>Trace</h2>
+
+            <code>
+            #0 index.php(68): RssBridge-&gt;main()        </code>
+        <br>
+            <code>
+            #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #14 lib/RssBridge.php(34): DisplayAction-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
+        <br>
+            <code>
+            #16 actions/DisplayAction.php(89): EdfPricesBridge-&gt;collectData()        </code>
+        <br>
+            <code>
+            #17 bridges/EdfPricesBridge.php(103): EdfPricesBridge-&gt;tempo()        </code>
+        <br>
+            <code>
+            #18 bridges/EdfPricesBridge.php(48)        </code>
+        <br>
+    
+    <br>
+
+    <h2>Context</h2>
+
+    <div>
+        <strong>Query:</strong> action=display&amp;bridge=EdfPricesBridge&amp;contract=/energie/edf/tarifs/tempo&amp;format=Html    </div>
+
+    <div>
+        <strong>Version:</strong> 2024-02-02 (git.master.bf4a918)    </div>
+
+    <div>
+        <strong>OS:</strong> Linux    </div>
+
+    <div>
+        <strong>PHP:</strong> 8.2.26    </div>
+
+    <br>
+
+    <a href="/">Go back</a>
+</div>
+
+
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+EDF+tarifs" title="Opens GitHub to search for similar issues">
+    <button>Find similar bugs</button>
+</a>
+
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=EDF+tarifs+failed+with%3A+Call+to+a+member+function+nextSibling%28%29+on+null&body=%60%60%60%0AError%3A+Call+to+a+member+function+nextSibling%28%29+on+null+in+bridges%2FEdfPricesBridge.php+line+48%0A%0Aindex.php%2868%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+EdfPricesBridge-%3EcollectData%28%29%0Abridges%2FEdfPricesBridge.php%28103%29%3A+EdfPricesBridge-%3Etempo%28%29%0Abridges%2FEdfPricesBridge.php%2848%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DEdfPricesBridge%26contract%3D%252Fenergie%252Fedf%252Ftarifs%252Ftempo%26format%3DHtml%0AVersion%3A+2024-02-02+%28git.master.bf4a918%29%0AOs%3A+Linux%0APHP+version%3A+8.2.26%0A%60%60%60%0AMaintainer%3A+%40floviolleau&labels=Bridge-Broken&assignee=f" title="After clicking this button you can review the issue before submitting it">
+    <button>Create GitHub Issue</button>
+</a>
+
+<p class="maintainer">
+    floviolleau</p>
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
