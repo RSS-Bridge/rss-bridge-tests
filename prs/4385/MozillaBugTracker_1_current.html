@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Bug 121241 - Misplaced insertion line for outliner DND - Mozilla Bug Tracker</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241" target="_blank">Bug 121241 - Misplaced insertion line for outliner DND - Mozilla Bug Tracker</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-MozillaBugTrackerBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=MozillaBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c0"
+                    >Description</a>
+                </h2>
+
+                                    <time datetime="2002-01-22 16:55:00">
+                        2002-01-22 16:55:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Pierre Chanial 
+
+              Reporter 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-0" data-comment-id="1124724">Linux build 2002 01 21 21
+
+During a drag and drop in the bookmark outliner, the insertion line appears at
+two positions between items:
+- just below the first item
+- just above the second item (item is shifted, as reported)
+Only one position should be needed for the insertion line.</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c1"
+                    >Comment 1</a>
+                </h2>
+
+                                    <time datetime="2002-01-22 18:47:00">
+                        2002-01-22 18:47:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  NilsE 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-1" data-comment-id="1124932">Confirming on CVS 2002-01-22, 0700 UTC, Linux.
+
+In addition, if I file the same bookmark several times, using either inserting
+position, some magically disappear. But they're in bookmarks.html, but only
+until shutdown. After restart some of these invisible dupes are being
+eliminated. But that's problably a different bug.</div><div class="change">Status: UNCONFIRMED &rarr; NEW</div><div class="change">Ever confirmed: true</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c2"
+                    >Comment 2</a>
+                </h2>
+
+                                    <time datetime="2002-01-22 20:11:00">
+                        2002-01-22 20:11:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  [not reading bugmail] 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-2" data-comment-id="1125091">
+
+*** This bug has been marked as a duplicate of <a class="bz_bug_link          bz_status_VERIFIED bz_closed"
+   title="VERIFIED FIXED - Tracking Drag and Drop bugs in bookmark manager and sidebar"
+   href="https://bugzilla.mozilla.org/show_bug.cgi?id=114606" style="text-decoration:line-through;">114606</a> ***</div><div class="change">Status: NEW &rarr; RESOLVED</div><div class="change">Closed: <span class="rel-time" title="2002-01-22 12:11 PST" data-time="1011730278">23 years ago</span></div><div class="change">Resolution: --- &rarr; DUPLICATE</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c3"
+                    >Comment 3</a>
+                </h2>
+
+                                    <time datetime="2002-01-24 07:09:00">
+                        2002-01-24 07:09:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  [not reading bugmail] 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-3" data-comment-id="1128171">Nilse,
+
+the first comment/bug summary is covered by my change to the dupe, see <a class="bz_bug_link          bz_status_VERIFIED bz_closed"
+   title="VERIFIED FIXED - Tracking Drag and Drop bugs in bookmark manager and sidebar"
+   href="https://bugzilla.mozilla.org/show_bug.cgi?id=114606#c25" style="text-decoration:line-through;">bug
+114606 comment #25</a> for more.  I think filing the same bookmark, it should be not
+added to the same folder more than once.. and hence should be gone from the
+bookmarks.html.. the only case is if they are in different folders.  This is
+necessary for the merge bookmarks functionality in a really old bug.
+
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c4"
+                    >Comment 4</a>
+                </h2>
+
+                                    <time datetime="2002-02-02 16:16:00">
+                        2002-02-02 16:16:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  [not reading bugmail] 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-4" data-comment-id="1144225">changing bug to dependency, Pierre has a very good point.</div><div class="change">Blocks: <a class="bz_bug_link          bz_status_VERIFIED bz_closed"
+   title="VERIFIED FIXED - Tracking Drag and Drop bugs in bookmark manager and sidebar"
+   href="https://bugzilla.mozilla.org/show_bug.cgi?id=114606" style="text-decoration:line-through;">114606</a></div><div class="change">Status: RESOLVED &rarr; REOPENED</div><div class="change">Resolution: DUPLICATE &rarr; ---</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c5"
+                    >Comment 5</a>
+                </h2>
+
+                                    <time datetime="2002-02-02 23:43:00">
+                        2002-02-02 23:43:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-5" data-comment-id="1144576">I just noticed that ns4.x supports both drop orientations too.
+So I wonder if this is actually bug.
+
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c6"
+                    >Comment 6</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 03:21:00">
+                        2002-02-03 03:21:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Blake Ross 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-6" data-comment-id="1144762">Jan, you're working on this, aren't you? That's the impression I got, sorry if not.</div><div class="change">Assignee: blaker &rarr; varga</div><div class="change">Status: REOPENED &rarr; NEW</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c7"
+                    >Comment 7</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 09:03:00">
+                        2002-02-03 09:03:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-7" data-comment-id="1144962">ok, I'll try to figure out something.
+</div><div class="change">Status: NEW &rarr; ASSIGNED</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c8"
+                    >Comment 8</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 16:59:00">
+                        2002-02-03 16:59:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-8" data-comment-id="1145174">Yeah current behaviour sucks!
+Here comes a new patch, hope you will like it
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c9"
+                    >Comment 9</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 17:03:00">
+                        2002-02-03 17:03:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-9" data-comment-id="1145176">this took me so much time, sigh
+it should look better now.</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c10"
+                    >Comment 10</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 17:09:00">
+                        2002-02-03 17:09:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-10" data-comment-id="1145178">need some testing on mac, any volunteers ?
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c11"
+                    >Comment 11</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 17:22:00">
+                        2002-02-03 17:22:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-11" data-comment-id="1145187">zach, could you test on Mac ?</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c12"
+                    >Comment 12</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 17:33:00">
+                        2002-02-03 17:33:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text  empty"
+      id="ct-12" data-comment-id="1145190"></div><div class="change">
+        <a href="https://bugzilla.mozilla.org/attachment.cgi?id=67655&amp;action=edit"
+           title="proposed fix"
+           class=""
+        >Attachment #67655</a> -
+        Attachment is obsolete: true</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c13"
+                    >Comment 13</a>
+                </h2>
+
+                                    <time datetime="2002-02-03 18:36:00">
+                        2002-02-03 18:36:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text  empty"
+      id="ct-13" data-comment-id="1145222"></div><div class="change">
+        <a href="https://bugzilla.mozilla.org/attachment.cgi?id=67656&amp;action=edit"
+           title="new patch, contains also a fix for scrollbar not updating"
+           class=""
+        >Attachment #67656</a> -
+        Attachment is obsolete: true</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c14"
+                    >Comment 14</a>
+                </h2>
+
+                                    <time datetime="2002-02-05 01:05:00">
+                        2002-02-05 01:05:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-14" data-comment-id="1147464">tested on linux and winnt, looks good so far
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c15"
+                    >Comment 15</a>
+                </h2>
+
+                                    <time datetime="2002-02-05 01:42:00">
+                        2002-02-05 01:42:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  David Hyatt 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-15" data-comment-id="1147569">sr=hyatt
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c16"
+                    >Comment 16</a>
+                </h2>
+
+                                    <time datetime="2002-02-05 16:04:00">
+                        2002-02-05 16:04:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Mike Pinkerton (not reading bugmail) 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-16" data-comment-id="1148451">two questions:
+
+- you create an atom for dragSession but i don't see it used anywhere besides
+putting it into the list. shouldn't it show up in the css somewhere?
+
+- GetFinalImageSize() to get the dimensions of the twisty will be wrong when the
+skin is using a theme impl. You have to query the theme impl to get the
+width/height of the twisty.</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c17"
+                    >Comment 17</a>
+                </h2>
+
+                                    <time datetime="2002-02-05 19:34:00">
+                        2002-02-05 19:34:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-17" data-comment-id="1148900">I added dragSession atom for future use.
+
+I'll try to address twisty size in 123605.
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#a1280067_8340"
+                    >Updated</a>
+                </h2>
+
+                                    <time datetime="2002-02-06 12:29:00">
+                        2002-02-06 12:29:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+            Assignee 
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div class="change">Priority: -- &rarr; P3</div><div class="change">Target Milestone: --- &rarr; mozilla0.9.9</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c18"
+                    >Comment 18</a>
+                </h2>
+
+                                    <time datetime="2002-02-06 17:42:00">
+                        2002-02-06 17:42:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Mike Pinkerton (not reading bugmail) 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-18" data-comment-id="1151319">i tried on mac and there are still problems.
+
+for example, when the very first item in my bookmarks list is a folder, moving
+the mouse into it causes the folder to select, then clear. there is no drop
+feedback until you move the mouse out of the container. it doesn't matter if the
+folder is open or closed.
+
+Of greater importance, though, is if I hold the mouse in the lower portion of
+the open container (the bottom 25% or so), the drop feedback shows that it will
+go at the same level as the container, but between it an its children (which is
+very wrong), but then dropping it puts it _above_ the container. 
+
+i also think that the &quot;move between&quot; feedback is indented too much. for an open
+container, it's at the same level as its children which makes me think the drop
+will make it a child. It should be moved over more to the left, between the
+icons. it should probably also be wider horizontally to be more visible.</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c19"
+                    >Comment 19</a>
+                </h2>
+
+                                    <time datetime="2002-02-06 18:02:00">
+                        2002-02-06 18:02:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-19" data-comment-id="1151379">ok, trying to fix it</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c20"
+                    >Comment 20</a>
+                </h2>
+
+                                    <time datetime="2002-02-06 19:42:00">
+                        2002-02-06 19:42:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-20" data-comment-id="1151689">This patch should address all comments pointed by pinkerton.
+All except incorrent dropping above a container.
+That and other issues should be covered in <a class="bz_bug_link          bz_status_VERIFIED bz_closed"
+   title="VERIFIED FIXED - Tracking Drag and Drop bugs in bookmark manager and sidebar"
+   href="https://bugzilla.mozilla.org/show_bug.cgi?id=114606" style="text-decoration:line-through;">bug 114606</a>.</div><div class="change">
+        <a href="https://bugzilla.mozilla.org/attachment.cgi?id=67657&amp;action=edit"
+           title="added comments"
+           class=""
+        >Attachment #67657</a> -
+        Attachment is obsolete: true</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c21"
+                    >Comment 21</a>
+                </h2>
+
+                                    <time datetime="2002-02-08 15:38:00">
+                        2002-02-08 15:38:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-21" data-comment-id="1156149">Zach said, it buids and works fine on Mac.
+Pink, could you stamp it with an r= ?
+
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c22"
+                    >Comment 22</a>
+                </h2>
+
+                                    <time datetime="2002-02-08 16:13:00">
+                        2002-02-08 16:13:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Mike Pinkerton (not reading bugmail) 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-22" data-comment-id="1156208">Comment on <span class=""><a href="https://bugzilla.mozilla.org/attachment.cgi?id=68170" name="attach_68170" title="better fix">attachment 68170</a> <a href="https://bugzilla.mozilla.org/attachment.cgi?id=68170&amp;action=edit" title="better fix">[details]</a> <a href="https://bugzilla.mozilla.org/attachment.cgi?id=68170&amp;action=diff" title="better fix">[diff]</a></span> <a href='https://bugzilla.mozilla.org/page.cgi?id=splinter.html&amp;ignore=&amp;bug=121241&amp;attachment=68170'>[review]</a>
+better fix
+
+r=pink. so much better ;)</div><div class="change">
+        <a href="https://bugzilla.mozilla.org/attachment.cgi?id=68170&amp;action=edit"
+           title="better fix"
+           class=""
+        >Attachment #68170</a> -
+        Flags: review+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c23"
+                    >Comment 23</a>
+                </h2>
+
+                                    <time datetime="2002-02-08 22:57:00">
+                        2002-02-08 22:57:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-23" data-comment-id="1157076">fixed</div><div class="change">Status: ASSIGNED &rarr; RESOLVED</div><div class="change">Closed: <span class="rel-time" title="2002-01-22 12:11 PST" data-time="1011730278">23 years ago</span> &rarr; <span class="rel-time" title="2002-02-08 14:57 PST" data-time="1013209066">23 years ago</span></div><div class="change">Resolution: --- &rarr; FIXED</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c24"
+                    >Comment 24</a>
+                </h2>
+
+                                    <time datetime="2002-02-09 14:21:00">
+                        2002-02-09 14:21:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Pierre Chanial 
+
+              Reporter 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-24" data-comment-id="1157977">Great!
+Marking verified on linux build 2002 02 08 21</div><div class="change">Status: RESOLVED &rarr; VERIFIED</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c25"
+                    >Comment 25</a>
+                </h2>
+
+                                    <time datetime="2002-02-10 04:39:00">
+                        2002-02-10 04:39:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  [not reading bugmail] 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-25" data-comment-id="1158740">Jan,
+
+this will help you fix the other stuff:
+
+if you are moving a *highlighted* bookmark there is still two insertion bars..
+they are extremely close together.  and will still get the same effect as in
+114606.  it doesn't do the shifting.. that is fixed.  I see it is below the
+highlighted bookmark, and one is above the highlighted line.  The one above the
+highlighted line will insert above the unhighlighted bookmark above the
+highlighted one.  </div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c26"
+                    >Comment 26</a>
+                </h2>
+
+                                    <time datetime="2002-02-10 20:04:00">
+                        2002-02-10 20:04:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  Jan Varga [:janv] 
+
+              Assignee 
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-26" data-comment-id="1159236">Dennis, that's bookmarks issue, not outliner related in general.
+</div>
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.mozilla.org/show_bug.cgi?id=121241#c27"
+                    >Comment 27</a>
+                </h2>
+
+                                    <time datetime="2002-02-13 06:29:00">
+                        2002-02-13 06:29:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by:  [not reading bugmail] 
+
+          </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                <div
+      class="comment-text"
+      id="ct-27" data-comment-id="1164249">Thanks for that clarification, as you could probably tell, I didn't understand
+the  difference between the outliner and its relationship with bookmarks code. 
+I'm trying though.
+
+Dennis</div>
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>

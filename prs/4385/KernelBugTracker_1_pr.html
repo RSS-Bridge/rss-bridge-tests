@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Bug 121241 tracker for AML stack leak - Acpi-State leaks consume all of memory - Kernel Bug Tracker</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://bugzilla.kernel.org/show_bug.cgi?id=121241" target="_blank">Bug 121241 tracker for AML stack leak - Acpi-State leaks consume all of memory - Kernel Bug Tracker</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-KernelBugTrackerBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=KernelBugTrackerBridge&amp;context=Bug+comments&amp;id=121241&amp;sorting=of&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c0"
+                    >Description</a>
+                </h2>
+
+                                    <time datetime="2016-06-30 15:50:27">
+                        2016-06-30 15:50:27                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c1"
+                    >Comment 1</a>
+                </h2>
+
+                                    <time datetime="2016-06-30 15:55:42">
+                        2016-06-30 15:55:42                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Running an fio (fio-2.1.10) job against a software RAID-10 device built from multipathed SSDs causes all memory to be consumed by Acpi-State objects. This is the report from slabtop:<br><br> Active / Total Objects (% used)    : -1033565817 / -1033409379 (100.0%)<br> Active / Total Slabs (% used)      : 65344141 / 65345079 (100.0%)<br> Active / Total Caches (% used)     : 69 / 122 (56.6%)<br> Active / Total Size (% used)       : 256421282.18K / 256452679.19K (100.0%)<br> Minimum / Average / Maximum Object : 0.02K / 0.08K / 4096.00K<br><br>  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   <br>3260693700 3260690441   1%    0.08K 65213874	   50 260855496K Acpi-State<br>193936 163748  84%    0.03K   1564	124      6256K kmalloc-32<br><br>This is the script running the fio jobs:<br><br>DEV='/dev/md6'=~ [yY](es)* ]]<br>DRIVESIZEBYTES=$(($(cat /sys/block/`basename  $DEV`/size) *512))<br>DRIVESIZEGiB=$(($DRIVESIZEBYTES/1024/1024/1024))e drive fill x 2&quot;<br>FIO=&quot;sudo /opt/clearsky/bin/fio&quot;<br>echo Drive Size=$DRIVESIZEGiB GiB<br>        $FIO --readwrite=rw --bs=4k --invalidate=1 --bsrange=4k-512k\<br>trap &quot;exit 1;&quot; SIGHUP SIGINT SIGTERM --direct=1 --size=&quot;$DRIVESIZEGiB&quot;G\<br>        --group_reporting --ioengine=libaio --numjobs=1\<br>devs=` ls /dev/md[345] `-minimal $names &gt;&gt; '/tmp/seq_precon_log.txt';<br>names=&quot;&quot;Pass # $n, complete drive fill&quot;<br>        done<br>for dev in $devs; do<br>  names=`echo $names &quot;--name=${dev} --iodepth=128 --filename=${dev}&quot;`;<br>doneit<br>fi<br>echo Conditioning $devs<br>read -p &quot;Are you sure you want to continue? &lt;y/N&gt; &quot; prompt                                                                                                   <br>~                                                                                                                                                            <br>if [[ $prompt =~ [yY](es)* ]]                                                                                                                                <br>then                                                                                                                                                         <br>  echo &quot;Starting 512KB sequential write, complete drive fill x 2&quot;                                                                                            <br>  date                                                                                                                                                       <br>  n=0; while (( n++ &lt; 2000 )); do                                                                                                                            <br>        $FIO --readwrite=rw --bs=4k --invalidate=1 --bsrange=4k-512k\                                                                                        <br>        --rwmixread=33 --end_fsync=0 --direct=1 --size=&quot;$DRIVESIZEGiB&quot;G\                                                                                     <br>        --group_reporting --ioengine=libaio --numjobs=1\                                                                                                     <br>        --randrepeat=0 --minimal $names &gt;&gt; '/tmp/seq_precon_log.txt';                                                                                        <br>  echo &quot;Pass # $n, complete drive fill&quot;                                                                                                                      <br>        done<br>  date<br>else<br>  exit<br>fi
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c2"
+                    >Comment 2</a>
+                </h2>
+
+                                    <time datetime="2016-06-30 19:59:37">
+                        2016-06-30 19:59:37                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                If --ioengine=libaio is removed the issue goes away. This is the slabtop from the run without ioengine:<br><br>Active / Total Objects (% used)    : 1172329 / 1264471 (92.7%)<br> Active / Total Slabs (% used)      : 147877 / 148087 (99.9%)<br> Active / Total Caches (% used)     : 72 / 113 (63.7%)<br> Active / Total Size (% used)       : 1770060.91K / 1782121.35K (99.3%)<br> Minimum / Average / Maximum Object : 0.02K / 1.41K / 4096.00K<br><br>  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   <br>274833 269544  98%    0.10K   7047	 39     28188K buffer_head<br>203980 168866  82%    0.03K   1645	124      6580K kmalloc-32<br>121248 112230  92%    0.25K   7578	 16     30312K kmalloc-256<br>112728 111322  98%    0.07K   2013	 56      8052K Acpi-ParseExt<br> 97544  97521  99%   16.00K  97544        1   1560704K kmalloc-16384<br> 78435  77473  98%    0.19K   3735	 21     14940K dentry<br> 59829  58472  97%    0.12K   1813	 33      7252K kernfs_node_cache<br> 52794  43897  83%    0.06K    838	 63      3352K kmalloc-64<br> 30250  28222  93%    0.08K    605	 50      2420K Acpi-State<br> 26922  26894  99%    0.53K   3846        7     15384K inode_cache<br> 22785  22366  98%    0.12K    735	 31      2940K kmalloc-96<br> 22572  16167  71%    0.04K    228       99       912K Acpi-Namespace<br> 17556  16389  93%    0.19K    836       21      3344K kmalloc-192<br> 15344  15193  99%    0.50K   1918        8      7672K kmalloc-512<br><br>Adding --ioengine=libaio in again shows Acpi-State slab growing without bound.<br><br>I was also unable to reproduce this with a similar vdbench script:<br><br>*workload:  Single run, 3 raw disks, 0% random, 33% read of 4k blocks at unlimited rate<br><br>*HD:	Host Definition<br>*SD:		Storage Definition<br>*WD:	Workload Definition<br>*RD:	Run Definition<br>*<br>hd=default,user=root,shell=ssh,jvms=8<br><br>sd=sd1,lun=/dev/md3,openflags=o_direct,hitarea=0,range=(0,100),threads=8<br>sd=sd2,lun=/dev/md4,openflags=o_direct,hitarea=0,range=(0,100),threads=8<br>sd=sd3,lun=/dev/md5,openflags=o_direct,hitarea=0,range=(0,100),threads=8<br>wd=wd1,sd=(sd1,sd2,sd3),xfersize=(4096,100),rdpct=33,seekpct=0<br>rd=run1,wd=wd1,iorate=max,elapsed=1800,warmup=600
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c3"
+                    >Comment 3</a>
+                </h2>
+
+                                    <time datetime="2016-07-05 14:01:43">
+                        2016-07-05 14:01:43                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Please remove the &quot;'=~ [yY](es)* ]] from the first line of the script in the original comment. It is a cut and paste error.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c4"
+                    >Comment 4</a>
+                </h2>
+
+                                    <time datetime="2016-07-05 17:08:57">
+                        2016-07-05 17:08:57                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I upgraded fio:<br><br># ./fio --version<br>fio-2.12<br><br>using ioengine=libaio, the results are the same:<br><br> Active / Total Objects (% used)    : 170404994 / 170852831 (99.7%)<br> Active / Total Slabs (% used)      : 3574679 / 3574916 (100.0%)<br> Active / Total Caches (% used)     : 70 / 122 (57.4%)<br> Active / Total Size (% used)       : 15112939.94K / 15169514.47K (99.6%)<br> Minimum / Average / Maximum Object : 0.02K / 0.09K / 4096.00K<br><br>  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   <br>168280800 168280800  23%    0.08K 3365616	50  13462464K Acpi-State<br>645918 444330  68%    0.10K  16562	 39     66248K buffer_head<br>324508 200318  61%    0.03K   2617	124     10468K kmalloc-32<br>323296 268628  83%    0.25K  20206	 16     80824K kmalloc-256<br>254331 242560  95%    0.19K  12111	 21     48444K dentry<br>165528 158701  95%    0.04K   1672	 99      6688K Acpi-Namespace<br>117306 111044  94%    0.06K   1862	 63      7448K kmalloc-64<br>115008 115008 100%    0.31K   9584       12     38336K bio-3<br>112840 111079  98%    0.07K   2015	 56	 8060K Acpi-ParseExt
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c5"
+                    >Comment 5</a>
+                </h2>
+
+                                    <time datetime="2016-07-06 15:17:03">
+                        2016-07-06 15:17:03                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I eliminated both the MD RAID-10 and the device mapper multi-path to run the test on the raw devices (/dev/sd?) with the same defect:<br><br> Active / Total Caches (% used)     : 72 / 112 (64.3%)<br> Active / Total Size (% used)       : 149415419.76K / 149439781.30K (100.0%)<br> Minimum / Average / Maximum Object : 0.02K / 0.08K / 4096.00K<br><br>  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   <br>1890042650 1890042295   0%    0.08K 37800853       50 151203412K Acpi-State<br>193869 187373  96%    0.10K   4971       39     19884K buffer_head<br>257052 167477  65%    0.03K   2073      124      8292K kmalloc-32<br>152192 115624  75%    0.25K   9512	 16     38048K kmalloc-256<br>112896 111877  99%    0.07K   2016       56      8064K Acpi-ParseExt<br> 97565  97489  99%   16.00K  97565	  1   1561040K kmalloc-16384<br> 85932  81944  95%    0.19K   4092	 21     16368K dentry<br> 57288  53843  93%    0.12K   1736	 33      6944K kernfs_node_cache<br> 48636  42996  88%    0.06K    772	 63      3088K kmalloc-64<br> 40572  40403  99%    0.53K   5796	  7     23184K inode_cache<br> 22847  21776  95%    0.12K    737       31      2948K kmalloc-96<br> 15225  13729  90%    0.19K    725	 21      2900K kmalloc-192<br> 15939  13178  82%    0.04K    161       99       644K Acpi-Namespace<br> 13008  12336  94%    0.50K   1626	  8	 6504K kmalloc-5
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c6"
+                    >Comment 6</a>
+                </h2>
+
+                                    <time datetime="2016-07-06 16:14:45">
+                        2016-07-06 16:14:45                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Correction to <a href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c5">comment 5</a>: MD RAID-10 was eliminated. Multi-path was not. The defect does not appear to be present on the raw devices. The following is the slabtop output after twice as much I/O as shown in <a href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c5">comment 5</a>:<br><br> Active / Total Objects (% used)    : 1293649 / 1470729 (88.0%)<br> Active / Total Slabs (% used)      : 148968 / 149123 (99.9%)<br> Active / Total Caches (% used)     : 67 / 110 (60.9%)<br> Active / Total Size (% used)       : 1756033.81K / 1785582.46K (98.3%)<br> Minimum / Average / Maximum Object : 0.02K / 1.21K / 4096.00K<br><br>  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   <br>270777 266887  98%    0.10K   6943	 39     27772K buffer_head<br>235200 234330  99%    0.08K   4704	 50     18816K Acpi-State<br>232252 164813  70%    0.03K   1873	124      7492K kmalloc-32<br>112952 110903  98%    0.07K   2017	 56      8068K Acpi-ParseExt<br>163200 109900  67%    0.25K  10200       16     40800K kmalloc-256<br> 97555  97518  99%   16.00K  97555	  1   1560880K kmalloc-16384<br> 69174  61546  88%    0.19K   3294	 21     13176K dentry<br> 55143  53400  96%    0.12K   1671	 33	 6684K kernfs_node_cache<br> 48888  40602  83%    0.06K    776	 63      3104K kmalloc-64
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c7"
+                    >Comment 7</a>
+                </h2>
+
+                                    <time datetime="2016-07-07 21:06:00">
+                        2016-07-07 21:06:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I have demonstrated that the defect is only on the write path.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c8"
+                    >Comment 8</a>
+                </h2>
+
+                                    <time datetime="2016-07-15 20:46:04">
+                        2016-07-15 20:46:04                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Robert Moore&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Please post the acpidump for this machine, thanks.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c9"
+                    >Comment 9</a>
+                </h2>
+
+                                    <time datetime="2016-07-21 18:14:40">
+                        2016-07-21 18:14:40                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class=""><a href="https://bugzilla.kernel.org/attachment.cgi?id=224461" name="attach_224461" title="requested acpidump file.">attachment 224461</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=224461&amp;action=edit" title="requested acpidump file.">[details]</a></span><br>requested acpidump file.<br><br>As requested.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c10"
+                    >Comment 10</a>
+                </h2>
+
+                                    <time datetime="2016-07-21 18:22:12">
+                        2016-07-21 18:22:12                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Thanks. Please also attach your fio script as a file. Even after handling the copy/paste error I cannot run the script and don't want to assume any corrections.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c11"
+                    >Comment 11</a>
+                </h2>
+
+                                    <time datetime="2016-07-21 18:27:21">
+                        2016-07-21 18:27:21                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class=""><a href="https://bugzilla.kernel.org/attachment.cgi?id=224471" name="attach_224471" title="fio script">attachment 224471</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=224471&amp;action=edit" title="fio script">[details]</a></span><br>fio script<br><br>As requested.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c12"
+                    >Comment 12</a>
+                </h2>
+
+                                    <time datetime="2016-07-21 21:13:34">
+                        2016-07-21 21:13:34                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Robert Moore&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                dmesg would also help.<br>thanks.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c13"
+                    >Comment 13</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 13:17:53">
+                        2016-07-22 13:17:53                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class=""><a href="https://bugzilla.kernel.org/attachment.cgi?id=225271" name="attach_225271" title="system dmesg output">attachment 225271</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=225271&amp;action=edit" title="system dmesg output">[details]</a></span><br>system dmesg output<br><br>As requested
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c14"
+                    >Comment 14</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 13:24:11">
+                        2016-07-22 13:24:11                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I booted linux 4.6.0 and the fault is not present.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c15"
+                    >Comment 15</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 14:17:07">
+                        2016-07-22 14:17:07                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I downloaded and built 4.4.15, the fault did not reproduce.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c16"
+                    >Comment 16</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 17:42:24">
+                        2016-07-22 17:42:24                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Robert Moore&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                It would be helpful to us to know the exact platform where this was seen.<br>thanks.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c17"
+                    >Comment 17</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 23:19:02">
+                        2016-07-22 23:19:02                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class="bz_obsolete" style="text-decoration:line-through;"><a href="https://bugzilla.kernel.org/attachment.cgi?id=225531&amp;action=diff" name="attach_225531" title="acpi state debug patch">attachment 225531</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=225531&amp;action=edit" title="acpi state debug patch">[details]</a></span><br>acpi state debug patch<br><br>This patch will print a number that corresponds to the Acpi-State descriptor being created. Types are enumerated in drivers/acpi/acpica/acobject.h. Look for the prefix ACPI_DESC_TYPE.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c18"
+                    >Comment 18</a>
+                </h2>
+
+                                    <time datetime="2016-07-22 23:23:23">
+                        2016-07-22 23:23:23                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Hi Matthew. If you can move to a newer kernel that would be best. If you can't or would like to pursue the root cause if this problem please try the above patch on the problem kernel to see which descriptor is behind the memory problem. Should print to dmesg. You may want to clear dmesg (save it first if desired) before running your script.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c19"
+                    >Comment 19</a>
+                </h2>
+
+                                    <time datetime="2016-07-25 14:53:07">
+                        2016-07-25 14:53:07                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I get the following compilation errors when building linux 4.1.8 with your patch:<br><br>In file included from include/acpi/acpi.h:61:0,<br>                 from drivers/acpi/acpica/utstate.c:44:<br>drivers/acpi/acpica/utstate.c: In function ‘acpi_ut_create_generic_state’:<br>include/acpi/acoutput.h:213:41: error: too few arguments to function ‘acpi_info’<br> #define ACPI_INFO(plist)                acpi_info plist<br>                                         ^<br>drivers/acpi/acpica/utstate.c:133:2: note: in expansion of macro ‘ACPI_INFO’<br>  ACPI_INFO((&quot;Acpi Generic State Created, Type: 0x%x\n&quot;,<br>  ^<br>In file included from include/acpi/acpi.h:64:0,<br>                 from drivers/acpi/acpica/utstate.c:44:<br>include/acpi/acpixf.h:868:5: note: declared here<br>     acpi_info(const char *module_name,<br>     ^<br>include/acpi/acpixf.h:320:2: note: in definition of macro ‘ACPI_MSG_DEPENDENT_RETURN_VOID’<br>  prototype;<br>  ^<br>scripts/Makefile.build:258: recipe for target 'drivers/acpi/acpica/utstate.o' failed<br>make[3]: *** [drivers/acpi/acpica/utstate.o] Error 1<br>make[3]: *** Waiting for unfinished jobs....<br>scripts/Makefile.build:403: recipe for target 'drivers/acpi/acpica' failed<br>make[2]: *** [drivers/acpi/acpica] Error 2<br>scripts/Makefile.build:403: recipe for target 'drivers/acpi' failed<br>make[1]: *** [drivers/acpi] Error 2<br>Makefile:947: recipe for target 'drivers' failed<br>make: *** [drivers] Error 2<br><br><br>We are not in a position to move forward to a new kernel at this time. We have not yet targeted our next kernel. We may want to wait until the next new long term support kernel is available.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c20"
+                    >Comment 20</a>
+                </h2>
+
+                                    <time datetime="2016-07-25 18:55:54">
+                        2016-07-25 18:55:54                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class="bz_obsolete" style="text-decoration:line-through;"><a href="https://bugzilla.kernel.org/attachment.cgi?id=226361&amp;action=diff" name="attach_226361" title="debug patch for 4.1 kernel">attachment 226361</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=226361&amp;action=edit" title="debug patch for 4.1 kernel">[details]</a></span><br>debug patch for 4.1 kernel<br><br>My apologies. It applies to the current kernel. Simple fix. Compiled tested on 4.1.8.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c21"
+                    >Comment 21</a>
+                </h2>
+
+                                    <time datetime="2016-07-25 19:29:18">
+                        2016-07-25 19:29:18                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Here is the BOM for the systems in question:<br><br>Description	Quantity<br>OEM Dell Storage MD1420, 24 HDs 2.5&quot;, 2Us (210-ADBU)	1<br>OEM SHIP,MD1420,DAO (340-AKRE)	1<br>No Raid, no Controller (405-AAFC)	1<br>Brand/No-Bezel, 2U, OEM Storage (325-BBIQ)	1<br>Enclosure Management Module, dual (403-BBGM)	1<br>Hard Drive Filler 2.5in, single blank (400-AEPR)	10<br>200GB Solid State Drive SAS Write Intensive MLC 12Gbps 2.5in Hot-plug Drive, PX04SH (400-AMEY)	14<br>Rack rail, 2Us, Static (770-BBJE)	1<br>12Gb HD-Mini to HD-Mini SAS cable, 0.5m (470-ABDN)	4<br>Solutions Program Support (927-3179)	1<br>	<br>	<br>	<br>Description	Quantity<br>OEM PowerEdge R630 (210-ADCY)	1<br>PowerEdge R630 Motherboard MLK (329-BCZI)	1<br>OEM PowerEdge R630 Shipping-8 Drive Chassis (340-AKRZ)	1<br>Intel X710 Quad Port 10Gb DA/SFP+ Ethernet, Network Daughter Card (555-BCKP)	1<br>SAS 12Gbps HBA External Controller, Low Profile (405-AAFB)	1<br>iDRAC8 Enterprise, integrated Dell Remote Access Controller, Enterprise (385-BBHO)	1<br>Chassis with up to 8, 2.5&quot; Hard Drives, 3 PCIe Slots (321-BBKL)	1<br>Brand/No-Bezel, OEM PowerEdge R630, 8 Drive Chassis (325-BBJC)	1<br>Performance BIOS Settings (384-BBBL)	1<br>RAID 1 for H330/H730/H730P (2 HDDs or SSDs) (780-BBJK)	1<br>PERC H330 Integrated RAID Controller (405-AAEF)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJDO)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJEE)	1<br>32GB RDIMM, 2400MT/s, Dual Rank, x4 Data Width (370-ACNS)	8<br>2400MT/s RDIMMs (370-ACPH)	1<br>Performance Optimized (370-AAIP)	1<br>200GB Solid State Drive SATA Mix Use MLC 6Gpbs 2.5in Hot-plug Drive, S3610 (400-AIFV)	2<br>Description	Quantity<br>OEM Dell Storage MD1420, 24 HDs 2.5&quot;, 2Us (210-ADBU)	1<br>Dell Hardware Limited Warranty Plus On Site Service Initial 15 Months (977-8949)	1<br>Dell Hardware Limited Warranty Plus On Site Service Extended Months(s) (977-8950)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 15 Months (977-8952)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 24 Months Extended (977-8953)	1<br>ProSupport : 7x24 Technical Support, 39 Months (977-8966)	1<br>Thank you choosing Dell ProSupport. For tech support, visit <a href="http://www.dell.com/support">http://www.dell.com/support</a> or call 1-800- 945-3355 (989-3439)	1<br>On-Site Installation Declined (900-9997)	1<br>Declined Remote Consulting Service (973-2426)	1<br>US Order (332-1286)	1<br>OEM SHIP,MD1420,DAO (340-AKRE)	1<br>No Raid, no Controller (405-AAFC)	1<br>Brand/No-Bezel, 2U, OEM Storage (325-BBIQ)	1<br>Enclosure Management Module, dual (403-BBGM)	1<br>Hard Drive Filler 2.5in, single blank (400-AEPR)	10<br>200GB Solid State Drive SAS Write Intensive MLC 12Gbps 2.5in Hot-plug Drive, PX04SH (400-AMEY)	14<br>Rack rail, 2Us, Static (770-BBJE)	1<br>OEM MD1420 Regulatory label, Mexico (389-BEVW)	1<br>Power supply, AC 600W, Redundant (450-AEBJ)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	1<br>12Gb HD-Mini to HD-Mini SAS cable, 0.5m (470-ABDN)	4<br>Solutions Program Support (927-3179)	1<br>	<br>	<br>	<br>Description	Quantity<br>OEM PowerEdge R630 (210-ADCY)	1<br>PowerEdge R630 Motherboard MLK (329-BCZI)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 39 Months (976-9165)	1<br>ProSupport : 7x24 Technical Support, 39 Months (976-9172)	1<br>Dell Hardware Limited Warranty Plus On Site Service (976-9191)	1<br>Thank you choosing Dell ProSupport. For tech support, visit <a href="http://www.dell.com/support">http://www.dell.com/support</a> or call 1-800- 945-3355 (989-3439)	1<br>US Order (332-1286)	1<br>OEM PowerEdge R630 Shipping-8 Drive Chassis (340-AKRZ)	1<br>Intel X710 Quad Port 10Gb DA/SFP+ Ethernet, Network Daughter Card (555-BCKP)	1<br>SAS 12Gbps HBA External Controller, Low Profile (405-AAFB)	1<br>iDRAC8 Enterprise, integrated Dell Remote Access Controller, Enterprise (385-BBHO)	1<br>Chassis with up to 8, 2.5&quot; Hard Drives, 3 PCIe Slots (321-BBKL)	1<br>Brand/No-Bezel, OEM PowerEdge R630, 8 Drive Chassis (325-BBJC)	1<br>Performance BIOS Settings (384-BBBL)	1<br>RAID 1 for H330/H730/H730P (2 HDDs or SSDs) (780-BBJK)	1<br>PERC H330 Integrated RAID Controller (405-AAEF)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJDO)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJEE)	1<br>32GB RDIMM, 2400MT/s, Dual Rank, x4 Data Width (370-ACNS)	8<br>2400MT/s RDIMMs (370-ACPH)	1<br>Performance Optimized (370-AAIP)	1<br>200GB Solid State Drive SATA Mix Use MLC 6Gpbs 2.5in Hot-plug Drive, S3610 (400-AIFV)	2<br>PE Server FIPS TPM 1.2,CC (461-AADP)	1<br>No Systems Documentation, No OpenManage DVD Kit (631-AACK)	1<br>No Optical Drive Internal for 8 HD Chassis (429-AAQN)	1<br>ReadyRails Sliding Rails Without Cable Management Arm (770-BBBC)	1<br>Dual, Hot-plug, Redundant Power Supply (1+1), 495W (450-ADWQ)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	2<br>No Operating System (619-ABVR)	1<br>No Media Required (421-5736)	1<br>DIMM Blanks for System with 2 Processors (370-ABWE)	1<br>120W Heatsink for PowerEdge R630 (412-AAEE)	1<br>120W Heatsink for PowerEdge R630 (412-AAEE)	1<br>Solutions Program Support (927-3179)	1Description	Quantity<br>OEM Dell Storage MD1420, 24 HDs 2.5&quot;, 2Us (210-ADBU)	1<br>Dell Hardware Limited Warranty Plus On Site Service Initial 15 Months (977-8949)	1<br>Dell Hardware Limited Warranty Plus On Site Service Extended Months(s) (977-8950)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 15 Months (977-8952)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 24 Months Extended (977-8953)	1<br>ProSupport : 7x24 Technical Support, 39 Months (977-8966)	1<br>Thank you choosing Dell ProSupport. For tech support, visit <a href="http://www.dell.com/support">http://www.dell.com/support</a> or call 1-800- 945-3355 (989-3439)	1<br>On-Site Installation Declined (900-9997)	1<br>Declined Remote Consulting Service (973-2426)	1<br>US Order (332-1286)	1<br>OEM SHIP,MD1420,DAO (340-AKRE)	1<br>No Raid, no Controller (405-AAFC)	1<br>Brand/No-Bezel, 2U, OEM Storage (325-BBIQ)	1<br>Enclosure Management Module, dual (403-BBGM)	1<br>Hard Drive Filler 2.5in, single blank (400-AEPR)	10<br>200GB Solid State Drive SAS Write Intensive MLC 12Gbps 2.5in Hot-plug Drive, PX04SH (400-AMEY)	14<br>Rack rail, 2Us, Static (770-BBJE)	1<br>OEM MD1420 Regulatory label, Mexico (389-BEVW)	1<br>Power supply, AC 600W, Redundant (450-AEBJ)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	1<br>12Gb HD-Mini to HD-Mini SAS cable, 0.5m (470-ABDN)	4<br>Solutions Program Support (927-3179)	1<br>	<br>	<br>	<br>Description	Quantity<br>OEM PowerEdge R630 (210-ADCY)	1<br>PowerEdge R630 Motherboard MLK (329-BCZI)	1<br>ProSupport : Next Business Day Onsite Service After Problem Diagnosis, 39 Months (976-9165)	1<br>ProSupport : 7x24 Technical Support, 39 Months (976-9172)	1<br>Dell Hardware Limited Warranty Plus On Site Service (976-9191)	1<br>Thank you choosing Dell ProSupport. For tech support, visit <a href="http://www.dell.com/support">http://www.dell.com/support</a> or call 1-800- 945-3355 (989-3439)	1<br>US Order (332-1286)	1<br>OEM PowerEdge R630 Shipping-8 Drive Chassis (340-AKRZ)	1<br>Intel X710 Quad Port 10Gb DA/SFP+ Ethernet, Network Daughter Card (555-BCKP)	1<br>SAS 12Gbps HBA External Controller, Low Profile (405-AAFB)	1<br>iDRAC8 Enterprise, integrated Dell Remote Access Controller, Enterprise (385-BBHO)	1<br>Chassis with up to 8, 2.5&quot; Hard Drives, 3 PCIe Slots (321-BBKL)	1<br>Brand/No-Bezel, OEM PowerEdge R630, 8 Drive Chassis (325-BBJC)	1<br>Performance BIOS Settings (384-BBBL)	1<br>RAID 1 for H330/H730/H730P (2 HDDs or SSDs) (780-BBJK)	1<br>PERC H330 Integrated RAID Controller (405-AAEF)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJDO)	1<br>Intel Xeon E5-2680 v4 2.4GHz,35M Cache,9.60GT/s QPI,Turbo,HT,14C/28T (120W) Max Mem 2400MHz (338-BJEE)	1<br>32GB RDIMM, 2400MT/s, Dual Rank, x4 Data Width (370-ACNS)	8<br>2400MT/s RDIMMs (370-ACPH)	1<br>Performance Optimized (370-AAIP)	1<br>200GB Solid State Drive SATA Mix Use MLC 6Gpbs 2.5in Hot-plug Drive, S3610 (400-AIFV)	2<br>PE Server FIPS TPM 1.2,CC (461-AADP)	1<br>No Systems Documentation, No OpenManage DVD Kit (631-AACK)	1<br>No Optical Drive Internal for 8 HD Chassis (429-AAQN)	1<br>ReadyRails Sliding Rails Without Cable Management Arm (770-BBBC)	1<br>Dual, Hot-plug, Redundant Power Supply (1+1), 495W (450-ADWQ)	1<br>C13 to C14, PDU Style, 12 AMP, 6.5 Feet (2m) Power Cord, North America (492-BBDI)	2<br>No Operating System (619-ABVR)	1<br>No Media Required (421-5736)	1<br>DIMM Blanks for System with 2 Processors (370-ABWE)	1<br>120W Heatsink for PowerEdge R630 (412-AAEE)	1<br>120W Heatsink for PowerEdge R630 (412-AAEE)	1<br>Solutions Program Support (927-3179)	1
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c22"
+                    >Comment 22</a>
+                </h2>
+
+                                    <time datetime="2016-07-26 15:14:59">
+                        2016-07-26 15:14:59                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class=""><a href="https://bugzilla.kernel.org/attachment.cgi?id=226501" name="attach_226501" title="grep ACPI /var/log/messages output">attachment 226501</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=226501&amp;action=edit" title="grep ACPI /var/log/messages output">[details]</a></span><br>grep ACPI /var/log/messages output<br><br>It appears that messages were rate limited in /var/log/messages. There were 17094100 objects created and 99% were in use. Over time the percent used drops as shown in previous comments
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c23"
+                    >Comment 23</a>
+                </h2>
+
+                                    <time datetime="2016-07-26 19:25:13">
+                        2016-07-26 19:25:13                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Robert Moore&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                This output is very useful. It will help us to develop another patch that tells us exactly what control method(s) are executing.<br>thanks.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c24"
+                    >Comment 24</a>
+                </h2>
+
+                                    <time datetime="2016-07-27 04:02:51">
+                        2016-07-27 04:02:51                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Created <span class=""><a href="https://bugzilla.kernel.org/attachment.cgi?id=226561&amp;action=diff" name="attach_226561" title="Print ACPI Methods associated with Acpi-State.">attachment 226561</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=226561&amp;action=edit" title="Print ACPI Methods associated with Acpi-State.">[details]</a></span><br>Print ACPI Methods associated with Acpi-State.<br><br>This patch prints the ACPI Method that's associated with the PSCOPE and WSCOPE descriptors that are being constantly generated as determined by the previous debug data. This should significantly narrow down the culprit. Again you'll want to clear dmesg just before running your script.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c25"
+                    >Comment 25</a>
+                </h2>
+
+                                    <time datetime="2016-08-16 17:23:46">
+                        2016-08-16 17:23:46                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Robert Moore&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Any news on this?
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c26"
+                    >Comment 26</a>
+                </h2>
+
+                                    <time datetime="2016-08-16 17:29:27">
+                        2016-08-16 17:29:27                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                We have had to wait for an internal re-organization to settle out before we can restart our investigations.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c27"
+                    >Comment 27</a>
+                </h2>
+
+                                    <time datetime="2017-01-16 05:48:55">
+                        2017-01-16 05:48:55                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Lv Zheng&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Ping...
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c28"
+                    >Comment 28</a>
+                </h2>
+
+                                    <time datetime="2017-01-19 15:03:06">
+                        2017-01-19 15:03:06                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I need to get resources assigned for reproducing this bug.<br><br>Is the patch (above) the only thing you want changed?
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c29"
+                    >Comment 29</a>
+                </h2>
+
+                                    <time datetime="2017-01-19 17:26:48">
+                        2017-01-19 17:26:48                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;David Box&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Yes. This won't fix it. But it will hopefully show us the ASL method at the center of this problem.
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c30"
+                    >Comment 30</a>
+                </h2>
+
+                                    <time datetime="2017-01-24 17:00:56">
+                        2017-01-24 17:00:56                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Matthew L. Martin&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                I have applied the second patch and have reproduced the fault, but dmesg is silent during the run. Did you want both patches applied?
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://bugzilla.kernel.org/show_bug.cgi?id=121241#c31"
+                    >Comment 31</a>
+                </h2>
+
+                                    <time datetime="2017-03-23 06:15:42">
+                        2017-03-23 06:15:42                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: 
+          &lt;span class=&quot;vcard&quot;&gt;&lt;span class=&quot;fn&quot;&gt;Lv Zheng&lt;/span&gt;
+&lt;/span&gt;
+        </p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Refiling this bug to ACPICA bugzilla, please track it there.<br><br>Thanks<br>Lv
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
