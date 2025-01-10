@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Ollama Blog Bridge</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://ollama.com" target="_blank">Ollama Blog Bridge</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-OllamaBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=OllamaBridge&amp;limit=10&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/structured-outputs"
+                    >Structured outputs</a>
+                </h2>
+
+                                    <time datetime="2024-12-06 00:00:00">
+                        2024-12-06 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><img src="https://ollama.com/public/blog/ollama-json.png" alt="Ollama playing with building blocks" width="70%" /></p>
+
+<p>Ollama now supports structured outputs making it possible to constrain a model&rsquo;s output to a specific format defined by a JSON schema. The Ollama Python and JavaScript libraries have been updated to support structured outputs.</p>
+
+<p>Use cases for structured outputs include:</p>
+
+<ul>
+<li>Parsing data from documents</li>
+<li>Extracting data from images</li>
+<li>Structuring all language model responses</li>
+<li>More reliability and consistency than JSON mode</li>
+</ul>
+
+<h3>Get started</h3>
+
+<p>Download the latest version of <a href="https://ollama.com/download">Ollama</a></p>
+
+<p>Upgrade to the latest version of the Ollama Python or JavaScript library:</p>
+
+<p><sub>Python</sub></p>
+
+<pre><code class="language-bash">pip install -U ollama
+</code></pre>
+
+<p><sub>JavaScript</sub></p>
+
+<pre><code class="language-bash">npm i ollama
+</code></pre>
+
+<p>To pass structured outputs to the model, the <code>format</code> parameter can be used in the cURL request or the <code>format</code> parameter in the Python or JavaScript libraries.</p>
+
+<h4>cURL</h4>
+
+<pre><code class="language-shell">curl -X POST http://localhost:11434/api/chat -H &quot;Content-Type: application/json&quot; -d '{
+  &quot;model&quot;: &quot;llama3.1&quot;,
+  &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Tell me about Canada.&quot;}],
+  &quot;stream&quot;: false,
+  &quot;format&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+      &quot;name&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;capital&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;languages&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;items&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      }
+    },
+    &quot;required&quot;: [
+      &quot;name&quot;,
+      &quot;capital&quot;, 
+      &quot;languages&quot;
+    ]
+  }
+}'
+</code></pre>
+
+<h5>Output</h5>
+
+<p>The response is returned in the format defined by the JSON schema in the request.</p>
+
+<pre><code class="language-json">{
+  &quot;capital&quot;: &quot;Ottawa&quot;,
+  &quot;languages&quot;: [
+    &quot;English&quot;,
+    &quot;French&quot;
+  ],
+  &quot;name&quot;: &quot;Canada&quot;
+}
+</code></pre>
+
+<h4>Python</h4>
+
+<p>Using the <a href="https://github.com/ollama/ollama-python">Ollama Python library</a>, pass in the schema as a JSON object to the <code>format</code> parameter as either <code>dict</code> or use Pydantic (recommended) to serialize the schema using <code>model_json_schema()</code>.</p>
+
+<pre><code class="language-py">from ollama import chat
+from pydantic import BaseModel
+
+class Country(BaseModel):
+  name: str
+  capital: str
+  languages: list[str]
+
+response = chat(
+  messages=[
+    {
+      'role': 'user',
+      'content': 'Tell me about Canada.',
+    }
+  ],
+  model='llama3.1',
+  format=Country.model_json_schema(),
+)
+
+country = Country.model_validate_json(response.message.content)
+print(country)
+</code></pre>
+
+<h5>Output</h5>
+
+<pre><code class="language-py">name='Canada' capital='Ottawa' languages=['English', 'French']
+</code></pre>
+
+<h4>JavaScript</h4>
+
+<p>Using the <a href="https://github.com/ollama/ollama-js">Ollama JavaScript library</a>, pass in the schema as a JSON object to the <code>format</code> parameter as either <code>object</code> or use Zod (recommended) to serialize the schema using <code>zodToJsonSchema()</code>.</p>
+
+<pre><code class="language-js">import ollama from 'ollama';
+import { z } from 'zod';
+import { zodToJsonSchema } from 'zod-to-json-schema';
+
+const Country = z.object({
+    name: z.string(),
+    capital: z.string(), 
+    languages: z.array(z.string()),
+});
+
+const response = await ollama.chat({
+    model: 'llama3.1',
+    messages: [{ role: 'user', content: 'Tell me about Canada.' }],
+    format: zodToJsonSchema(Country),
+});
+
+const country = Country.parse(JSON.parse(response.message.content));
+console.log(country);
+</code></pre>
+
+<h5>Output</h5>
+
+<pre><code class="language-js">{
+  name: &quot;Canada&quot;,
+  capital: &quot;Ottawa&quot;,
+  languages: [ &quot;English&quot;, &quot;French&quot; ],
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<h3>Data extraction</h3>
+
+<p>To extract structured data from text, define a schema to represent information. The model then extracts the information and returns the data in the defined schema as JSON:</p>
+
+<pre><code class="language-py">from ollama import chat
+from pydantic import BaseModel
+
+class Pet(BaseModel):
+  name: str
+  animal: str
+  age: int
+  color: str | None
+  favorite_toy: str | None
+
+class PetList(BaseModel):
+  pets: list[Pet]
+
+response = chat(
+  messages=[
+    {
+      'role': 'user',
+      'content': '''
+        I have two pets.
+        A cat named Luna who is 5 years old and loves playing with yarn. She has grey fur.
+        I also have a 2 year old black cat named Loki who loves tennis balls.
+      ''',
+    }
+  ],
+  model='llama3.1',
+  format=PetList.model_json_schema(),
+)
+
+pets = PetList.model_validate_json(response.message.content)
+print(pets)
+
+</code></pre>
+
+<h4>Example output</h4>
+
+<pre><code class="language-py">pets=[
+  Pet(name='Luna', animal='cat', age=5, color='grey', favorite_toy='yarn'), 
+  Pet(name='Loki', animal='cat', age=2, color='black', favorite_toy='tennis balls')
+]
+</code></pre>
+
+<h3>Image description</h3>
+
+<p>Structured outputs can also be used with vision models. For example, the following code uses <code>llama3.2-vision</code> to describe the following image and returns a structured output:</p>
+
+<p><img src="https://ollama.com/public/blog/beach.jpg" alt="image" /></p>
+
+<pre><code class="language-py">from ollama import chat
+from pydantic import BaseModel
+
+class Object(BaseModel):
+  name: str
+  confidence: float
+  attributes: str 
+
+class ImageDescription(BaseModel):
+  summary: str
+  objects: List[Object]
+  scene: str
+  colors: List[str]
+  time_of_day: Literal['Morning', 'Afternoon', 'Evening', 'Night']
+  setting: Literal['Indoor', 'Outdoor', 'Unknown']
+  text_content: Optional[str] = None
+
+path = 'path/to/image.jpg'
+
+response = chat(
+  model='llama3.2-vision',
+  format=ImageDescription.model_json_schema(),  # Pass in the schema for the response
+  messages=[
+    {
+      'role': 'user',
+      'content': 'Analyze this image and describe what you see, including any objects, the scene, colors and any text you can detect.',
+      'images': [path],
+    },
+  ],
+  options={'temperature': 0},  # Set temperature to 0 for more deterministic output
+)
+
+image_description = ImageDescription.model_validate_json(response.message.content)
+print(image_description)
+</code></pre>
+
+<h4>Example output</h4>
+
+<pre><code class="language-py">summary='A palm tree on a sandy beach with blue water and sky.' 
+objects=[
+  Object(name='tree', confidence=0.9, attributes='palm tree'), 
+  Object(name='beach', confidence=1.0, attributes='sand')
+], 
+scene='beach', 
+colors=['blue', 'green', 'white'], 
+time_of_day='Afternoon' 
+setting='Outdoor' 
+text_content=None
+</code></pre>
+
+<h4>OpenAI compatibility</h4>
+
+<pre><code class="language-py">from openai import OpenAI
+import openai
+from pydantic import BaseModel
+
+client = OpenAI(base_url=&quot;http://localhost:11434/v1&quot;, api_key=&quot;ollama&quot;)
+
+class Pet(BaseModel):
+    name: str
+    animal: str
+    age: int
+    color: str | None
+    favorite_toy: str | None
+
+class PetList(BaseModel):
+    pets: list[Pet]
+
+try:
+    completion = client.beta.chat.completions.parse(
+        temperature=0,
+        model=&quot;llama3.1:8b&quot;,
+        messages=[
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: '''
+                I have two pets.
+                A cat named Luna who is 5 years old and loves playing with yarn. She has grey fur.
+                I also have a 2 year old black cat named Loki who loves tennis balls.
+            '''}
+        ],
+        response_format=PetList,
+    )
+
+    pet_response = completion.choices[0].message
+    if pet_response.parsed:
+        print(pet_response.parsed)
+    elif pet_response.refusal:
+        print(pet_response.refusal)
+except Exception as e:
+    if type(e) == openai.LengthFinishReasonError:
+        print(&quot;Too many tokens: &quot;, e)
+        pass
+    else:
+        print(e)
+        pass
+</code></pre>
+
+<h2>Tips</h2>
+
+<p>For reliable use of structured outputs, consider to:</p>
+
+<ul>
+<li>Use Pydantic (Python) or Zod (JavaScript) to define the schema for the response</li>
+<li>Add &ldquo;return as JSON&rdquo; to the prompt to help the model understand the request</li>
+<li>Set the temperature to 0 for more deterministic output</li>
+</ul>
+
+<h2>What&rsquo;s next?</h2>
+
+<ul>
+<li>Exposing logits for controlled generation</li>
+<li>Performance and accuracy improvements for structured outputs</li>
+<li>GPU acceleration for sampling</li>
+<li>Additional format support beyond JSON schema</li>
+</ul>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/functions-as-tools"
+                    >Ollama Python library 0.4 with function calling improvements</a>
+                </h2>
+
+                                    <time datetime="2024-11-25 00:00:00">
+                        2024-11-25 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><img src="https://ollama.com/public/blog/tool-calling.png" alt="Ollama playing with tools" width="70%" /></p>
+
+<p>In the latest version of the <a href="https://github.com/ollama/ollama-python">Ollama Python library</a>, functions can now be provided as tools. The library now also has full typing support and <a href="https://github.com/ollama/ollama-python/tree/main/examples">new examples</a> have been added.</p>
+
+<h2>Get started</h2>
+
+<p>Start by installing or upgrading the Ollama Python library:</p>
+
+<pre><code>pip install -U ollama
+</code></pre>
+
+<h2>Passing Python functions as tools</h2>
+
+<h3>Define a Python function</h3>
+
+<p>Start by defining a regular Python function. For better results, annotate parameter and return values types and optionally add a <a href="https://google.github.io/styleguide/pyguide.html#doc-function-raises">Google-style docstring</a>:</p>
+
+<pre><code class="language-py">def add_two_numbers(a: int, b: int) -&gt; int:
+  &quot;&quot;&quot;
+  Add two numbers
+
+  Args:
+    a: The first integer number
+    b: The second integer number
+
+  Returns:
+    int: The sum of the two numbers
+  &quot;&quot;&quot;
+  return a + b
+</code></pre>
+
+<h3>Pass the function as a tool to Ollama</h3>
+
+<p>Next, use the <code>tools</code> field to pass the function as a tool to Ollama:</p>
+
+<pre><code class="language-py">import ollama
+
+response = ollama.chat(
+  'llama3.1',
+  messages=[{'role': 'user', 'content': 'What is 10 + 10?'}],
+  tools=[add_two_numbers], # Actual function reference
+)
+</code></pre>
+
+<h3>Call the function from the model response</h3>
+
+<p>Use the returned tool call and arguments provided by the model to call the respective function:</p>
+
+<pre><code class="language-py">available_functions = {
+  'add_two_numbers': add_two_numbers,
+}
+
+for tool in response.message.tool_calls or []:
+  function_to_call = available_functions.get(tool.function.name)
+  if function_to_call:
+    print('Function output:', function_to_call(**tool.function.arguments))
+  else:
+    print('Function not found:', tool.function.name)
+</code></pre>
+
+<h3>Pass existing functions as tools</h3>
+
+<p>Functions from existing Python libraries, SDKs, and elsewhere can now also be provided as tools. For example, the following code passes the <code>request</code> function from the <code>requests</code> library as a tool to fetch the contents of the Ollama website:</p>
+
+<pre><code class="language-py">import ollama
+import requests
+
+available_functions = {
+  'request': requests.request,
+}
+
+response = ollama.chat(
+  'llama3.1',
+  messages=[{
+    'role': 'user',
+    'content': 'get the ollama.com webpage?',
+  }],
+  tools=[requests.request], 
+)
+
+for tool in response.message.tool_calls or []:
+  function_to_call = available_functions.get(tool.function.name)
+  if function_to_call == requests.request:
+    # Make an HTTP request to the URL specified in the tool call
+    resp = function_to_call(
+      method=tool.function.arguments.get('method'),
+      url=tool.function.arguments.get('url'),
+    )
+    print(resp.text)
+  else:
+    print('Function not found:', tool.function.name)
+
+</code></pre>
+
+<h3>How it works: generating JSON Schema from functions</h3>
+
+<p>The Ollama Python library uses Pydantic and docstring parsing to generate the JSON schema. As an example, for the <code>add_two_nubmers</code> function declared at the start of this post, the following JSON schema is generated (and was previously required to be provided manually as a tool):</p>
+
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;function&quot;,
+    &quot;function&quot;: {
+        &quot;name&quot;: &quot;add_two_numbers&quot;,
+        &quot;description&quot;: &quot;Add two numbers&quot;,
+        &quot;parameters&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;required&quot;: [
+                &quot;a&quot;,
+                &quot;b&quot;
+            ],
+            &quot;properties&quot;: {
+                &quot;a&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;,
+                    &quot;description&quot;: &quot;The first integer number&quot;
+                },
+                &quot;b&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;,
+                    &quot;description&quot;: &quot;The second integer number&quot;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3>Additional improvements to the Ollama Python library</h3>
+
+<p>The 0.4 release of the Ollama Python library includes additional improvements:</p>
+
+<ul>
+<li>Examples have been updated on the <a href="https://github.com/ollama/ollama-python/tree/main/examples">Ollama Python GitHub</a>.</li>
+<li>Full typing support throughout the library to support direct object access while maintaining existing functionality.</li>
+</ul>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/llama3.2-vision"
+                    >Llama 3.2 Vision</a>
+                </h2>
+
+                                    <time datetime="2024-11-06 00:00:00">
+                        2024-11-06 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><a href="https://ollama.com/library/llama3.2-vision">Llama 3.2 Vision</a> is now available to run in Ollama, in both 11B and 90B sizes.</p>
+
+<video controls autoplay>
+    <source src="https://github.com/user-attachments/assets/82e25d0d-921c-4900-b78f-589c1bb86968">
+</video>
+
+<h2>Get started</h2>
+
+<p><a href="https://ollama.com/download">Download Ollama 0.4</a>, then run:</p>
+
+<pre><code class="language-bash">ollama run llama3.2-vision
+</code></pre>
+
+<p>To run the larger 90B model:</p>
+
+<pre><code class="language-bash">ollama run llama3.2-vision:90b
+</code></pre>
+
+<p>To add an image to the prompt, drag and drop it into the terminal, or add a path to the image to the prompt on Linux.</p>
+
+<blockquote>
+<p>Note: Llama 3.2 Vision 11B requires least 8GB of VRAM, and the 90B model requires at least 64 GB of VRAM.</p>
+</blockquote>
+
+<h2>Examples</h2>
+
+<h3>Handwriting</h3>
+
+<p><img src="https://ollama.com/public/blog/llama3.2-vision-handwriting.png" alt="handwriting example" /></p>
+
+<h3>Optical Character Recognition (OCR)</h3>
+
+<p><img src="https://ollama.com/public/blog/llama3.2-vision-ocr.png" alt="OCR example" /></p>
+
+<h3>Charts &amp; tables</h3>
+
+<p><img src="https://ollama.com/public/blog/llama3.2-vision-charts.png" alt="charts and tables example" /></p>
+
+<h3>Image Q&amp;A</h3>
+
+<p><img src="https://ollama.com/public/blog/llama3.2-vision-imageqa.png" alt="image Q&amp;A example" /></p>
+
+<h2>Usage</h2>
+
+<p>First, pull the model:</p>
+
+<pre><code class="language-bash">ollama pull llama3.2-vision
+</code></pre>
+
+<h3>Python Library</h3>
+
+<p>To use Llama 3.2 Vision with the Ollama <a href="https://github.com/ollama/ollama-python">Python library</a>:</p>
+
+<pre><code class="language-python">import ollama
+
+response = ollama.chat(
+    model='llama3.2-vision',
+    messages=[{
+        'role': 'user',
+        'content': 'What is in this image?',
+        'images': ['image.jpg']
+    }]
+)
+
+print(response)
+</code></pre>
+
+<h3>JavaScript Library</h3>
+
+<p>To use Llama 3.2 Vision with the Ollama <a href="https://github.com/ollama/ollama-js">JavaScript library</a>:</p>
+
+<pre><code class="language-javascript">import ollama from 'ollama'
+
+const response = await ollama.chat({
+  model: 'llama3.2-vision',
+  messages: [{
+    role: 'user',
+    content: 'What is in this image?',
+    images: ['image.jpg']
+  }]
+})
+
+console.log(response)
+</code></pre>
+
+<h3>cURL</h3>
+
+<pre><code class="language-shell">curl http://localhost:11434/api/chat -d '{
+  &quot;model&quot;: &quot;llama3.2-vision&quot;,
+  &quot;messages&quot;: [
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;what is in this image?&quot;,
+      &quot;images&quot;: [&quot;&lt;base64-encoded image data&gt;&quot;]
+    }
+  ]
+}'
+</code></pre>
+
+<p><a href="https://ollama.com/download"><img src="https://ollama.com/public/blog/ollama-vision.png" alt="Ollama Vision logo" title="Download Ollama" /></a></p>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/ibm-granite"
+                    >IBM Granite 3.0 models</a>
+                </h2>
+
+                                    <time datetime="2024-10-21 00:00:00">
+                        2024-10-21 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><img src="https://ollama.com/public/blog/ollama_ibm.png" alt="An illustration of Ollama holding a beautiful flower with the IBM Rebus logo of the Eye, Bee and M, made by Paul Rand." /></p>
+
+<p>A selection of IBM Granite 3.0 models are now available to run using Ollama. All models are offered under a standard <strong>Apache 2.0 license</strong>.</p>
+
+<h3>Performance on par with state-of-the-art open models</h3>
+
+<p><strong>2B:</strong></p>
+
+<p><code>ollama run granite3-dense</code></p>
+
+<p><strong>8B:</strong></p>
+
+<p><code>ollama run granite3-dense:8b</code></p>
+
+<p><strong>Granite 2B and Granite 8B are text-only dense LLMs</strong> trained on over 12 trillion tokens of data, demonstrated significant improvements over their predecessors in performance and speed in IBM&rsquo;s initial testing. Granite 8B Instruct now rivals Llama 3.1 8B Instruct across both OpenLLM Leaderboard v1 and OpenLLM Leaderboard v2 benchmarks.</p>
+
+<p><strong>They are designed to support tool-based use cases</strong> and support for retrieval augmented generation (RAG), streamlining code generation, translation and bug fixing.</p>
+
+<h3>Mixture of Expert (MoE) models for low latency</h3>
+
+<p><strong>1B:</strong></p>
+
+<p><code>ollama run granite3-moe</code></p>
+
+<p><strong>3B:</strong></p>
+
+<p><code>ollama run granite3-moe:3b</code></p>
+
+<p>The <strong>1B and 3B models</strong> are the first mixture of experts (MoE) Granite models from IBM designed for low latency usage.</p>
+
+<p>The models are trained on over 10 trillion tokens of data, the Granite MoE models are ideal for deployment in on-device applications or situations requiring instantaneous inference.</p>
+
+<h3>Capabilities</h3>
+
+<ul>
+<li>Summarization</li>
+<li>Text classification</li>
+<li>Text extraction</li>
+<li>Question-answering</li>
+<li>Retrieval Augmented Generation (RAG)</li>
+<li>Code related</li>
+<li>Function-calling</li>
+<li>Multilingual dialog use cases</li>
+</ul>
+
+<h3>Get started</h3>
+
+<ul>
+<li><a href="https://ollama.com/library/granite3-dense">Granite Dense 2B and 8B models</a></li>
+<li><a href="https://ollama.com/library/granite3-moe">Granite Mixture of Expert 1B and 3B models</a></li>
+</ul>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/llama3.2"
+                    >Llama 3.2 goes small and multimodal</a>
+                </h2>
+
+                                    <time datetime="2024-09-25 00:00:00">
+                        2024-09-25 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p>Meta&rsquo;s Llama 3.2 is now available to run using Ollama.</p>
+
+<p>To get started, <a href="https://ollama.com/download">download Ollama</a> and run Llama 3.2:</p>
+
+<pre><code>ollama run llama3.2 
+</code></pre>
+
+<p><img src="https://ollama.com/public/blog/small_and_multimodal.png" alt="A picture of Ollamas acting out what small and multimodal looks like. We hope you enjoy the new llama 3.2 models from Meta!" /></p>
+
+<h3>Small &amp; Multimodal: 1B, 3B, 11B and 90B</h3>
+
+<p><strong>1B and 3B Text-only models</strong></p>
+
+<p>1B:</p>
+
+<pre><code>ollama run llama3.2:1b
+</code></pre>
+
+<p>3B:</p>
+
+<pre><code>ollama run llama3.2
+</code></pre>
+
+<p><strong>1B and 3B models are text-only models</strong> are optimized to run locally on a mobile or edge device. They can be used to build highly personalized, on-device agents. For example, a person could ask it to summarize the last ten messages they received on WhatsApp, or to summarize their schedule for the next month.</p>
+
+<p>The prompts and responses should feel instantaneous, and with Ollama, processing is done locally, maintaining privacy by not sending data such as messages and other information to other third parties or cloud services.</p>
+
+<p><strong>(Coming very soon) 11B and 90B Vision models</strong></p>
+
+<p><strong>11B and 90B models support image reasoning</strong> use cases, such as document-level understanding including charts and graphs and captioning of images.</p>
+
+<p><em>Open-source is the path forward&hellip;</em>
+<a href="https://ollama.com/download">Download Ollama</a></p>
+
+<p><img src="https://ollama.com/public/blog/3ollamas.png" alt="3 Ollamas welcome you to open-source" /></p>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/reduce-hallucinations-with-bespoke-minicheck"
+                    >Reduce hallucinations with Bespoke-Minicheck</a>
+                </h2>
+
+                                    <time datetime="2024-09-18 00:00:00">
+                        2024-09-18 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p>Bespoke-Minicheck is a new grounded factuality checking model developed by <a href="https://bespokelabs.ai/">Bespoke Labs</a> that is now available in <a href="https://ollama.com/library/bespoke-minicheck">Ollama</a>. It can fact-check responses generated by other models to detect and reduce hallucinations.</p>
+
+<h2>How it works</h2>
+
+<p>Bespoke-Minicheck works by taking chunks of factual information (i.e. the <em>Document</em>) and generated output (i.e. the <em>Claim</em>) and verifying the claim against the document. If the document supports the claim, the model will output <em>Yes</em>. Otherwise, it will output <em>No</em>:</p>
+
+<p><img src="https://ollama.com/public/blog/bespoke-minicheck-howitworks.png" alt="illustration of how Bespoke-Minicheck works" /></p>
+
+<h2>RAG use case</h2>
+
+<p>Bespoke-Minicheck is especially powerful when building Retrieval Augmented Generation (RAG) applications, as it can be used to make sure responses are grounded in the retrieved context provided to the LLM. This can be done as a post-processing step to detect hallucinations:</p>
+
+<p><img src="https://ollama.com/public/blog/bespoke-minicheck-rag.png" alt="illustration of Bespoke-Minicheck used for Retrieval Augmented Generation (RAG) applications" /></p>
+
+<p>For an example of how to use Bespoke-Minicheck in a RAG application using Ollama, see the <a href="https://github.com/ollama/ollama/tree/main/examples/python-grounded-factuality-rag-check">RAG example on GitHub</a>.</p>
+
+<h2>Getting started</h2>
+
+<p>Start by downloading and running the model:</p>
+
+<pre><code>ollama run bespoke-minicheck
+</code></pre>
+
+<p>Next, write the prompt as follows, providing both the source document and the <em>claim</em>:</p>
+
+<pre><code>Document: A group of students gather in the school library to study for their upcoming final exams.
+Claim: The students are preparing for an examination.
+</code></pre>
+
+<p>Since the source information supports the claim, the model will output <em>Yes</em>.</p>
+
+<pre><code>Yes
+</code></pre>
+
+<p>However, when the claim is not supported by the document, the model will respond with <em>No</em>:</p>
+
+<pre><code>Document: A group of students gather in the school library to study for their upcoming final exams.
+Claim: The students are out on vacation
+</code></pre>
+
+<pre><code>No
+</code></pre>
+
+<p>For an example on how to use Bespoke-Minicheck to fact check a claim against source information using Ollama, see <a href="https://github.com/ollama/ollama/tree/main/examples/python-grounded-factuality-simple-check">Fact checking example on GitHub</a>.</p>
+
+<h2>Examples</h2>
+
+<ul>
+<li><a href="https://github.com/ollama/ollama/tree/main/examples/python-grounded-factuality-simple-check">Fact Checking</a></li>
+<li><a href="https://github.com/ollama/ollama/tree/main/examples/python-grounded-factuality-rag-check">Retrieval Augmented Generation (RAG)</a></li>
+</ul>
+
+<h2>Read more</h2>
+
+<ul>
+<li><a href="http://ollama.com/library/bespoke-minicheck">Model page (Ollama)</a></li>
+<li><a href="https://huggingface.co/bespokelabs/Bespoke-MiniCheck-7B">Model page (HuggingFace)</a></li>
+<li><a href="https://github.com/Liyan06/MiniCheck">MiniCheck GitHub repository</a></li>
+<li><a href="https://bespokelabs.ai/blog/hallucinations-fact-checking-entailment-and-all-that-what-does-it-all-mean">Intro post about hallucinations and grounded factuality</a></li>
+</ul>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/tool-support"
+                    >Tool support</a>
+                </h2>
+
+                                    <time datetime="2024-07-25 00:00:00">
+                        2024-07-25 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><img src="https://ollama.com/public/blog/ollama-tool.png" alt="ollama with a box of tools, ready to serve you" /></p>
+
+<p>Ollama now supports tool calling with popular models such as Llama 3.1. This enables a model to answer a given prompt using tool(s) it knows about, making it possible for models to perform more complex tasks or interact with the outside world.</p>
+
+<p>Example tools include:</p>
+
+<ul>
+<li>Functions and APIs</li>
+<li>Web browsing</li>
+<li>Code interpreter</li>
+<li>much more!</li>
+</ul>
+
+<video controls autoplay>
+    <source src="https://github.com/user-attachments/assets/aea4d7c1-f1be-41fd-9077-023d37a9d052" type="video/mp4">
+</video>
+
+<h3>Tool calling</h3>
+
+<p>To enable tool calling, provide a list of available tools via the <code>tools</code> field in Ollama’s API.</p>
+
+<pre><code class="language-python">import ollama
+
+response = ollama.chat(
+    model='llama3.1',
+    messages=[{'role': 'user', 'content':
+        'What is the weather in Toronto?'}],
+
+		# provide a weather checking tool to the model
+    tools=[{
+      'type': 'function',
+      'function': {
+        'name': 'get_current_weather',
+        'description': 'Get the current weather for a city',
+        'parameters': {
+          'type': 'object',
+          'properties': {
+            'city': {
+              'type': 'string',
+              'description': 'The name of the city',
+            },
+          },
+          'required': ['city'],
+        },
+      },
+    },
+  ],
+)
+
+print(response['message']['tool_calls'])
+</code></pre>
+
+<p>Supported models will now answer with a <code>tool_calls</code> response. Tool responses can be provided via messages with the <code>tool</code> role. See <a href="https://github.com/ollama/ollama/blob/main/docs/api.md#chat-request-with-tools">API documentation</a> for more information.</p>
+
+<h3>Supported models</h3>
+
+<p>A list of supported models can be found under the <a href="https://ollama.com/search?c=tools">Tools category on the models page</a>:</p>
+
+<ul>
+<li><a href="https://ollama.com/library/llama3.1">Llama 3.1</a></li>
+<li><a href="https://ollama.com/library/mistral-nemo">Mistral Nemo</a></li>
+<li><a href="https://ollama.com/library/firefunction-v2">Firefunction v2</a></li>
+<li><a href="https://ollama.com/library/command-r-plus">Command-R +</a></li>
+</ul>
+
+<blockquote>
+<p>Note: please check if you have the latest model by running <code>ollama pull &lt;model&gt;</code></p>
+</blockquote>
+
+<p><img src="https://ollama.com/public/blog/model-page-tools.png" alt="ollama.com tool models" /></p>
+
+<h3>OpenAI compatibility</h3>
+
+<p>Ollama’s OpenAI compatible endpoint also now supports tools, making it possible to switch to using Llama 3.1 and other models.</p>
+
+<pre><code class="language-python">import openai
+
+openai.base_url = &quot;http://localhost:11434/v1&quot;
+openai.api_key = 'ollama'
+
+response = openai.chat.completions.create(
+	model=&quot;llama3.1&quot;,
+	messages=messages,
+	tools=tools,
+)
+</code></pre>
+
+<h3>Full examples</h3>
+
+<ul>
+<li><a href="https://github.com/ollama/ollama-python/blob/main/examples/tools/main.py">Python</a></li>
+<li><a href="https://github.com/ollama/ollama-js/blob/main/examples/tools/tools.ts">JavaScript</a></li>
+</ul>
+
+<h3>Future improvements</h3>
+
+<ul>
+<li>Streaming tool calls: stream tool calls back to begin taking action faster when multiple tools are returned</li>
+<li>Tool choice: force a model to use a tool</li>
+</ul>
+
+<h3>Let&rsquo;s build together</h3>
+
+<p>We are so excited to bring you tool support, and see what you build with it!</p>
+
+<p>If you have any feedback, please do not hesitate to tell us either in our <a href="https://discord.com/invite/ollama">Discord</a> or via <a href="mailto:hello@ollama.com">hello@ollama.com</a>.</p>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/gemma2"
+                    >Google Gemma 2</a>
+                </h2>
+
+                                    <time datetime="2024-06-27 00:00:00">
+                        2024-06-27 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><img src="https://ollama.com/public/blog/gemma2.png" alt="Ollama in Noogler hat with Gemma 2 logo" /></p>
+
+<p>Google Gemma 2 is now available in three sizes, 2B, 9B and 27B, featuring a brand new architecture designed for class leading performance and efficiency.</p>
+
+<p><strong>To run Gemma 2:</strong></p>
+
+<pre><code>ollama run gemma2
+</code></pre>
+
+<h2>Class leading performance</h2>
+
+<p>At 27 billion parameters, Gemma 2 delivers performance surpassing models more than twice its size in benchmarks. This breakthrough efficiency sets a new standard in the open model landscape.</p>
+
+<h2>Three sizes: 2B, 9B and 27B parameters</h2>
+
+<p>The initial release of Gemma 2 includes two sizes:</p>
+
+<ul>
+<li><a href="https://ollama.com/library/gemma2:2b">2B Parameters</a> <code>ollama run gemma2:2b</code></li>
+<li><a href="https://ollama.com/library/gemma2">9B Parameters</a> <code>ollama run gemma2</code></li>
+<li><a href="https://ollama.com/library/gemma2:27b">27B Parameters</a> <code>ollama run gemma2:27b</code></li>
+</ul>
+
+<h2>Using Gemma 2 with popular tooling</h2>
+
+<h3>LangChain</h3>
+
+<pre><code class="language-python">from langchain_community.llms import Ollama
+llm = Ollama(model=&quot;gemma2&quot;)
+llm.invoke(&quot;Why is the sky blue?&quot;)
+</code></pre>
+
+<h3>LlamaIndex</h3>
+
+<pre><code class="language-python">from llama_index.llms.ollama import Ollama
+llm = Ollama(model=&quot;gemma2&quot;)
+llm.complete(&quot;Why is the sky blue?&quot;)
+</code></pre>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/continue-code-assistant"
+                    >An entirely open-source AI code assistant inside your editor</a>
+                </h2>
+
+                                    <time datetime="2024-05-31 00:00:00">
+                        2024-05-31 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <blockquote>
+<p>This is a guest post from Ty Dunn, Co-founder of Continue, that covers how to set up, explore, and figure out the best way to use Continue and Ollama together.</p>
+</blockquote>
+
+<p><img src="https://ollama.com/public/blog/ollama-continue.png" alt="Continue and Ollama" /></p>
+
+<p><a href="https://continue.dev">Continue</a> enables you to easily create your own coding assistant directly inside Visual Studio Code and JetBrains with open-source LLMs. All this can run entirely on your own laptop or have Ollama deployed on a server to remotely power code completion and chat experiences based on your needs.</p>
+
+<p>To get set up, you&rsquo;ll want to install</p>
+
+<ul>
+<li><a href="https://docs.continue.dev/quickstart">Continue</a> for <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">VS Code</a> or <a href="https://plugins.jetbrains.com/plugin/22707-continue">JetBrains</a></li>
+<li><a href="https://github.com/ollama/ollama?tab=readme-ov-file#quickstart">Ollama</a> for <a href="https://ollama.com/download/mac">macOS</a>, <a href="https://ollama.com/download/linux">Linux</a>, or <a href="https://ollama.com/download/windows">Windows</a></li>
+</ul>
+
+<p>Once you have them downloaded, <strong>here&rsquo;s what we recommend exploring:</strong></p>
+
+<h3>Try out Mistral AI&rsquo;s Codestral 22B model for autocomplete and chat</h3>
+
+<p>As of the now, <a href="https://mistral.ai/news/codestral/">Codestral</a> is our current favorite model capable of both autocomplete and chat. This model demonstrates how LLMs have improved for programming tasks. However, with 22B parameters and a <a href="https://mistral.ai/news/mistral-ai-non-production-license-mnpl/">non-production license</a>, it requires quite a bit of VRAM and can only be used for research and testing purposes, so it might not be the best fit for daily local usage.</p>
+
+<p>a. Download and run Codestral in your terminal by running</p>
+
+<pre><code>ollama run codestral
+</code></pre>
+
+<p>b. Click on the gear icon in the bottom right corner of Continue to open your <code>config.json</code> and add</p>
+
+<pre><code class="language-json">{
+  &quot;models&quot;: [
+    {
+      &quot;title&quot;: &quot;Codestral&quot;,
+      &quot;provider&quot;: &quot;ollama&quot;,
+      &quot;model&quot;: &quot;codestral&quot;
+    }
+  ],
+  &quot;tabAutocompleteModel&quot;: {
+    &quot;title&quot;: &quot;Codestral&quot;,
+    &quot;provider&quot;: &quot;ollama&quot;,
+    &quot;model&quot;: &quot;codestral&quot;
+  }
+}
+</code></pre>
+
+<p><img src="https://ollama.com/public/blog/continue-settings-vscode.png" alt="VS Code settings to change config.json" /></p>
+
+<h3>Use DeepSeek Coder 6.7B for autocomplete and Llama 3 8B for chat</h3>
+
+<p>Depending on how much VRAM you have on your machine, you might be able to take advantage of Ollama&rsquo;s ability to run multiple models and handle multiple concurrent requests by using <a href="https://deepseekcoder.github.io/">DeepSeek Coder 6.7B</a> for autocomplete and <a href="https://ai.meta.com/blog/meta-llama-3/">Llama 3 8B</a> for chat. If your machine can&rsquo;t handle both at the same time, then try each of them and decide whether you prefer a local autocomplete or a local chat experience. You can then <a href="https://docs.continue.dev/setup/select-provider">use a remotely hosted or SaaS model</a> for the other experience.</p>
+
+<p>a. Download and run DeepSeek Coder 6.7B in your terminal by running</p>
+
+<pre><code>ollama run deepseek-coder:6.7b-base
+</code></pre>
+
+<p>b. Download and run Llama 3 8B in another terminal window by running</p>
+
+<pre><code>ollama run llama3:8b
+</code></pre>
+
+<p>c. Click on the gear icon in the bottom right corner of Continue to open your <code>config.json</code> and add</p>
+
+<pre><code class="language-json">{
+  &quot;models&quot;: [
+    {
+      &quot;title&quot;: &quot;Llama 3 8B&quot;,
+      &quot;provider&quot;: &quot;ollama&quot;,
+      &quot;model&quot;: &quot;llama3:8b&quot;
+    }
+  ],
+  &quot;tabAutocompleteModel&quot;: {
+    &quot;title&quot;: &quot;DeepSeek Coder 6.7B&quot;,
+    &quot;provider&quot;: &quot;ollama&quot;,
+    &quot;model&quot;: &quot;deepseek-coder:6.7b-base&quot;
+  }
+}
+</code></pre>
+
+<h3>Use <code>nomic-embed-text</code> embeddings with Ollama to power <code>@codebase</code></h3>
+
+<p>Continue comes with an <a href="https://docs.continue.dev/customization/context-providers#codebase-retrieval">@codebase</a> context provider built-in, which lets you automatically retrieve the most relevant snippets from your codebase. Assuming you have a chat model set up already (e.g. Codestral, Llama 3), you can keep this entire experience local thanks to embeddings with Ollama and <a href="https://blog.lancedb.com/lancedb-x-continue/">LanceDB</a>. As of now, we recommend using <code>nomic-embed-text</code> embeddings.</p>
+
+<p>a. Download <code>nomic-embed-text</code> in your terminal by running</p>
+
+<pre><code>ollama pull nomic-embed-text
+</code></pre>
+
+<p>b. Click on the gear icon on the bottom right corner of Continue to open your <code>config.json</code> and add</p>
+
+<pre><code class="language-json">{
+  &quot;embeddingsProvider&quot;: {
+    &quot;provider&quot;: &quot;ollama&quot;,
+    &quot;model&quot;: &quot;nomic-embed-text&quot;
+  }
+}
+</code></pre>
+
+<p>c. Depending on the size of your codebase, it might take some time to index and then you can ask it questions with important codebase sections automatically being found and used in the answer (e.g. &ldquo;@codebase what is the default context length for Llama 3?&rdquo;)</p>
+
+<h3>Fine-tune StarCoder 2 on your development data and push it to the Ollama model library</h3>
+
+<p>When you use Continue, you automatically generate data on how you build software. By default, this <a href="https://docs.continue.dev/development-data">development data</a> is saved to <code>.continue/dev_data</code> on your local machine. When combined with the code that you ultimately commit, it can be used to improve the LLM that you or your team use (if you allow). For example, you can use accepted autocomplete suggestions from your team to fine-tune a model like StarCoder 2 to give you better suggestions.</p>
+
+<p>a. <a href="https://github.com/dlt-hub/continue-dlt-demo/blob/main/continue-hf-pipeline.py">Extract and load the &ldquo;accepted tab suggestions&rdquo; into Hugging Face Datasets</a></p>
+
+<p>b. <a href="https://colab.research.google.com/drive/1jjb14BDlEeGjRmeXnfm41gDBlTNvsscn">Use Hugging Face Supervised Fine-tuning Trainer to fine-tune StarCoder 2</a></p>
+
+<p>c. <a href="https://ollama.com/oakela/starcoder2_continue">Push the model to the Ollama model library for your team to use and measure how your acceptance rate changes</a></p>
+
+<h3>Learn more about Ollama by using <code>@docs</code> to ask questions with the help of Continue</h3>
+
+<p>Continue also comes with an <a href="https://docs.continue.dev/customization/context-providers#documentation"><code>@docs</code></a> context provider built-in, which lets you index and retrieve snippets from any documentation site. Assuming you have a chat model set up already (e.g. Codestral, Llama 3), you can keep this entire experience local by providing a link to the Ollama README on GitHub and asking questions to learn more with it as context.</p>
+
+<p>a. Type <code>@docs</code> in the chat sidebar, select &ldquo;Add Docs&rdquo;, copy and paste &ldquo;<a href="https://github.com/ollama/ollama&quot;">https://github.com/ollama/ollama&rdquo;</a> into the URL field, and type &ldquo;Ollama&rdquo; into the title field</p>
+
+<p>b. It should quickly index the Ollama README and then you can ask it questions with important sections automatically being found and used in the answer (e.g. &ldquo;@Ollama how do I run Llama 3?&rdquo;)</p>
+
+<h2>Join our Discord!</h2>
+
+<p>Now that you have tried these different explorations, you should hopefully have a much better sense of what is the best way for you to use Continue and Ollama. If you ran into problems along the way or have questions, join the <a href="https://discord.com/invite/EfJEfdFnDQ">Continue Discord</a> or the <a href="https://discord.com/invite/ollama">Ollama Discord</a> to get some help and answers.</p>
+
+    
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://ollama.com/blog/firebase-genkit"
+                    >Google announces Firebase Genkit with Ollama support</a>
+                </h2>
+
+                                    <time datetime="2024-05-20 00:00:00">
+                        2024-05-20 00:00:00                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+      <p><a href="https://firebase.google.com/docs/genkit/plugins/ollama"><img src="https://ollama.com/public/blog/firebase-genkit.png" alt="Ollama Firebase Genkit" /></a></p>
+
+<p>At Google IO 2024, Google unveiled <a href="https://firebase.google.com/docs/genkit/plugins/ollama">Firebase Genkit</a>, featuring Ollama support for running Google’s open-source Gemma model on your local machine. Firebase Genkit is a new open-source framework for developers to build, deploy and monitor production-ready AI-powered apps.</p>
+
+<p><a href="https://firebase.google.com/docs/genkit/plugins/ollama"><img src="https://ollama.com/public/blog/firebase-genkit-ui.png" alt="Firebase Genkit UI" /></a></p>
+
+<h2>Getting started</h2>
+
+<p>Firebase Genkit works with Ollama on MacOS, Windows, Linux, and via Docker containers.</p>
+
+<h3>Install Genkit</h3>
+
+<pre><code>npm i -g genkit
+</code></pre>
+
+<p>Download Google&rsquo;s Gemma model</p>
+
+<pre><code>ollama pull gemma
+</code></pre>
+
+<p>If you don&rsquo;t have Ollama installed, it can be <a href="https://ollama.com/download">downloaded here</a>.</p>
+
+<h3>Create and initialize a new node.js project</h3>
+
+<pre><code>mkdir genkit-ollama
+cd genkit-ollama
+npm init
+genkit init
+</code></pre>
+
+<p><img src="https://ollama.com/public/blog/genkit-init-2.png" alt="genkit init selecting ollama as a provider" /></p>
+
+<p><strong>Genkit will now be running on <a href="http://localhost:4000">localhost:4000</a></strong></p>
+
+<p><a href="https://firebase.google.com/docs/genkit/plugins/ollama"><img src="https://ollama.com/public/blog/firebase-genkit-ui.png" alt="Firebase Genkit UI" /></a></p>
+
+<h2>More resources</h2>
+
+<ul>
+<li><a href="https://firebase.blog/posts/2024/05/introducing-genkit">Introducing Firebase Genkit</a></li>
+<li><a href="https://firebase.google.com/docs/genkit/get-started">Google Firebase Genkit get started</a></li>
+<li><a href="https://firebase.google.com/docs/genkit/plugins/ollama">Ollama official plugin</a></li>
+<li><a href="https://github.com/firebase/genkit">Firebase Genkit GitHub repository</a></li>
+<li><a href="https://developer.nvidia.com/blog/supercharge-generative-ai-development-with-firebase-genkit-optimized-by-nvidia-rtx-gpus/">NVIDIA Firebase Genkit optimization for RTX GPUs</a></li>
+</ul>
+
+    
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
