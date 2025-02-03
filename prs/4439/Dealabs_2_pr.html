@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RSS-Bridge" />
+    <title>RSS-Bridge</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    <script src="static/rss-bridge.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="./">
+                <img width="400" src="static/logo_600px.png">
+            </a>
+        </header>
+
+                    <div class="alert-error">
+                Warning : Debug mode is active from any location, make sure only you can access RSS-Bridge.            </div>
+        
+        <div class="error">
+
+            
+            
+    <h2>Details</h2>
+
+    <div style="margin-bottom: 15px">
+        <div class="error-type">
+            <strong>Type:</strong> ErrorException        </div>
+
+        <div>
+            <strong>Code:</strong> 0        </div>
+
+        <div class="error-message">
+            <strong>Message:</strong> Undefined array key 1        </div>
+
+        <div>
+            <strong>File:</strong> bridges/PepperBridgeAbstract.php        </div>
+
+        <div>
+            <strong>Line:</strong> 291        </div>
+    </div>
+
+    <h2>Trace</h2>
+
+            <code>
+            #0 index.php(68): RssBridge-&gt;main()        </code>
+        <br>
+            <code>
+            #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #14 lib/RssBridge.php(34): DisplayAction-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
+        <br>
+            <code>
+            #16 actions/DisplayAction.php(118): DisplayAction-&gt;createFeedItemFromException()        </code>
+        <br>
+            <code>
+            #17 actions/DisplayAction.php(160): PepperBridgeAbstract-&gt;getName()        </code>
+        <br>
+            <code>
+            #18 bridges/PepperBridgeAbstract.php(459): PepperBridgeAbstract-&gt;getGroupTitle()        </code>
+        <br>
+            <code>
+            #19 bridges/PepperBridgeAbstract.php(291): {closure}()        </code>
+        <br>
+            <code>
+            #20 bridges/PepperBridgeAbstract.php(291)        </code>
+        <br>
+    
+    <br>
+
+    <h2>Context</h2>
+
+    <div>
+        <strong>Query:</strong> action=display&amp;bridge=DealabsBridge&amp;context=Deals par groupe&amp;order=-hot&amp;format=Html    </div>
+
+    <div>
+        <strong>Version:</strong> 2025-01-26 (git.fix-pepperbridge-typo.9504a6a)    </div>
+
+    <div>
+        <strong>OS:</strong> Linux    </div>
+
+    <div>
+        <strong>PHP:</strong> 8.2.26    </div>
+
+    <br>
+
+    <a href="/">Go back</a>
+</div>
+
+    </div>
+</body>
+</html>
+
