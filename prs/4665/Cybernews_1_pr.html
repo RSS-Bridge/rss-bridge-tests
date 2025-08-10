@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3001/?action=display&amp;bridge=CybernewsBridge&amp;format=Html"
-                    >Bridge returned error 403! (20310)</a>
+                    >Bridge returned error 0! (20310)</a>
                 </h2>
 
-                                    <time datetime="2025-08-10 10:24:58">
-                        2025-08-10 10:24:58                    </time>
+                                    <time datetime="2025-08-10 11:03:23">
+                        2025-08-10 11:03:23                    </time>
                     <p></p>
                 
                 
@@ -99,47 +99,25 @@
                 
 <div class="error">
 
-                        <h2>The website is protected by CloudFlare</h2>
-            <p>
-                RSS-Bridge tried to fetch a website.
-                The fetching was blocked by CloudFlare.
-                CloudFlare is anti-bot software.
-                Its purpose is to block non-humans.
-            </p>
-        
-        
-                    <h2>403 Forbidden</h2>
-            <p>
-                The HTTP 403 Forbidden response status code indicates that the
-                server understands the request but refuses to authorize it.
-            </p>
-        
-        
-        
-        
-                    <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403                </a>
-            </p>
-        
-    
+            
+            
     <h2>Details</h2>
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> CloudFlareException        </div>
+            <strong>Type:</strong> ErrorException        </div>
 
         <div>
-            <strong>Code:</strong> 403        </div>
+            <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://cybernews.com/news-sitemap.xml resulted in 403 Forbidden        </div>
+            <strong>Message:</strong> Undefined variable $url        </div>
 
         <div>
-            <strong>File:</strong> lib/http.php        </div>
+            <strong>File:</strong> bridges/CybernewsBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 32        </div>
+            <strong>Line:</strong> 18        </div>
     </div>
 
     <h2>Trace</h2>
@@ -196,13 +174,10 @@
             #16 actions/DisplayAction.php(89): CybernewsBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/CybernewsBridge.php(14): getContents()        </code>
+            #17 bridges/CybernewsBridge.php(18): {closure}()        </code>
         <br>
             <code>
-            #18 lib/contents.php(106): HttpException::fromResponse()        </code>
-        <br>
-            <code>
-            #19 lib/http.php(32)        </code>
+            #18 bridges/CybernewsBridge.php(18)        </code>
         <br>
     
     <br>
@@ -213,7 +188,7 @@
         <strong>Query:</strong> action=display&amp;bridge=CybernewsBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.CybernewsBridge.daddb8b)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.CybernewsBridge.d998300)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -231,7 +206,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Cybernews+failed+with%3A+https%3A%2F%2Fcybernews.com%2Fnews-sitemap.xml+resulted+in+403+Forbidden&body=%60%60%60%0ACloudFlareException%3A+https%3A%2F%2Fcybernews.com%2Fnews-sitemap.xml+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+32%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+CybernewsBridge-%3EcollectData%28%29%0Abridges%2FCybernewsBridge.php%2814%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2832%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DCybernewsBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.CybernewsBridge.daddb8b%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40tillcash&labels=Bridge-Broken&assignee=t" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Cybernews+failed+with%3A+Undefined+variable+%24url&body=%60%60%60%0AErrorException%3A+Undefined+variable+%24url+in+bridges%2FCybernewsBridge.php+line+18%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+CybernewsBridge-%3EcollectData%28%29%0Abridges%2FCybernewsBridge.php%2818%29%3A+%7Bclosure%7D%28%29%0Abridges%2FCybernewsBridge.php%2818%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DCybernewsBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.CybernewsBridge.d998300%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40tillcash&labels=Bridge-Broken&assignee=t" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
