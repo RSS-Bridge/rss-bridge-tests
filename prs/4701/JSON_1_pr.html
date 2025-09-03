@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3001/?action=display&amp;bridge=JSONBridge&amp;url=https%3A%2F%2Fexample.com%2Fjson%2F&amp;root=%5B%2A%5D&amp;id=id&amp;uri=thumb.url&amp;title=name&amp;format=Html"
-                    >Bridge returned error 404! (20334)</a>
+                    >Bridge returned error 0! (20334)</a>
                 </h2>
 
-                                    <time datetime="2025-09-03 09:17:03">
-                        2025-09-03 09:17:03                    </time>
+                                    <time datetime="2025-09-03 09:18:28">
+                        2025-09-03 09:18:28                    </time>
                     <p></p>
                 
                 
@@ -102,17 +102,15 @@
             
         
         
-                    <h2>404 Page Not Found</h2>
-            <p>
-                RSS-Bridge tried to fetch a page on a website.
-                But it doesn't exists.
-            </p>
         
         
         
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404                </a>
+                See
+                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
+                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
+                </a>
+                for description of the curl error code.
             </p>
         
     
@@ -123,29 +121,16 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 404        </div>
+            <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://example.com/json/ resulted in 404 Not Found &lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Example Domain&lt;/title&gt;
-
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
-    body {
-        background-color: #f0f0f2;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;        </div>
+            <strong>Message:</strong> cURL error Operation timed out after 5002 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://example.com/json/        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 36        </div>
+            <strong>Line:</strong> 182        </div>
     </div>
 
     <h2>Trace</h2>
@@ -157,34 +142,34 @@
             #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+            #2 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+            #3 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+            #4 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+            #5 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+            #6 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+            #7 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+            #8 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+            #9 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+            #10 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+            #11 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
             #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
@@ -205,10 +190,10 @@
             #17 bridges/JSONBridge.php(72): getContents()        </code>
         <br>
             <code>
-            #18 lib/contents.php(106): HttpException::fromResponse()        </code>
+            #18 lib/contents.php(79): CurlHttpClient-&gt;request()        </code>
         <br>
             <code>
-            #19 lib/http.php(36)        </code>
+            #19 lib/http.php(182)        </code>
         <br>
     
     <br>
@@ -219,7 +204,7 @@
         <strong>Query:</strong> action=display&amp;bridge=JSONBridge&amp;url=https://example.com/json/&amp;root=[*]&amp;id=id&amp;uri=thumb.url&amp;title=name&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-06-03 (git.JSONBridge.4aea943)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.JSONBridge.5d8bbb1)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -237,7 +222,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Generic+JSON+%28JMESPath%29+Bridge+failed+with%3A+https%3A%2F%2Fexample.com%2Fjson%2F+resulted+in+404+Not+Found+%3C%21doctype+html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A++++%3Ctitle%3EExample+Domain%3C%2Ftitle%3E%0A%0A++++%3Cmeta+charset%3D%22utf-8%22+%2F%3E%0A++++%3Cmeta+http-equiv%3D%22Content-type%22+content%3D%22text%2Fhtml%3B+charset%3Dutf-8%22+%2F%3E%0A++++%3Cmeta+name%3D%22viewport%22+content%3D%22width%3Ddevice-width%2C+initial-scale%3D1%22+%2F%3E%0A++++%3Cstyle+type%3D%22text%2Fcss%22%3E%0A++++body+%7B%0A++++++++background-color%3A+%23f0f0f2%3B%0A++++++++margin%3A+0%3B%0A++++++++padding%3A+0%3B%0A++++++++font-family%3A+-apple-system%2C+system-ui%2C+BlinkMacSystemFont%2C+%22Segoe+UI%22%2C+%22Open+Sans%22%2C+%22Helvetica+Neue%22%2C+Helvetica%2C+Arial%2C+sans-serif%3B&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fexample.com%2Fjson%2F+resulted+in+404+Not+Found+%3C%21doctype+html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A++++%3Ctitle%3EExample+Domain%3C%2Ftitle%3E%0A%0A++++%3Cmeta+charset%3D%22utf-8%22+%2F%3E%0A++++%3Cmeta+http-equiv%3D%22Content-type%22+content%3D%22text%2Fhtml%3B+charset%3Dutf-8%22+%2F%3E%0A++++%3Cmeta+name%3D%22viewport%22+content%3D%22width%3Ddevice-width%2C+initial-scale%3D1%22+%2F%3E%0A++++%3Cstyle+type%3D%22text%2Fcss%22%3E%0A++++body+%7B%0A++++++++background-color%3A+%23f0f0f2%3B%0A++++++++margin%3A+0%3B%0A++++++++padding%3A+0%3B%0A++++++++font-family%3A+-apple-system%2C+system-ui%2C+BlinkMacSystemFont%2C+%22Segoe+UI%22%2C+%22Open+Sans%22%2C+%22Helvetica+Neue%22%2C+Helvetica%2C+Arial%2C+sans-serif%3B+in+lib%2Fhttp.php+line+36%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+JSONBridge-%3EcollectData%28%29%0Abridges%2FJSONBridge.php%2872%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2836%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DJSONBridge%26url%3Dhttps%253A%252F%252Fexample.com%252Fjson%252F%26root%3D%255B%252A%255D%26id%3Did%26uri%3Dthumb.url%26title%3Dname%26format%3DHtml%0AVersion%3A+2025-06-03+%28git.JSONBridge.4aea943%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40wrobelda&labels=Bridge-Broken&assignee=w" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Generic+JSON+%28JMESPath%29+Bridge+failed+with%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fexample.com%2Fjson%2F&body=%60%60%60%0AHttpException%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fexample.com%2Fjson%2F+in+lib%2Fhttp.php+line+182%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+JSONBridge-%3EcollectData%28%29%0Abridges%2FJSONBridge.php%2872%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28182%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DJSONBridge%26url%3Dhttps%253A%252F%252Fexample.com%252Fjson%252F%26root%3D%255B%252A%255D%26id%3Did%26uri%3Dthumb.url%26title%3Dname%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.JSONBridge.5d8bbb1%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40wrobelda&labels=Bridge-Broken&assignee=w" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
