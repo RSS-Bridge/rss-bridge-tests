@@ -19,8 +19,8 @@
 | FallGuys | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_pr.html) | ✔️ |
 | GenshinImpact | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_current.html) | ✔️ |
 | GenshinImpact | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_pr.html) | ✔️ |
-| Golem | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
-| Golem | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
+| Golem | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_current.html) | ✔️ |
+| Golem | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_pr.html) | ✔️ |
 | Heise | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Heise_1_current.html) | ✔️ |
 | Heise | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Heise_1_pr.html) | ✔️ |
 | Reddit | [1 single (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Reddit_1_current.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
@@ -48,4 +48,4 @@
 | YouTubeFeedExpander | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_current.html) | ✔️ |
 | YouTubeFeedExpander | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_pr.html) | ✔️ |
 
-*last change: Saturday 2025-11-01 21:01:51*
+*last change: Saturday 2025-11-01 21:56:47*
