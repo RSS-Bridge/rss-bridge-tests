@@ -13,8 +13,8 @@
 | Drive2ru | [3 Личные блоги (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_3_pr.html) | ⚠️ `The feed has no items` |
 | Drive2ru | [4 Публикации по темам (Стоит почитать) (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | Drive2ru | [4 Публикации по темам (Стоит почитать) (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
-| Euronews | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "name"` |
-| Euronews | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "name"` |
+| Euronews | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_current.html) | ✔️ |
+| Euronews | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_pr.html) | ✔️ |
 | FallGuys | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_current.html) | ✔️ |
 | FallGuys | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_pr.html) | ✔️ |
 | GenshinImpact | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_current.html) | ✔️ |
@@ -48,4 +48,4 @@
 | YouTubeFeedExpander | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_current.html) | ✔️ |
 | YouTubeFeedExpander | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_pr.html) | ✔️ |
 
-*last change: Saturday 2025-11-01 21:56:47*
+*last change: Saturday 2025-11-01 22:28:05*
