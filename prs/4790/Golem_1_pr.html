@@ -90,8 +90,8 @@
                     >Bridge returned error 0! (20393)</a>
                 </h2>
 
-                                    <time datetime="2025-11-01 20:47:25">
-                        2025-11-01 20:47:25                    </time>
+                                    <time datetime="2025-11-01 21:02:43">
+                        2025-11-01 21:02:43                    </time>
                     <p></p>
                 
                 
@@ -114,10 +114,10 @@
             <strong>Message:</strong> Undefined array key 1        </div>
 
         <div>
-            <strong>File:</strong> lib/html.php        </div>
+            <strong>File:</strong> bridges/GolemBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 499        </div>
+            <strong>Line:</strong> 123        </div>
     </div>
 
     <h2>Trace</h2>
@@ -183,13 +183,10 @@
             #19 bridges/GolemBridge.php(106): GolemBridge-&gt;extractContent()        </code>
         <br>
             <code>
-            #20 bridges/GolemBridge.php(124): handleYoutube()        </code>
+            #20 bridges/GolemBridge.php(123): {closure}()        </code>
         <br>
             <code>
-            #21 lib/html.php(499): {closure}()        </code>
-        <br>
-            <code>
-            #22 lib/html.php(499)        </code>
+            #21 bridges/GolemBridge.php(123)        </code>
         <br>
     
     <br>
@@ -200,7 +197,7 @@
         <strong>Query:</strong> action=display&amp;bridge=GolemBridge&amp;category=https://rss.golem.de/rss.php?feed=ATOM1.0&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.youtube-helper.91cd125)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.youtube-helper.0935806)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -218,7 +215,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Golem.de+failed+with%3A+Undefined+array+key+1&body=%60%60%60%0AErrorException%3A+Undefined+array+key+1+in+lib%2Fhtml.php+line+499%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GolemBridge-%3EcollectData%28%29%0Abridges%2FGolemBridge.php%2860%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2838%29%3A+GolemBridge-%3EparseItem%28%29%0Abridges%2FGolemBridge.php%28106%29%3A+GolemBridge-%3EextractContent%28%29%0Abridges%2FGolemBridge.php%28124%29%3A+handleYoutube%28%29%0Alib%2Fhtml.php%28499%29%3A+%7Bclosure%7D%28%29%0Alib%2Fhtml.php%28499%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGolemBridge%26category%3Dhttps%253A%252F%252Frss.golem.de%252Frss.php%253Ffeed%253DATOM1.0%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.youtube-helper.91cd125%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40Mynacol&labels=Bridge-Broken&assignee=M" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Golem.de+failed+with%3A+Undefined+array+key+1&body=%60%60%60%0AErrorException%3A+Undefined+array+key+1+in+bridges%2FGolemBridge.php+line+123%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GolemBridge-%3EcollectData%28%29%0Abridges%2FGolemBridge.php%2860%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2838%29%3A+GolemBridge-%3EparseItem%28%29%0Abridges%2FGolemBridge.php%28106%29%3A+GolemBridge-%3EextractContent%28%29%0Abridges%2FGolemBridge.php%28123%29%3A+%7Bclosure%7D%28%29%0Abridges%2FGolemBridge.php%28123%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGolemBridge%26category%3Dhttps%253A%252F%252Frss.golem.de%252Frss.php%253Ffeed%253DATOM1.0%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.youtube-helper.0935806%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40Mynacol&labels=Bridge-Broken&assignee=M" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 

@@ -16,9 +16,9 @@
 | Euronews | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "name"` |
 | Euronews | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "name"` |
 | FallGuys | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_current.html) | ✔️ |
-| FallGuys | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
+| FallGuys | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_pr.html) | ✔️ |
 | GenshinImpact | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_current.html) | ✔️ |
-| GenshinImpact | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
+| GenshinImpact | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/GenshinImpact_1_pr.html) | ✔️ |
 | Golem | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
 | Golem | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Golem_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
 | Heise | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Heise_1_current.html) | ✔️ |
@@ -46,6 +46,6 @@
 | YouTubeCommunityTab | [2 By username (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeCommunityTab_2_current.html) | ✔️ |
 | YouTubeCommunityTab | [2 By username (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeCommunityTab_2_pr.html) | ✔️ |
 | YouTubeFeedExpander | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_current.html) | ✔️ |
-| YouTubeFeedExpander | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
+| YouTubeFeedExpander | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_pr.html) | ✔️ |
 
-*last change: Saturday 2025-11-01 20:46:30*
+*last change: Saturday 2025-11-01 21:01:51*
