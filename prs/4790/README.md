@@ -1,18 +1,18 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| AssociatedPressNews | [1 Standard Topics (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_1_current.html) | ❌ `Bridge returned error 404! (20393)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=apf-topnews resulted in 404 Not Found` |
-| AssociatedPressNews | [1 Standard Topics (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_1_pr.html) | ❌ `Bridge returned error 404! (20393)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=apf-topnews resulted in 404 Not Found` |
-| AssociatedPressNews | [2 Custom Topic (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_2_current.html) | ❌ `Bridge returned error 404! (20393)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=europe resulted in 404 Not Found` |
-| AssociatedPressNews | [2 Custom Topic (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_2_pr.html) | ❌ `Bridge returned error 404! (20393)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=europe resulted in 404 Not Found` |
+| AssociatedPressNews | [1 Standard Topics (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_1_current.html) | ❌ `Bridge returned error 404! (20394)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=apf-topnews resulted in 404 Not Found` |
+| AssociatedPressNews | [1 Standard Topics (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_1_pr.html) | ❌ `Bridge returned error 404! (20394)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=apf-topnews resulted in 404 Not Found` |
+| AssociatedPressNews | [2 Custom Topic (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_2_current.html) | ❌ `Bridge returned error 404! (20394)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=europe resulted in 404 Not Found` |
+| AssociatedPressNews | [2 Custom Topic (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/AssociatedPressNews_2_pr.html) | ❌ `Bridge returned error 404! (20394)`<br>❌ `Type: HttpException`<br>❌ `Message: https://afs-prod.appspot.com/api/v2/feed/tag?tags=europe resulted in 404 Not Found` |
 | Drive2ru | [1 Новости и тест-драйвы (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_1_current.html) | ✔️ |
 | Drive2ru | [1 Новости и тест-драйвы (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_1_pr.html) | ✔️ |
-| Drive2ru | [2 Бортжурналы (По модели или марке) (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_2_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
-| Drive2ru | [2 Бортжурналы (По модели или марке) (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_2_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
+| Drive2ru | [2 Бортжурналы (По модели или марке) (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_2_current.html) | ❌ `Bridge returned error 0! (20394)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
+| Drive2ru | [2 Бортжурналы (По модели или марке) (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_2_pr.html) | ❌ `Bridge returned error 0! (20394)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | Drive2ru | [3 Личные блоги (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_3_current.html) | ⚠️ `The feed has no items` |
 | Drive2ru | [3 Личные блоги (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_3_pr.html) | ⚠️ `The feed has no items` |
-| Drive2ru | [4 Публикации по темам (Стоит почитать) (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_current.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
-| Drive2ru | [4 Публикации по темам (Стоит почитать) (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_pr.html) | ❌ `Bridge returned error 0! (20393)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
+| Drive2ru | [4 Публикации по темам (Стоит почитать) (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_current.html) | ❌ `Bridge returned error 0! (20394)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
+| Drive2ru | [4 Публикации по темам (Стоит почитать) (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Drive2ru_4_pr.html) | ❌ `Bridge returned error 0! (20394)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | Euronews | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_current.html) | ✔️ |
 | Euronews | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/Euronews_1_pr.html) | ✔️ |
 | FallGuys | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/FallGuys_1_current.html) | ✔️ |
@@ -48,4 +48,4 @@
 | YouTubeFeedExpander | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_current.html) | ✔️ |
 | YouTubeFeedExpander | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4790/YouTubeFeedExpander_1_pr.html) | ✔️ |
 
-*last change: Saturday 2025-11-01 22:28:05*
+*last change: Sunday 2025-11-02 00:08:43*
