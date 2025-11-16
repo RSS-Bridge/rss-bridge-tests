@@ -6,4 +6,4 @@
 | Kleinanzeigen | [2 By profile (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4821/Kleinanzeigen_2_current.html) | ⚠️ `The feed has no items` |
 | Kleinanzeigen | [2 By profile (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4821/Kleinanzeigen_2_pr.html) | ⚠️ `The feed has no items` |
 
-*last change: Sunday 2025-11-16 15:56:22*
+*last change: Sunday 2025-11-16 16:00:59*
