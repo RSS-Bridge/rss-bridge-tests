@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3001/?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=mac&amp;country=US&amp;format=Html"
-                    >Bridge returned error 0! (20409)</a>
+                    >Bridge returned error 401! (20409)</a>
                 </h2>
 
-                                    <time datetime="2025-11-17 17:21:55">
-                        2025-11-17 17:21:55                    </time>
+                                    <time datetime="2025-11-17 22:23:15">
+                        2025-11-17 22:23:15                    </time>
                     <p></p>
                 
                 
@@ -100,24 +100,34 @@
 <div class="error">
 
             
-            
+        
+        
+        
+        
+        
+                    <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401                </a>
+            </p>
+        
+    
     <h2>Details</h2>
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> ErrorException        </div>
+            <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 0        </div>
+            <strong>Code:</strong> 401        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> preg_match(): Compilation failed: missing terminating ] for character class at offset 103        </div>
+            <strong>Message:</strong> https://amp-api-edge.apps.apple.com/v1/catalog/USs/310633997?platform=mac&amp;extend=versionHistory resulted in 401 Unauthorized        </div>
 
         <div>
-            <strong>File:</strong> bridges/AppleAppStoreBridge.php        </div>
+            <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 132        </div>
+            <strong>Line:</strong> 34        </div>
     </div>
 
     <h2>Trace</h2>
@@ -174,16 +184,16 @@
             #16 actions/DisplayAction.php(89): AppleAppStoreBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/AppleAppStoreBridge.php(202): AppleAppStoreBridge-&gt;getAppData()        </code>
+            #17 bridges/AppleAppStoreBridge.php(207): AppleAppStoreBridge-&gt;getAppData()        </code>
         <br>
             <code>
-            #18 bridges/AppleAppStoreBridge.php(132): preg_match()        </code>
+            #18 bridges/AppleAppStoreBridge.php(156): getContents()        </code>
         <br>
             <code>
-            #19 (): {closure}()        </code>
+            #19 lib/contents.php(131): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #20 bridges/AppleAppStoreBridge.php(132)        </code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -194,7 +204,7 @@
         <strong>Query:</strong> action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=mac&amp;country=US&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.master.b1fc90e)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.master.32ff3c7)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -212,7 +222,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Apple+App+Store+failed+with%3A+preg_match%28%29%3A+Compilation+failed%3A+missing+terminating+%5D+for+character+class+at+offset+103&body=%60%60%60%0AErrorException%3A+preg_match%28%29%3A+Compilation+failed%3A+missing+terminating+%5D+for+character+class+at+offset+103+in+bridges%2FAppleAppStoreBridge.php+line+132%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+AppleAppStoreBridge-%3EcollectData%28%29%0Abridges%2FAppleAppStoreBridge.php%28202%29%3A+AppleAppStoreBridge-%3EgetAppData%28%29%0Abridges%2FAppleAppStoreBridge.php%28132%29%3A+preg_match%28%29%0A%28%29%3A+%7Bclosure%7D%28%29%0Abridges%2FAppleAppStoreBridge.php%28132%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DAppleAppStoreBridge%26id%3D310633997%26p%3Dmac%26country%3DUS%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.master.b1fc90e%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40NohamR&labels=Bridge-Broken&assignee=N" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Apple+App+Store+failed+with%3A+https%3A%2F%2Famp-api-edge.apps.apple.com%2Fv1%2Fcatalog%2FUS%2Fapps%2F310633997%3Fplatform%3Dmac%26extend%3DversionHistory+resulted+in+401+Unauthorized&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Famp-api-edge.apps.apple.com%2Fv1%2Fcatalog%2FUSs%2F310633997%3Fplatform%3Dmac%26extend%3DversionHistory+resulted+in+401+Unauthorized+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+AppleAppStoreBridge-%3EcollectData%28%29%0Abridges%2FAppleAppStoreBridge.php%28207%29%3A+AppleAppStoreBridge-%3EgetAppData%28%29%0Abridges%2FAppleAppStoreBridge.php%28156%29%3A+getContents%28%29%0Alib%2Fcontents.php%28131%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DAppleAppStoreBridge%26id%3D310633997%26p%3Dmac%26country%3DUS%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.master.32ff3c7%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40NohamR&labels=Bridge-Broken&assignee=N" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
