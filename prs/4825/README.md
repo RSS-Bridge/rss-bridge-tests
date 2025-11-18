@@ -18,4 +18,4 @@
 | TriabolosNews | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4825/TriabolosNews_1_current.html) | ✔️ |
 | TriabolosNews | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4825/TriabolosNews_1_pr.html) | ✔️ |
 
-*last change: Tuesday 2025-11-18 13:19:07*
+*last change: Tuesday 2025-11-18 13:19:27*
