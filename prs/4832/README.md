@@ -6,4 +6,4 @@
 | EdfPrices | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4832/EdfPrices_1_current.html) | ✔️ |
 | EdfPrices | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4832/EdfPrices_1_pr.html) | ✔️ |
 
-*last change: Saturday 2025-11-22 23:55:48*
+*last change: Sunday 2025-11-23 00:00:05*
