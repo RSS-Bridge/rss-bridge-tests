@@ -86,136 +86,661 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3001/?action=display&amp;bridge=ScribbleHubBridge&amp;context=Series&amp;sid=965299&amp;format=Html"
-                    >Bridge returned error 0! (20487)</a>
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1700001/"
+                    >22. Three London Addresses</a>
                 </h2>
 
-                                    <time datetime="2026-02-03 02:39:59">
-                        2026-02-03 02:39:59                    </time>
+                                    <time datetime="2025-07-02 21:12:00">
+                        2025-07-02 21:12:00                    </time>
                     <p></p>
                 
+                                    <p class="author">by: miriamrobern</p>
                 
                 <!-- Intentionally not escaping for html context -->
                 
-<div class="error">
-
-            
-            
-    <h2>Details</h2>
-
-    <div style="margin-bottom: 15px">
-        <div class="error-type">
-            <strong>Type:</strong> ErrorException        </div>
-
-        <div>
-            <strong>Code:</strong> 0        </div>
-
-        <div class="error-message">
-            <strong>Message:</strong> Attempt to read property &quot;title&quot; on bool        </div>
-
-        <div>
-            <strong>File:</strong> bridges/ScribbleHubBridge.php        </div>
-
-        <div>
-            <strong>Line:</strong> 173        </div>
-    </div>
-
-    <h2>Trace</h2>
-
-            <code>
-            #0 index.php(73): RssBridge-&gt;main()        </code>
-        <br>
-            <code>
-            #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #2 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #3 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #4 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #5 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #6 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #7 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #8 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #9 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #10 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #11 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
-        <br>
-            <code>
-            #14 lib/RssBridge.php(34): DisplayAction-&gt;__invoke()        </code>
-        <br>
-            <code>
-            #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
-        <br>
-            <code>
-            #16 actions/DisplayAction.php(89): ScribbleHubBridge-&gt;collectData()        </code>
-        <br>
-            <code>
-            #17 bridges/ScribbleHubBridge.php(46): ScribbleHubBridge-&gt;collectSeries()        </code>
-        <br>
-            <code>
-            #18 bridges/ScribbleHubBridge.php(173): {closure}()        </code>
-        <br>
-            <code>
-            #19 bridges/ScribbleHubBridge.php(173)        </code>
-        <br>
-    
-    <br>
-
-    <h2>Context</h2>
-
-    <div>
-        <strong>Query:</strong> action=display&amp;bridge=ScribbleHubBridge&amp;context=Series&amp;sid=965299&amp;format=Html    </div>
-
-    <div>
-        <strong>Version:</strong> 2025-08-05 (git.shub.9e18b20)    </div>
-
-    <div>
-        <strong>OS:</strong> Linux    </div>
-
-    <div>
-        <strong>PHP:</strong> 8.2.29    </div>
-
-    <br>
-
-    <a href="/">Go back</a>
-</div>
-
-
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Scribble+Hub+Series+-+The+New+Girl+at+Uskweirs+Manor" title="Opens GitHub to search for similar issues">
-    <button>Find similar bugs</button>
-</a>
-
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Scribble+Hub+Series+-+The+New+Girl+at+Uskweirs+Manor+failed+with%3A+Attempt+to+read+property+%22title%22+on+bool&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22title%22+on+bool+in+bridges%2FScribbleHubBridge.php+line+173%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+ScribbleHubBridge-%3EcollectData%28%29%0Abridges%2FScribbleHubBridge.php%2846%29%3A+ScribbleHubBridge-%3EcollectSeries%28%29%0Abridges%2FScribbleHubBridge.php%28173%29%3A+%7Bclosure%7D%28%29%0Abridges%2FScribbleHubBridge.php%28173%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DScribbleHubBridge%26context%3DSeries%26sid%3D965299%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.shub.9e18b20%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40phantop&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
-    <button>Create GitHub Issue</button>
-</a>
-
-<p class="maintainer">
-    phantop</p>
                 
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1699995/"
+                    >21. The Heart Wants</a>
+                </h2>
+
+                                    <time datetime="2025-07-02 21:11:00">
+                        2025-07-02 21:11:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1598839/"
+                    >20. Lucky, Actually</a>
+                </h2>
+
+                                    <time datetime="2025-05-12 18:52:00">
+                        2025-05-12 18:52:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1598837/"
+                    >19. The Duchess Regent</a>
+                </h2>
+
+                                    <time datetime="2025-05-12 18:51:00">
+                        2025-05-12 18:51:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1455029/"
+                    >18. A Long-Awaited Visit</a>
+                </h2>
+
+                                    <time datetime="2025-02-24 18:43:00">
+                        2025-02-24 18:43:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434044/"
+                    >17. Home and Other Impossible Tasks</a>
+                </h2>
+
+                                    <time datetime="2025-02-17 15:20:00">
+                        2025-02-17 15:20:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434040/"
+                    >16. Disclosures</a>
+                </h2>
+
+                                    <time datetime="2025-02-16 15:20:00">
+                        2025-02-16 15:20:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434038/"
+                    >15. The Garden Party at Malvern</a>
+                </h2>
+
+                                    <time datetime="2025-02-15 15:19:00">
+                        2025-02-15 15:19:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434036/"
+                    >14. Llangollen</a>
+                </h2>
+
+                                    <time datetime="2025-02-11 15:18:00">
+                        2025-02-11 15:18:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434034/"
+                    >13. A Hot Day in Sussex</a>
+                </h2>
+
+                                    <time datetime="2025-02-11 15:17:00">
+                        2025-02-11 15:17:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1434026/"
+                    >12. Out of Bridewell</a>
+                </h2>
+
+                                    <time datetime="2025-02-11 15:11:00">
+                        2025-02-11 15:11:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1132282/"
+                    >11. To Bridewell</a>
+                </h2>
+
+                                    <time datetime="2024-08-12 07:00:00">
+                        2024-08-12 07:00:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1132279/"
+                    >10. Brotherly and Sisterly Love</a>
+                </h2>
+
+                                    <time datetime="2024-07-23 07:00:00">
+                        2024-07-23 07:00:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1113712/"
+                    >9. The Carriage to Yorkshire</a>
+                </h2>
+
+                                    <time datetime="2024-06-10 07:00:00">
+                        2024-06-10 07:00:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1113718/"
+                    >8. Gŵil Awst</a>
+                </h2>
+
+                                    <time datetime="2024-06-08 14:27:00">
+                        2024-06-08 14:27:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1061742/"
+                    >7. The Posture of a Lady</a>
+                </h2>
+
+                                    <time datetime="2024-04-15 16:20:00">
+                        2024-04-15 16:20:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1027247/"
+                    >6. The Mulveys Give Dinner</a>
+                </h2>
+
+                                    <time datetime="2024-03-11 12:47:00">
+                        2024-03-11 12:47:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/1000286/"
+                    >5. Strangers on a Hill</a>
+                </h2>
+
+                                    <time datetime="2024-02-12 07:00:00">
+                        2024-02-12 07:00:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/965317/"
+                    >4. Correspondence, Concoctions, and Coaching</a>
+                </h2>
+
+                                    <time datetime="2024-01-15 07:00:00">
+                        2024-01-15 07:00:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/965311/"
+                    >3. Girl Talk</a>
+                </h2>
+
+                                    <time datetime="2024-01-08 20:24:00">
+                        2024-01-08 20:24:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/965308/"
+                    >2. The Impossible</a>
+                </h2>
+
+                                    <time datetime="2024-01-08 20:22:00">
+                        2024-01-08 20:22:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.scribblehub.com/read/965299-the-new-girl-at-uskweirs-manor/chapter/965304/"
+                    >1. A Fateful House Party</a>
+                </h2>
+
+                                    <time datetime="2024-01-08 20:17:00">
+                        2024-01-08 20:17:00                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: miriamrobern</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                
+                
+                                    <div class="categories">
+                        <p>Categories:</p>
+                                                    <li class="category">miriamrobern</li>
+                                                    <li class="category">The New Girl at Uskweirs Manor</li>
+                                                    <li class="category">965299</li>
+                                                    <li class="category">Adult</li>
+                                                    <li class="category">Drama</li>
+                                                    <li class="category">Gender Bender</li>
+                                                    <li class="category">Girls Love</li>
+                                                    <li class="category">Historical</li>
+                                                    <li class="category">Romance</li>
+                                            </div>
                             </section>
         
     </div>
