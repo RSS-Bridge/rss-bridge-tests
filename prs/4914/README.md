@@ -1,6 +1,7 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
+| PlaySrf | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4914/PlaySrf_1_pr.html) | ✔️ |
 | RaiPlaySound | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4914/RaiPlaySound_1_pr.html) | ✔️ |
 
-*last change: Friday 2026-02-27 17:41:15*
+*last change: Tuesday 2026-03-03 16:43:26*
