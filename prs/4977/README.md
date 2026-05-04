@@ -1,0 +1,9 @@
+## Pull request artifacts
+| Bridge | Context | Status |
+| - | - | - |
+| Twitter | [1 By keyword or hashtag (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4977/Twitter_1_current.html) | ❌ `Bridge returned error 404! (20577)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/1.1/search/tweets.json?q=rss-bridge%2BOR%2Brssbridge&tweet_mode=extended&tweet_search_mode=live resulted in 404 Not Found` |
+| Twitter | [2 By username (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4977/Twitter_2_current.html) | ❌ `Bridge returned error 404! (20577)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/graphql/3JNH4e9dq1BifLxAa3UMWg/UserWithProfileTweetsQueryV2?variables=%7B%22autoplay_enabled%22%3Atrue%2C%22count%22%3A40%2C%22includeEditControl%22%3Atrue%2C%22includeEditPerspective%22%3Afalse%2C%22includeHasBirdwat...` |
+| Twitter | [3 By list (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4977/Twitter_3_current.html) | ❌ `Bridge returned error 404! (20577)`<br>❌ `Type: HttpException`<br>❌ `Message: https://twitter.com/i/api/graphql/-kmqNvm5Y-cVrfvBy6docg/ListBySlug?variables=%7B%22screenName%22%3A%22scobleizer%22%2C%22listSlug%22%3A%22tech-news%22%7D&features=%7B%22android_graphql_skip_api_media_color_palette%22%3Afalse%2C%22blue_busin...` |
+| Twitter | [4 By list ID (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4977/Twitter_4_current.html) | ❌ `Bridge returned error 404! (20577)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/graphql/BbGLL1ZfMibdFNWlk7a0Pw/ListTimeline?variables=%7B%22rest_id%22%3A%2231748%22%2C%22count%22%3A20%7D&features=%7B%22android_graphql_skip_api_media_color_palette%22%3Afalse%2C%22blue_business_profile_image_shape_...` |
+
+*last change: Monday 2026-05-04 14:21:31*
