@@ -10,4 +10,4 @@
 | Bandcamp | [4 By album (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4979/Bandcamp_4_current.html) | ✔️ |
 | Bandcamp | [4 By album (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4979/Bandcamp_4_pr.html) | ✔️ |
 
-*last change: Tuesday 2026-05-05 22:29:33*
+*last change: Tuesday 2026-05-05 22:39:41*
