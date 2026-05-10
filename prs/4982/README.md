@@ -7,9 +7,9 @@
 | Youtube | [2 By channel id (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_2_pr.html) | ✔️ |
 | Youtube | [3 By custom name (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_3_current.html) | ✔️ |
 | Youtube | [3 By custom name (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_3_pr.html) | ✔️ |
-| Youtube | [4 By playlist Id (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_4_current.html) | ❌ `Bridge returned error 0! (20581)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined property: stdClass::$playlistVideoListRenderer` |
+| Youtube | [4 By playlist Id (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_4_current.html) | ✔️ |
 | Youtube | [4 By playlist Id (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_4_pr.html) | ✔️ |
 | Youtube | [5 Search result (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_5_current.html) | ✔️ |
 | Youtube | [5 Search result (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4982/Youtube_5_pr.html) | ✔️ |
 
-*last change: Friday 2026-05-08 20:31:53*
+*last change: Sunday 2026-05-10 13:29:23*
