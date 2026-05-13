@@ -3,4 +3,4 @@
 | - | - | - |
 | TheBell | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/4954/TheBell_1_pr.html) | ✔️ |
 
-*last change: Thursday 2026-04-09 06:39:22*
+*last change: Wednesday 2026-05-13 06:23:15*
