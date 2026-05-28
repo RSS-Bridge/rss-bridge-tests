@@ -92,8 +92,8 @@
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2026-05-28 22:42:41">
-                                2026-05-28 22:42:41                            </time>
+                            <time datetime="2026-05-28 22:49:17">
+                                2026-05-28 22:49:17                            </time>
                         </p>
                     
                                     </div>
@@ -109,19 +109,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> ErrorException        </div>
+            <strong>Type:</strong> TypeError        </div>
 
         <div>
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Attempt to read property &quot;plaintext&quot; on null        </div>
+            <strong>Message:</strong> trim(): Argument #1 ($string) must be of type string, bool given        </div>
 
         <div>
             <strong>File:</strong> bridges/GitHubWorkflowBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 72        </div>
+            <strong>Line:</strong> 80        </div>
     </div>
 
     <h2>Trace</h2>
@@ -178,10 +178,10 @@
             #16 actions/DisplayAction.php(89): GithubWorkflowBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/GitHubWorkflowBridge.php(72): {closure}()        </code>
+            #17 bridges/GitHubWorkflowBridge.php(80): trim()        </code>
         <br>
             <code>
-            #18 bridges/GitHubWorkflowBridge.php(72)        </code>
+            #18 bridges/GitHubWorkflowBridge.php(80)        </code>
         <br>
     
     <br>
@@ -192,7 +192,7 @@
         <strong>Query:</strong> action=display&amp;bridge=GitHubWorkflowBridge&amp;user=RSS-Bridge&amp;repo=rss-bridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.github-workflows.d1068d1)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.github-workflows.5aa557f)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -210,7 +210,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=GitHub+Workflows+-+RSS-Bridge%2Frss-bridge+failed+with%3A+Attempt+to+read+property+%22plaintext%22+on+null&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22plaintext%22+on+null+in+bridges%2FGitHubWorkflowBridge.php+line+72%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GithubWorkflowBridge-%3EcollectData%28%29%0Abridges%2FGitHubWorkflowBridge.php%2872%29%3A+%7Bclosure%7D%28%29%0Abridges%2FGitHubWorkflowBridge.php%2872%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGitHubWorkflowBridge%26user%3DRSS-Bridge%26repo%3Drss-bridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.github-workflows.d1068d1%29%0AOs%3A+Linux%0APHP+version%3A+8.2.31%0A%60%60%60%0AMaintainer%3A+%40AMA147000&labels=Bridge-Broken&assignee=A" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=GitHub+Workflows+-+RSS-Bridge%2Frss-bridge+failed+with%3A+trim%28%29%3A+Argument+%231+%28%24string%29+must+be+of+type+string%2C+bool+given&body=%60%60%60%0ATypeError%3A+trim%28%29%3A+Argument+%231+%28%24string%29+must+be+of+type+string%2C+bool+given+in+bridges%2FGitHubWorkflowBridge.php+line+80%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GithubWorkflowBridge-%3EcollectData%28%29%0Abridges%2FGitHubWorkflowBridge.php%2880%29%3A+trim%28%29%0Abridges%2FGitHubWorkflowBridge.php%2880%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGitHubWorkflowBridge%26user%3DRSS-Bridge%26repo%3Drss-bridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.github-workflows.5aa557f%29%0AOs%3A+Linux%0APHP+version%3A+8.2.31%0A%60%60%60%0AMaintainer%3A+%40AMA147000&labels=Bridge-Broken&assignee=A" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
