@@ -3,8 +3,8 @@
 | - | - | - |
 | Derpibooru | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Derpibooru_1_current.html) | ✔️ |
 | Derpibooru | [1 Global (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Derpibooru_1_pr.html) | ⚠️ `The feed has no items` |
-| Rule34 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Rule34_1_current.html) | ❌ `Bridge returned error 400! (20617)`<br>❌ `Type: ClientException`<br>❌ `Message: Invalid parameters value(s): user_id` |
-| Rule34 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Rule34_1_pr.html) | ❌ `Bridge returned error 400! (20617)`<br>❌ `Type: ClientException`<br>❌ `Message: Invalid parameters value(s): user_id` |
+| Rule34 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Rule34_1_current.html) | ❌ `Bridge returned error 400! (20624)`<br>❌ `Type: ClientException`<br>❌ `Message: Invalid parameters value(s): user_id` |
+| Rule34 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Rule34_1_pr.html) | ❌ `Bridge returned error 400! (20624)`<br>❌ `Type: ClientException`<br>❌ `Message: Invalid parameters value(s): user_id` |
 | Trixiebooru | [1 Global (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5000/Trixiebooru_1_pr.html) | ⚠️ `The feed has no items` |
 
-*last change: Saturday 2026-06-13 08:19:35*
+*last change: Saturday 2026-06-20 09:06:08*
