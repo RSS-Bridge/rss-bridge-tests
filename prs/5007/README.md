@@ -4,4 +4,4 @@
 | Vk2 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_current.html) | ❌ `Bridge returned error 0! (20625)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
 | Vk2 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_pr.html) | ❌ `Bridge returned error 0! (20625)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
 
-*last change: Sunday 2026-06-21 10:02:04*
+*last change: Sunday 2026-06-21 10:05:03*
