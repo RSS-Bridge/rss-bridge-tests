@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>NGINX Releases</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://nginx.org/" target="_blank">NGINX Releases</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-NginxBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=NginxBridge&amp;source=changes&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://nginx.org/en/CHANGES"
+                    >NGINX 1.31.2</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-06-17 00:00:00">
+                                2026-06-17 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #cf222e;">Security</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Use-after-free might occur when using HTTP/3 and processing a specially crafted QUIC session, allowing an attacker to cause worker process memory corruption or segmentation fault in a worker process (CVE-2026-42530).</li><li>A heap memory buffer overflow might occur in a worker process when using a configuration with &quot;ignore_invalid_headers off;&quot; and &quot;large_client_header_buffers&quot; with large configured values when proxying a specially crafted request to HTTP/2 or gRPC backend, allowing an attacker to cause worker process memory corruption or segmentation fault in a worker process (CVE-2026-42055).</li><li>A heap memory buffer overread might occur in a worker process while handling a specially sent response with decoding from UTF-8 via the &quot;charset_map&quot; directive, allowing an attacker to cause a limited disclosure of worker proccess memory or segmentation fault in a worker process (CVE-2026-48142).</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #9a6700;">Change</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Now the $request_id variable uses SipHash-2-4.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Feature</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The $ssl_sigalgs variable.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A variable defined by the &quot;split_clients&quot; directive might be empty if all percentages were specified explicitly and summed up to 100%.</li><li>Constant time &quot;secure_link&quot; hash comparison.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://nginx.org/en/CHANGES"
+                    >NGINX 1.31.1</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-22 00:00:00">
+                                2026-05-22 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #cf222e;">Security</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A heap memory buffer overflow might occur in a worker process when using a configuration with overlapping captures in ngx_http_rewrite_module, potentially resulting in arbitrary code execution (CVE-2026-9256).</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://nginx.org/en/CHANGES"
+                    >NGINX 1.31.0</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-13 00:00:00">
+                                2026-05-13 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #cf222e;">Security</h3><ul style="list-style-type:disc; padding-left:24px;"><li>When using the &quot;proxy_set_body&quot; directive, an attacker might inject data in the proxied request to an HTTP/2 backend (CVE-2026-42926).</li><li>A heap memory buffer overflow might occur in a worker process while handling a specially crafted request by ngx_http_rewrite_module, potentially resulting in arbitrary code execution (CVE-2026-42945).</li><li>A heap memory buffer overread might occur in a worker process while handling a specially crafted response by ngx_http_scgi_module or ngx_http_uwsgi_module, allowing an attacker to cause a disclosure of worker process memory or segmentation fault in a worker process (CVE-2026-42946).</li><li>A heap memory buffer overread might occur in a worker process while handling a specially sent response with decoding from UTF-8 via the &quot;charset_map&quot; directive, allowing an attacker to cause a limited disclosure of worker proccess memory or segmentation fault in a worker process (CVE-2026-42934).</li><li>When using HTTP/3, processing of connection migration might cause new QUIC streams to receive a new client address before validation, allowing an attacker to cause address spoofing (CVE-2026-40460).</li><li>Use-after-free might occur during DNS server response processing if the &quot;ssl_ocsp&quot; directive was used, allowing an attacker to cause worker process memory corruption or segmentation fault in a worker process (CVE-2026-40701).</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #9a6700;">Changes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Now nginx rejects HTTP/2 and HTTP/3 requests with the &quot;Connection&quot;, &quot;Proxy-Connection&quot;, &quot;Keep-Alive&quot;, &quot;Transfer-Encoding&quot;, &quot;Upgrade&quot; header lines, and &quot;TE&quot; with any value other than &quot;trailers&quot;.</li><li>The ngx_http_dav_module now rejects a COPY or MOVE requests when the source and destination resources are the same or have a parent-child collection relationship.</li><li>The logging level of the &quot;invalid alert&quot; and &quot;record layer failure&quot; SSL errors, and of the &quot;SSL alert number N&quot; for any alert numbers has been lowered from &quot;crit&quot; to &quot;info&quot;.</li><li>Now the &quot;sticky&quot; module can be disabled with the --without-http_upstream_sticky_module configure option; the --without-http_upstream_sticky configure option is deprecated.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Features</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The ngx_http_tunnel_module; support for authenticating to proxies in the &quot;auth_basic&quot;, &quot;satisfy&quot;, and &quot;auth_delay&quot; directives.</li><li>The &quot;least_time&quot; directive inside the &quot;upstream&quot; block.</li><li>The &quot;proxy_ssl_alpn&quot; directive in the stream module.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Connections with HTTP/2 backends might not be cached when using the &quot;proxy_set_body&quot; or &quot;proxy_pass_request_body&quot; directives.</li><li>Proxied HTTP/0.9, SCGI, or uWSGI responses might be transferred incorrectly if the first line was not fully read.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://nginx.org/en/CHANGES"
+                    >NGINX 1.29.8</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-04-07 00:00:00">
+                                2026-04-07 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Features</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The &quot;max_headers&quot; directive.</li><li>OpenSSL 4.0 compatibility.</li><li>Now the &quot;include&quot; directive inside the &quot;geo&quot; block supports wildcards.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>In processing of HTTP 103 (Early Hints) responses from a proxied backend.</li><li>The $request_port and $is_request_port variables were not available in subrequests.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://nginx.org/en/CHANGES"
+                    >NGINX 1.29.7</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-03-24 00:00:00">
+                                2026-03-24 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #cf222e;">Security</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A buffer overflow might occur while handling a COPY or MOVE request in a location with &quot;alias&quot;, allowing an attacker to modify the source or destination path outside of the document root (CVE-2026-27654). io in collaboration with Claude and Anthropic Research.</li><li>Processing of a specially crafted mp4 file by the ngx_http_mp4_module on 32-bit platforms might cause a worker process crash, or might have potential other impact (CVE-2026-27784).</li><li>Processing of a specially crafted mp4 file by the ngx_http_mp4_module might cause a worker process crash, or might have potential other impact (CVE-2026-32647).</li><li>A segmentation fault might occur in a worker process if the CRAM-MD5 or APOP authentication methods were used and authentication retry was enabled (CVE-2026-27651).</li><li>An attacker might use PTR DNS records to inject data in auth_http requests, as well as in the XCLIENT command in the backend SMTP connection (CVE-2026-28753).</li><li>SSL handshake might succeed despite OCSP rejecting a client certificate in the stream module (CVE-2026-28755).</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Features</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The &quot;multipath&quot; parameter of the &quot;listen&quot; directive.</li><li>The &quot;local&quot; parameter of the &quot;keepalive&quot; directive in the &quot;upstream&quot; block.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #9a6700;">Changes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Now the &quot;keepalive&quot; directive in the &quot;upstream&quot; block is enabled by default.</li><li>Now ngx_http_proxy_module supports keepalive by default; the default value for &quot;proxy_http_version&quot; is &quot;1.1&quot;; the &quot;Connection&quot; proxy header is not sent by default anymore.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfix</h3><ul style="list-style-type:disc; padding-left:24px;"><li>An invalid HTTP/2 request might be sent after switching to the next upstream if buffered body was used in the ngx_http_grpc_module.</li></ul></div></div>                </div>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>

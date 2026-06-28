@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Freenginx Releases</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://freenginx.org/" target="_blank">Freenginx Releases</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-FreeNginxBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=FreeNginxBridge&amp;source=changes&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://freenginx.org/en/CHANGES"
+                    >freenginx 1.31.2</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-26 00:00:00">
+                                2026-05-26 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A segmentation fault might occur in a worker process if nested captures were used in the &quot;rewrite&quot; directive.</li><li>The &quot;if&quot; directive incorrectly handled relative paths when checking files.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://freenginx.org/en/CHANGES"
+                    >freenginx 1.31.1</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-19 00:00:00">
+                                2026-05-19 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Feature</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The &quot;off&quot; parameter of the &quot;index&quot; directive.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A segmentation fault might occur in a worker process if the &quot;rewrite&quot; directive was used to change request arguments and other directives of the ngx_http_rewrite_module were executed afterwards.</li><li>In the &quot;set&quot; directive.</li><li>A segmentation fault might occur in a worker process if the ngx_http_charset_module was used to convert responses from UTF-8.</li><li>In the ngx_http_charset_module.</li><li>A segmentation fault might occur in a worker process if the &quot;ssl_ocsp&quot; directive was used.</li><li>A segmentation fault might occur in a worker process if the &quot;scgi_pass&quot; or &quot;uwsgi_pass&quot; directives were used.</li><li>In the &quot;scgi_request_buffering&quot; directive.</li><li>In HTTP/3.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://freenginx.org/en/CHANGES"
+                    >freenginx 1.31.0</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-05 00:00:00">
+                                2026-05-05 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #9a6700;">Changes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Now the &quot;try_files&quot; directive can be used with arguments starting with the request URI inside a location given by a regular expression, along with the &quot;alias&quot; directive.</li><li>The logging level of the &quot;invalid ccs message&quot;, &quot;not on record boundary&quot;, &quot;required compression algorithm missing&quot;, and some &quot;record layer failure&quot; SSL errors has been lowered from &quot;crit&quot; to &quot;info&quot;.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>The &quot;try_files&quot; directive might work incorrectly when used with the &quot;alias&quot; directive.</li><li>A segmentation fault might occur in a worker process if the &quot;try_files&quot; and &quot;proxy_pass&quot; directives were used together.</li><li>The &quot;proxy_pass&quot; directive without a URI part might use the original request URI after the URI was changed by the &quot;try_files&quot; directive.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://freenginx.org/en/CHANGES"
+                    >freenginx 1.29.7</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-03-31 00:00:00">
+                                2026-03-31 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #1a7f37;">Feature</h3><ul style="list-style-type:disc; padding-left:24px;"><li>OpenSSL 4.0 compatibility.</li></ul></div><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>A segmentation fault might occur in a worker process if the ngx_http_dav_module was used to handle COPY and MOVE methods in a location with the &quot;alias&quot; directive.</li><li>Client host name was not escaped in requests to the authentication server and in the XCLIENT command if the &quot;resolver&quot; directive was used in the SMTP proxy.</li><li>In the mail proxy module.</li></ul></div></div>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://freenginx.org/en/CHANGES"
+                    >freenginx 1.29.6</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-03-10 00:00:00">
+                                2026-03-10 00:00:00                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <div style="font-size:14px; line-height:1.6; word-wrap:break-word;"><div style="margin:12px 0;"><h3 style="margin:0 0 8px 0; font-size:16px; padding-left:12px; border-left:4px solid #0969da;">Bugfixes</h3><ul style="list-style-type:disc; padding-left:24px;"><li>Incorrect &quot;upstream server temporarily disabled&quot; messages might be logged when using variables in the &quot;proxy_pass&quot; directive.</li><li>Retrying a request to the next gRPC upstream server might not work correctly.</li><li>A segmentation fault might occur in a worker process if the ngx_http_xslt_filter_module was used.</li><li>A segmentation fault might occur in a worker process if the ngx_http_mp4_module was used.</li><li>In the ngx_http_uwsgi_module and ngx_http_scgi_module modules.</li><li>In memory allocation error handling.</li></ul></div></div>                </div>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
