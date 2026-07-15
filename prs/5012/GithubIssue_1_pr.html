@@ -322,6 +322,42 @@ You can also implement your own bridge (with support of the community if needed)
                 <h2>
                     <a
                         class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4252"
+                    >Option to buffer/queue a bridge's outgoing requests</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2024-09-03 01:42:36">
+                                2024-09-03 01:42:36                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: K4LCIFER                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <p><strong>Labels:</strong> Feature-Request</p>**Is your feature request related to a problem? Please describe.**<br />
+Services often rate limit requests, so if RSS-Bridge makes too many requests too quickly, all subsequent requests from that Bridge will be dropped until the rate-limit lifts. This is partially mitigated by the implementation of the CACHE_TIMEOUT option, which specifies the length of time that a feed stores the previously fetched results before making a new request, but it does nothing to prevent requests from individual feeds from the same bridge being made in quick succession.<br />
+<br />
+**Describe the solution you&#039;d like**<br />
+There should be an option available for bridges that specifies the minimum amount of time between requests from any feed. This can be tuned to the rate limit of any service. <br />
+<br />
+It would function like the following: If a request is outgoing (the respective feed&#039;s cache timeout has expired), a separate timer will be set which must expire before a second outgoing request can be made, so if a second outgoing request is received before the timer expires, it must wait in a queue for the time to expire before it&#039;s sent out. If many requests are received all at once, they are buffered and sent out individually as the timer cycles.<br />
+<br />
+**Describe alternatives you&#039;ve considered**<br />
+None.<br />
+<br />
+**Additional context**<br />
+I&#039;ve encountered this, for example, with the Spotify bridge. If one has many artists to be fetched, they will start to be constantly rate limited.                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
                         href="https://github.com/RSS-Bridge/rss-bridge/issues/3950"
                     >JustWatch Bridge misses some titles</a>
                 </h2>
@@ -362,42 +398,6 @@ All titles of justwatch website should be posted in justwatch rss<br />
 <br />
 **Additional context**<br />
 n/a                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4252"
-                    >Option to buffer/queue a bridge's outgoing requests</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2024-09-03 01:42:36">
-                                2024-09-03 01:42:36                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: K4LCIFER                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    <p><strong>Labels:</strong> Feature-Request</p>**Is your feature request related to a problem? Please describe.**<br />
-Services often rate limit requests, so if RSS-Bridge makes too many requests too quickly, all subsequent requests from that Bridge will be dropped until the rate-limit lifts. This is partially mitigated by the implementation of the CACHE_TIMEOUT option, which specifies the length of time that a feed stores the previously fetched results before making a new request, but it does nothing to prevent requests from individual feeds from the same bridge being made in quick succession.<br />
-<br />
-**Describe the solution you&#039;d like**<br />
-There should be an option available for bridges that specifies the minimum amount of time between requests from any feed. This can be tuned to the rate limit of any service. <br />
-<br />
-It would function like the following: If a request is outgoing (the respective feed&#039;s cache timeout has expired), a separate timer will be set which must expire before a second outgoing request can be made, so if a second outgoing request is received before the timer expires, it must wait in a queue for the time to expire before it&#039;s sent out. If many requests are received all at once, they are buffered and sent out individually as the timer cycles.<br />
-<br />
-**Describe alternatives you&#039;ve considered**<br />
-None.<br />
-<br />
-**Additional context**<br />
-I&#039;ve encountered this, for example, with the Spotify bridge. If one has many artists to be fetched, they will start to be constantly rate limited.                </div>
 
                 
                             </section>
@@ -2732,6 +2732,44 @@ Currently in my rss-bridge instance `cache/server`&#039;s size is 704 Mb, while 
                 <h2>
                     <a
                         class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/669"
+                    >Facebook | Only two status</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2018-04-17 16:01:33">
+                                2018-04-17 16:01:33                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: odessadraekavik                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    <p><strong>Labels:</strong> Bridge-Feature-Request</p>Hello there,<br />
+<br />
+I am trying to display a Facebook page&#039;s public posts as an RSS feed but the script just retrieves<br />
+- Only the two last posts<br />
+- Page Reviews (You know... stars rating + comment)<br />
+<br />
+Page I am trying to display : **EcolePolytechnique**<br />
+Parameters used : _?action=display&amp;bridge=Facebook&amp;u=EcolePolytechnique&amp;media_type=all&amp;format=Mrss_<br />
+<br />
+What I get : ![https://i.imgur.com/1Er4v72.png](https://i.imgur.com/1Er4v72.png)<br />
+<br />
+What I should get : The blue part (as shown in the image) only, with all the page&#039;s posts.<br />
+I think the reviews are unnecessary and should be removed.<br />
+<br />
+Best regards.                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
                         href="https://github.com/RSS-Bridge/rss-bridge/issues/892"
                     >Twitter Feeds Not Updating</a>
                 </h2>
@@ -2772,44 +2810,6 @@ I don&#039;t know what else to do. You know, any time I ever needed to figure so
 It makes no sense, the feeds should be updating every 5 minutes (unless I&#039;m mistaken). I am self-hosted on Hostgator, so I believe I fulfill all the requirements to run RSS Bridge properly. The RSS Feed seems to update once after a few minutes, but then it stops. Is there a limitation somewhere that allows only 1 update and I need to change something somewhere in order to allow them to be updated continuously/again?<br />
 <br />
 Thanks                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/669"
-                    >Facebook | Only two status</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2018-04-17 16:01:33">
-                                2018-04-17 16:01:33                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: odessadraekavik                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    <p><strong>Labels:</strong> Bridge-Feature-Request</p>Hello there,<br />
-<br />
-I am trying to display a Facebook page&#039;s public posts as an RSS feed but the script just retrieves<br />
-- Only the two last posts<br />
-- Page Reviews (You know... stars rating + comment)<br />
-<br />
-Page I am trying to display : **EcolePolytechnique**<br />
-Parameters used : _?action=display&amp;bridge=Facebook&amp;u=EcolePolytechnique&amp;media_type=all&amp;format=Mrss_<br />
-<br />
-What I get : ![https://i.imgur.com/1Er4v72.png](https://i.imgur.com/1Er4v72.png)<br />
-<br />
-What I should get : The blue part (as shown in the image) only, with all the page&#039;s posts.<br />
-I think the reviews are unnecessary and should be removed.<br />
-<br />
-Best regards.                </div>
 
                 
                             </section>
