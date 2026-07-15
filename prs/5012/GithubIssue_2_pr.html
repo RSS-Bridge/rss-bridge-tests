@@ -86,14 +86,14 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099"
-                    >TODOs / Opened: - [ ] Move all wiki pages except "Public Hosts" to repository. Reasons: 1. There…</a>
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-989377263"
+                    >Closing as seperated to different issues.</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2021-05-03 19:52:07">
-                                2021-05-03 19:52:07                            </time>
+                            <time datetime="2021-12-09 01:19:30">
+                                2021-12-09 01:19:30                            </time>
                         </p>
                     
                                             <p class="author">
@@ -102,40 +102,7 @@
 
                 <div class="item-content">
                     <!-- Intentionally not escaping for html context -->
-                    <p><strong>Labels:</strong> Feature-Request</p>- [ ] Move all wiki pages except &quot;Public Hosts&quot; to repository. Reasons:<br />
-    1. There are PRs (at least https://github.com/RSS-Bridge/rss-bridge/pull/2058 and https://github.com/RSS-Bridge/rss-bridge/pull/2098) that require editing certain wiki pages, when merged. That is not convenient.<br />
-    2. If something awful happens to this repository (banned for example), it is easy to migrate to another<br />
-    Responsible: @em92<br />
-- [ ] Move release preparation scripts to `contrib/prepare_release` directory. As for now, instructions how to prepare release is hidden in one of draft releases<br />
-Responsible: @em92<br />
-<br />
-- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2102) In top of HTML format preview add link to donate bridge maintainer. Discussion about donation: https://github.com/RSS-Bridge/rss-bridge/discussions/2063<br />
-- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2101) Make HTML format as default feed format. Reasons:<br />
-    1. Promote donating bridge maintainers (see above)<br />
-    2. When filling values and press enter, redirection to Atom feed happens. Firefox does not recoginize it, and suggests to download file, Chromium-based browsers show xml as plaintext. Making HTML as default will have better UX.<br />
-<br />
-- [ ] Allow to use environment variables instead of config.ini.php. Reference: https://github.com/RSS-Bridge/rss-bridge/issues/2071#issuecomment-821169173<br />
-- [ ] Add hidden contexts which are not shown in bridge card. Possible usages:<br />
-    - Hiding deprecated context<br />
-    - Use context to generate permalink to media, which original links expire. Useful for resolving https://github.com/RSS-Bridge/rss-bridge/issues/1901 and https://github.com/RSS-Bridge/rss-bridge/issues/1818<br />
-- [ ] Add section in main instance page for using detect action<br />
-<br />
-[Added on May 8, 2021]<br />
-<br />
-- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2147) Implement running test cases to check correctness of detectParameters behavior. Reason:<br />
-Bridges that include &quot;detectParameters&quot; method must also have test samples like &quot;link&quot; -&gt; &quot;bridge parameters&quot;.<br />
-Example PR where I tried to test it: https://github.com/RSS-Bridge/rss-bridge/pull/2108<br />
-As possible solution - make modification to BridgeImplementationTest.php that would execute testing those samples, that are defined in bridge like this<br />
-```php<br />
-<br />
-const TEST_DETECT_PARAMETERS = array(<br />
-  &#039;https://www.youtube.com/playlist?list=PL0lo9MOBetEFEzIm3OP9_5jtkilBobdKB&#039;, array(&#039;p&#039; =&gt; &#039;PL0lo9MOBetEFEzIm3OP9_5jtkilBobdKB&#039;),<br />
-);<br />
-```<br />
-<br />
-[Added on June 26, 2021]<br />
-<br />
-- [ ] Correct error handling of curl related errors. Like this one: https://github.com/RSS-Bridge/rss-bridge/issues/2157                </div>
+                    Closing as seperated to different issues.                </div>
 
                 
                             </section>
@@ -143,120 +110,14 @@ const TEST_DETECT_PARAMETERS = array(<br />
                 <h2>
                     <a
                         class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831529602"
-                    >Love the idea! About the release preparation scripts: You should include a githu…</a>
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-868802989"
+                    >Added task on [Added on June 26, 2021]</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2021-05-03 20:58:09">
-                                2021-05-03 20:58:09                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: Bockiii                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    Love the idea!<br />
-<br />
-About the release preparation scripts: You should include a github action to create a multiarch container that also builds arm versions of rss-bridge. I&#039;ve prepared something in https://github.com/Bockiii/rss-bridge/tree/multiarchversion . With QEMU, it&#039;s really easy to build and manage. You can also configure an action to not trigger on every commit (as it is right now in my example) but on every release. hit me up if you want me to do that. I&#039;m not a fan of the release cycle of rss-bridge tbh, so maybe we should talk about the releases first. There were only 2 releases in 2020. That means you will drive people away from the official releases and into self-maintained repos and instances. Maybe a &quot;testing&quot; branch to do PRs against and then a merge into master after testing and then just use the master branch as the latest version.. idk, but I cannot believe I am the only one who has an issue with 2 releases a year.<br />
-<br />
-I will take a swing at the environment variables task. I will open a &quot;working on it&quot;-PR so people can interact and then, when the feature is done, merge all the changes into one, good commit.                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831816419"
-                    >@em92 For "Make HTML format as default feed format" Would it make sense to get r…</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2021-05-04 09:46:00">
-                                2021-05-04 09:46:00                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: Bockiii                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    @em92 <br />
-<br />
-For &quot;Make HTML format as default feed format&quot;<br />
-<br />
-Would it make sense to get rid of the whole link-row on the front page and instead go for a &quot;Show Feed&quot; button that leads to the html feed? This will also stop the confusion about getting the atom/mrss link for example (on the front page, you cant right-click on the button and say &quot;copy link location&quot;, you can do that on the atom/mrss buttons on the html-view though).<br />
-<br />
-I think it makes the whole navigation a little more intuitive                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831921067"
-                    >As you can see, I switched the bridgelist behavior to only show the HTML view as…</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2021-05-04 12:57:59">
-                                2021-05-04 12:57:59                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: Bockiii                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    As you can see, I switched the bridgelist behavior to only show the HTML view as default (see #2101) and I added Donation URL Support (see #2102). I&#039;ll wait for feedback before I go for another topic.                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831969124"
-                    >@em92 for the wiki topic: are you looking into readthedocs or gitbook? If you mo…</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2021-05-04 14:05:39">
-                                2021-05-04 14:05:39                            </time>
-                        </p>
-                    
-                                            <p class="author">
-                            by: Bockiii                        </p>
-                                    </div>
-
-                <div class="item-content">
-                    <!-- Intentionally not escaping for html context -->
-                    @em92 for the wiki topic: are you looking into readthedocs or gitbook? If you move to a new process, it might be worth looking into that. Both are free for open source projects.                </div>
-
-                
-                            </section>
-                    <section class="feeditem">
-                <h2>
-                    <a
-                        class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-832195076"
-                    >@Bockiii, I planned using markdown files on repository. They are simple and no n…</a>
-                </h2>
-
-                <div class="item-meta">
-                                            <p>
-                            <time datetime="2021-05-04 19:40:27">
-                                2021-05-04 19:40:27                            </time>
+                            <time datetime="2021-06-25 20:00:33">
+                                2021-06-25 20:00:33                            </time>
                         </p>
                     
                                             <p class="author">
@@ -265,17 +126,31 @@ I think it makes the whole navigation a little more intuitive                </d
 
                 <div class="item-content">
                     <!-- Intentionally not escaping for html context -->
-                    &gt; for the wiki topic: are you looking into readthedocs or gitbook? If you move to a new process, it might be worth looking into that. Both are free for open source projects.<br />
-<br />
-@Bockiii, I planned using markdown files on repository. They are simple and no need to host them.<br />
-<br />
-&gt; About the release preparation scripts: You should include a github action to create a multiarch container that also builds arm versions of rss-bridge.<br />
-<br />
-By the word &quot;release&quot; mean [those ones](https://github.com/RSS-Bridge/rss-bridge/releases) also I would call them &quot;release preparation instructions and a emacs script&quot;. Docker images are different things and they are updated on every commit in master. https://hub.docker.com/r/rssbridge/rss-bridge.<br />
-<br />
-&gt; I&#039;m not a fan of the release cycle of rss-bridge tbh, so maybe we should talk about the releases first. There were only 2 releases in 2020.<br />
-<br />
-That is long story for explanation. I will describe it later in discussion.                </div>
+                    Added task on [Added on June 26, 2021]                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-835290540"
+                    >Added task on [Added on May 8, 2021]</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-08 10:53:03">
+                                2021-05-08 10:53:03                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    Added task on [Added on May 8, 2021]                </div>
 
                 
                             </section>
@@ -327,14 +202,14 @@ Okay. If the docker container uses the latest master, the releases are not that 
                 <h2>
                     <a
                         class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-835290540"
-                    >Added task on [Added on May 8, 2021]</a>
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-832195076"
+                    >@Bockiii, I planned using markdown files on repository. They are simple and no n…</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2021-05-08 10:53:03">
-                                2021-05-08 10:53:03                            </time>
+                            <time datetime="2021-05-04 19:40:27">
+                                2021-05-04 19:40:27                            </time>
                         </p>
                     
                                             <p class="author">
@@ -343,7 +218,17 @@ Okay. If the docker container uses the latest master, the releases are not that 
 
                 <div class="item-content">
                     <!-- Intentionally not escaping for html context -->
-                    Added task on [Added on May 8, 2021]                </div>
+                    &gt; for the wiki topic: are you looking into readthedocs or gitbook? If you move to a new process, it might be worth looking into that. Both are free for open source projects.<br />
+<br />
+@Bockiii, I planned using markdown files on repository. They are simple and no need to host them.<br />
+<br />
+&gt; About the release preparation scripts: You should include a github action to create a multiarch container that also builds arm versions of rss-bridge.<br />
+<br />
+By the word &quot;release&quot; mean [those ones](https://github.com/RSS-Bridge/rss-bridge/releases) also I would call them &quot;release preparation instructions and a emacs script&quot;. Docker images are different things and they are updated on every commit in master. https://hub.docker.com/r/rssbridge/rss-bridge.<br />
+<br />
+&gt; I&#039;m not a fan of the release cycle of rss-bridge tbh, so maybe we should talk about the releases first. There were only 2 releases in 2020.<br />
+<br />
+That is long story for explanation. I will describe it later in discussion.                </div>
 
                 
                             </section>
@@ -351,23 +236,23 @@ Okay. If the docker container uses the latest master, the releases are not that 
                 <h2>
                     <a
                         class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-868802989"
-                    >Added task on [Added on June 26, 2021]</a>
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831969124"
+                    >@em92 for the wiki topic: are you looking into readthedocs or gitbook? If you mo…</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2021-06-25 20:00:33">
-                                2021-06-25 20:00:33                            </time>
+                            <time datetime="2021-05-04 14:05:39">
+                                2021-05-04 14:05:39                            </time>
                         </p>
                     
                                             <p class="author">
-                            by: em92                        </p>
+                            by: Bockiii                        </p>
                                     </div>
 
                 <div class="item-content">
                     <!-- Intentionally not escaping for html context -->
-                    Added task on [Added on June 26, 2021]                </div>
+                    @em92 for the wiki topic: are you looking into readthedocs or gitbook? If you move to a new process, it might be worth looking into that. Both are free for open source projects.                </div>
 
                 
                             </section>
@@ -375,14 +260,96 @@ Okay. If the docker container uses the latest master, the releases are not that 
                 <h2>
                     <a
                         class="itemtitle"
-                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-989377263"
-                    >Closing as seperated to different issues.</a>
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831921067"
+                    >As you can see, I switched the bridgelist behavior to only show the HTML view as…</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2021-12-09 01:19:30">
-                                2021-12-09 01:19:30                            </time>
+                            <time datetime="2021-05-04 12:57:59">
+                                2021-05-04 12:57:59                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    As you can see, I switched the bridgelist behavior to only show the HTML view as default (see #2101) and I added Donation URL Support (see #2102). I&#039;ll wait for feedback before I go for another topic.                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831816419"
+                    >@em92 For "Make HTML format as default feed format" Would it make sense to get r…</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-04 09:46:00">
+                                2021-05-04 09:46:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    @em92 <br />
+<br />
+For &quot;Make HTML format as default feed format&quot;<br />
+<br />
+Would it make sense to get rid of the whole link-row on the front page and instead go for a &quot;Show Feed&quot; button that leads to the html feed? This will also stop the confusion about getting the atom/mrss link for example (on the front page, you cant right-click on the button and say &quot;copy link location&quot;, you can do that on the atom/mrss buttons on the html-view though).<br />
+<br />
+I think it makes the whole navigation a little more intuitive                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099#issuecomment-831529602"
+                    >Love the idea! About the release preparation scripts: You should include a githu…</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-03 20:58:09">
+                                2021-05-03 20:58:09                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    Love the idea!<br />
+<br />
+About the release preparation scripts: You should include a github action to create a multiarch container that also builds arm versions of rss-bridge. I&#039;ve prepared something in https://github.com/Bockiii/rss-bridge/tree/multiarchversion . With QEMU, it&#039;s really easy to build and manage. You can also configure an action to not trigger on every commit (as it is right now in my example) but on every release. hit me up if you want me to do that. I&#039;m not a fan of the release cycle of rss-bridge tbh, so maybe we should talk about the releases first. There were only 2 releases in 2020. That means you will drive people away from the official releases and into self-maintained repos and instances. Maybe a &quot;testing&quot; branch to do PRs against and then a merge into master after testing and then just use the master branch as the latest version.. idk, but I cannot believe I am the only one who has an issue with 2 releases a year.<br />
+<br />
+I will take a swing at the environment variables task. I will open a &quot;working on it&quot;-PR so people can interact and then, when the feature is done, merge all the changes into one, good commit.                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/2099"
+                    >TODOs / Opened: - [ ] Move all wiki pages except "Public Hosts" to repository. Reasons: 1. There…</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-03 19:52:07">
+                                2021-05-03 19:52:07                            </time>
                         </p>
                     
                                             <p class="author">
@@ -391,7 +358,40 @@ Okay. If the docker container uses the latest master, the releases are not that 
 
                 <div class="item-content">
                     <!-- Intentionally not escaping for html context -->
-                    Closing as seperated to different issues.                </div>
+                    <p><strong>Labels:</strong> Feature-Request</p>- [ ] Move all wiki pages except &quot;Public Hosts&quot; to repository. Reasons:<br />
+    1. There are PRs (at least https://github.com/RSS-Bridge/rss-bridge/pull/2058 and https://github.com/RSS-Bridge/rss-bridge/pull/2098) that require editing certain wiki pages, when merged. That is not convenient.<br />
+    2. If something awful happens to this repository (banned for example), it is easy to migrate to another<br />
+    Responsible: @em92<br />
+- [ ] Move release preparation scripts to `contrib/prepare_release` directory. As for now, instructions how to prepare release is hidden in one of draft releases<br />
+Responsible: @em92<br />
+<br />
+- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2102) In top of HTML format preview add link to donate bridge maintainer. Discussion about donation: https://github.com/RSS-Bridge/rss-bridge/discussions/2063<br />
+- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2101) Make HTML format as default feed format. Reasons:<br />
+    1. Promote donating bridge maintainers (see above)<br />
+    2. When filling values and press enter, redirection to Atom feed happens. Firefox does not recoginize it, and suggests to download file, Chromium-based browsers show xml as plaintext. Making HTML as default will have better UX.<br />
+<br />
+- [ ] Allow to use environment variables instead of config.ini.php. Reference: https://github.com/RSS-Bridge/rss-bridge/issues/2071#issuecomment-821169173<br />
+- [ ] Add hidden contexts which are not shown in bridge card. Possible usages:<br />
+    - Hiding deprecated context<br />
+    - Use context to generate permalink to media, which original links expire. Useful for resolving https://github.com/RSS-Bridge/rss-bridge/issues/1901 and https://github.com/RSS-Bridge/rss-bridge/issues/1818<br />
+- [ ] Add section in main instance page for using detect action<br />
+<br />
+[Added on May 8, 2021]<br />
+<br />
+- [x] (Done https://github.com/RSS-Bridge/rss-bridge/pull/2147) Implement running test cases to check correctness of detectParameters behavior. Reason:<br />
+Bridges that include &quot;detectParameters&quot; method must also have test samples like &quot;link&quot; -&gt; &quot;bridge parameters&quot;.<br />
+Example PR where I tried to test it: https://github.com/RSS-Bridge/rss-bridge/pull/2108<br />
+As possible solution - make modification to BridgeImplementationTest.php that would execute testing those samples, that are defined in bridge like this<br />
+```php<br />
+<br />
+const TEST_DETECT_PARAMETERS = array(<br />
+  &#039;https://www.youtube.com/playlist?list=PL0lo9MOBetEFEzIm3OP9_5jtkilBobdKB&#039;, array(&#039;p&#039; =&gt; &#039;PL0lo9MOBetEFEzIm3OP9_5jtkilBobdKB&#039;),<br />
+);<br />
+```<br />
+<br />
+[Added on June 26, 2021]<br />
+<br />
+- [ ] Correct error handling of curl related errors. Like this one: https://github.com/RSS-Bridge/rss-bridge/issues/2157                </div>
 
                 
                             </section>
