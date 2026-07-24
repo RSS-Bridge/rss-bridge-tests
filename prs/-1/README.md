@@ -1,6 +1,6 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| Pawchive | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5008/Pawchive_1_pr.html) | ❌ `Bridge returned error 0! (20658)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: session` |
+| Boosty | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5003/Boosty_1_pr.html) | ⚠️ `The feed has no items` |
 
-*last change: Friday 2026-07-24 19:12:58*
+*last change: Friday 2026-07-24 19:15:51*
