@@ -1,6 +1,7 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| Boosty | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5003/Boosty_1_pr.html) | ⚠️ `The feed has no items` |
+| Vk2 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_current.html) | ❌ `Bridge returned error 0! (20660)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
+| Vk2 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_pr.html) | ❌ `Bridge returned error 0! (20660)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
 
-*last change: Friday 2026-07-24 19:15:51*
+*last change: Sunday 2026-07-26 08:49:01*
