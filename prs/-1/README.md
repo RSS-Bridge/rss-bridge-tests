@@ -1,7 +1,6 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| DobinDom | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5051/DobinDom_1_current.html) | ❌ `Bridge returned error 400! (20660)`<br>❌ `Type: HttpException`<br>❌ `Message: https://dobindom.ru/dobindom/backend/api/auth/login/ resulted in 400 Bad Request` |
-| DobinDom | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5051/DobinDom_1_pr.html) | ❌ `Bridge returned error 400! (20660)`<br>❌ `Type: HttpException`<br>❌ `Message: https://dobindom.ru/dobindom/backend/api/auth/login/ resulted in 400 Bad Request` |
+| Pawchive | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5008/Pawchive_1_pr.html) | ❌ `Bridge returned error 0! (20662)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: session` |
 
-*last change: Sunday 2026-07-26 15:51:49*
+*last change: Tuesday 2026-07-28 10:40:47*
