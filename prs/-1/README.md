@@ -1,6 +1,7 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| Pawchive | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5008/Pawchive_1_pr.html) | ❌ `Bridge returned error 0! (20662)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: session` |
+| Vk2 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_current.html) | ❌ `Bridge returned error 0! (20664)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
+| Vk2 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_pr.html) | ❌ `Bridge returned error 0! (20664)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
 
-*last change: Tuesday 2026-07-28 10:40:47*
+*last change: Thursday 2026-07-30 20:15:07*
