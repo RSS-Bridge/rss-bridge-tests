@@ -1,7 +1,6 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| Vk2 | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_current.html) | ❌ `Bridge returned error 0! (20664)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
-| Vk2 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5007/Vk2_1_pr.html) | ❌ `Bridge returned error 0! (20664)`<br>❌ `Type: Exception`<br>❌ `Message: Missing configuration option: access_token` |
+| Telegram2 | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5053/Telegram2_1_pr.html) | ✔️ |
 
-*last change: Thursday 2026-07-30 20:15:07*
+*last change: Saturday 2026-08-01 04:36:01*
