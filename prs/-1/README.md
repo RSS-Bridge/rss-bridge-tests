@@ -1,6 +1,9 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| AnnasArchive | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5066/AnnasArchive_1_current.html) | ❌ `Bridge returned error 0! (20677)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Could not resolve host: annas-archive.org: 6 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://annas-archive.org/search?sort=newest&q=apothecary+diaries` |
+| Facebook | [1 User (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_1_current.html) | ❌ `Bridge returned error 0! (20678)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find anything useful in https://www.facebook.com/None/posts?_fb_noscript=1` |
+| Facebook | [1 User (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_1_pr.html) | ❌ `Bridge returned error 500! (20678)`<br>❌ `Type: Exception`<br>❌ `Message: This page is not publicly available. RSS-Bridge only supports public pages: https://www.facebook.com/None/` |
+| Facebook | [2 Group (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_2_current.html) | ❌ `Bridge returned error 500! (20678)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find group title!` |
+| Facebook | [2 Group (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_2_pr.html) | ❌ `Bridge returned error 500! (20678)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find group title!` |
 
-*last change: Wednesday 2026-08-12 20:33:01*
+*last change: Thursday 2026-08-13 17:28:57*
