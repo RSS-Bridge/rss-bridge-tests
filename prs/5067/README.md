@@ -2,8 +2,8 @@
 | Bridge | Context | Status |
 | - | - | - |
 | Facebook | [1 User (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_1_current.html) | ❌ `Bridge returned error 0! (20680)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find anything useful in https://www.facebook.com/None/posts?_fb_noscript=1` |
-| Facebook | [1 User (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_1_pr.html) | ❌ `Bridge returned error 500! (20680)`<br>❌ `Type: Exception`<br>❌ `Message: This page is not publicly available. RSS-Bridge only supports public pages: https://www.facebook.com/None/` |
+| Facebook | [1 User (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_1_pr.html) | ✔️ |
 | Facebook | [2 Group (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_2_current.html) | ❌ `Bridge returned error 500! (20680)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find group title!` |
 | Facebook | [2 Group (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5067/Facebook_2_pr.html) | ❌ `Bridge returned error 500! (20680)`<br>❌ `Type: Exception`<br>❌ `Message: Unable to find group title!` |
 
-*last change: Saturday 2026-08-15 21:30:43*
+*last change: Saturday 2026-08-15 21:35:19*
