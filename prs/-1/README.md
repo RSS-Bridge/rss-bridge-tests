@@ -1,7 +1,11 @@
 ## Pull request artifacts
 | Bridge | Context | Status |
 | - | - | - |
-| AnnasArchive | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5066/AnnasArchive_1_current.html) | ❌ `Bridge returned error 0! (20678)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Could not resolve host: annas-archive.org: 6 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://annas-archive.org/search?sort=newest&q=apothecary+diaries` |
-| AnnasArchive | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5066/AnnasArchive_1_pr.html) | ⚠️ `The feed has no items` |
+| Reddit | [1 single (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_1_current.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
+| Reddit | [1 single (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_1_pr.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
+| Reddit | [2 multi (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_2_current.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
+| Reddit | [2 multi (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_2_pr.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
+| Reddit | [3 user (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_3_current.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
+| Reddit | [3 user (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5039/Reddit_3_pr.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: RateLimitException`<br>❌ `Message:` |
 
-*last change: Thursday 2026-08-13 19:36:25*
+*last change: Saturday 2026-08-15 19:23:00*
