@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Project issues: github.com/RSS-Bridge/rss-bridge</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://github.com/RSS-Bridge/rss-bridge/issues" target="_blank">Project issues: github.com/RSS-Bridge/rss-bridge</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-GithubIssueBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubIssueBridge&amp;context=Project+Issues&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5110"
+                    >InstagramBridge gives a blank feed for this specific user.</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-10-05 04:10:05">
+                                2026-10-05 04:10:05                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: WinnerWind                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+When trying to make an instagram feed for the user `shencomix` (Public) then a blank feed is given. I tested this on a private instance and also the public instance.
+
+Instagram feeds for other users like `adamtots` (Public) work fine.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Make a feed for `shencomix` on the InstagramBridge
+2. After a short wait, feed is blank.
+
+**Expected behavior**
+A feed to come.
+
+**Screenshots**
+N/A
+
+**Desktop (please complete the following information):**
+ - OS: Arch Linux x86_64
+ - Browser Librewolf
+ - Version Git
+
+**Smartphone (please complete the following information):**
+I don't have a smartphone
+
+**Additional context**
+Add any other context about the problem here.
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5106"
+                    >adamtots - Picuki failed with: https://www.picuki.com/profile/adamtots resulted in 403 Forbidden</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-10-03 06:42:36">
+                                2026-10-03 06:42:36                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: WinnerWind                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+CloudFlareException: https://www.picuki.com/profile/adamtots resulted in 403 Forbidden in lib/http.php line 32
+
+index.php(73): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(89): PicukiBridge->collectData()
+bridges/PicukiBridge.php(52): getSimpleHTMLDOM()
+lib/contents.php(180): getContents()
+lib/contents.php(135): HttpException::fromResponse()
+lib/http.php(32)
+
+Query string: action=display&bridge=PicukiBridge&context=Username&u=adamtots&count=12&format=Html
+Version: 2025-08-05
+Os: Linux
+PHP version: 8.2.33
+```
+Maintainer: @marcus-at-localhost                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5101"
+                    >Username botb_musikplattform - Posts, Stories & Tags - Imgsed failed with: Unable to find user `botb_musikplattform`</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-30 10:54:51">
+                                2026-09-30 10:54:51                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: flxholle                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+ClientException: Unable to find user `botb_musikplattform` in lib/utils.php line 256
+
+index.php(73): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(89): ImgsedBridge->collectData()
+bridges/ImgsedBridge.php(62): throwClientException()
+lib/utils.php(256)
+
+Query string: action=display&post=on&story=on&tagged=on&context=Username&u=botb_musikplattform&bridge=ImgsedBridge&format=Html
+Version: 2025-08-05
+Os: Linux
+PHP version: 8.2.33
+```
+Maintainer: @sysadminstory                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5099"
+                    >GoodReads bridge not filtering unpublished works as advertised</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-24 06:32:59">
+                                2026-09-24 06:32:59                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: LivInTheLookingGlass                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+
+The GoodReads bridge does not effectively filter out unpublished works
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to the GoodReads bridge
+2. Enter the URL for Patricia Briggs (https://www.goodreads.com/author/show/40563.Patricia_Briggs)
+3. Mark "show published works only"
+4. Generate the feed
+5. See (at time of writing) two unpublished works at the top of the feed
+
+**Expected behavior**
+The bridge should filter out works that are not yet published. In this case, this is obvious because
+1. GoodReads reports on their site that it is not yet published
+2. As a fallback, both have expected publish dates in the future
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+<img width="1080" height="2520" alt="Image" src="https://github.com/user-attachments/assets/7b198995-330f-40e0-aced-dd43963aae4d" />
+<img width="1080" height="2520" alt="Image" src="https://github.com/user-attachments/assets/7c63e5e1-0110-4417-9daa-5f5dbd53ab7e" />
+<img width="1080" height="2520" alt="Image" src="https://github.com/user-attachments/assets/8aaa1d10-ab39-40a5-8a1f-79f80def7e07" />
+
+**Smartphone**
+ - Device: Sony XQ-DC72
+ - OS: Android 15
+ - Browser: Firefox
+ - Version: 156                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5098"
+                    >BooruprojectBridge: SSRF via unvalidated 'i' parameter, bypasses intended booru.org-only host restriction</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-20 15:35:12">
+                                2026-09-20 15:35:12                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: router0mail                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ## Summary
+`BooruprojectBridge` is designed to fetch content only from `*.booru.org` subdomains -- the UI explicitly labels its `i` parameter as "Booru subdomain (subdomain.booru.org)". However, the bridge builds the fetch URL by naive string concatenation of the raw, unvalidated `i` input into the host position, and RSS-Bridge's parameter validator applies **no format restriction** to this field (no `type`, no `pattern`). An attacker can supply a value containing a `/` character to break out of the intended subdomain position and redirect the bridge's server-side HTTP fetch to an arbitrary host of their choosing -- completely bypassing the bridge author's intended `booru.org`-only restriction.
+
+This is not the generic "RSS-Bridge fetches arbitrary sites by design" risk (that applies to bridges that intentionally accept a full URL, e.g. `XPathBridge`, `MoinMoinBridge`); `BooruprojectBridge` explicitly does **not** intend to accept an arbitrary host, only a subdomain label, and that restriction is what's broken.
+
+## Affected Component
+`bridges/BooruprojectBridge.php` (extends `bridges/DanbooruBridge.php`), current `main` branch.
+
+## Root Cause
+```php
+// bridges/BooruprojectBridge.php
+const PARAMETERS = [
+    'global' => [
+        'p' => [ 'name' => 'page', 'defaultValue' => 0, 'type' => 'number' ],
+        't' => [ 'name' => 'tags', 'required' => true, 'exampleValue' => 'tagme', ... ]
+    ],
+    'Booru subdomain (subdomain.booru.org)' => [
+        'i' => [
+            'name' => 'Subdomain',
+            'required' => true,
+            'exampleValue'  => 'rm'
+            // no 'type' -> defaults to 'text'
+            // no 'pattern' -> no format restriction at all
+        ]
+    ]
+];
+...
+protected function getURI()
+{
+    if (!is_null($this->getInput('i'))) {
+        return 'https://' . $this->getInput('i') . '.booru.org/';   // line 63
+    }
+    ...
+}
+```
+
+```php
+// bridges/DanbooruBridge.php
+protected function getFullURI()
+{
+    return $this->getURI()
+    . 'posts?&page=' . $this->getInput('p')
+    . '&tags=' . urlencode($this->getInput('t'));
+}
+public function collectData()
+{
+    $html = getSimpleHTMLDOMCached($this->getFullURI());   // fetches the URL server-side
+    ...
+}
+```
+
+`lib/ParameterValidator.php`'s `validateTextValue()` falls back to bare `filter_var($value)` (no filter constant = no-op passthrough) when no `pattern` is set for a `text`-type parameter -- confirmed via standalone PHP: `filter_var("169.254.169.254/latest/meta-data/")` returns the string unmodified.
+
+Because `i` is concatenated directly before the fixed `.booru.org/` suffix, a `/` in the attacker's input terminates the intended hostname early. Everything after that `/` (including the literal `.booru.org/` suffix and the rest of the query string) becomes part of the **path** on the attacker-chosen host instead of the hostname.
+
+## Proof of Concept (isolated-algorithm-verified)
+```php
+<?php
+$value = "169.254.169.254/latest/meta-data/";
+var_dump(filter_var($value));
+// string(35) "169.254.169.254/latest/meta-data/"   <- passed through unmodified
+
+$uri = 'https://' . $value . '.booru.org/';
+echo $uri . "\n";
+// https://169.254.169.254/latest/meta-data/.booru.org/
+
+$full = $uri . 'index.php?page=post&s=list&pid=0&tags=tagme';
+echo $full . "\n";
+// https://169.254.169.254/latest/meta-data/.booru.org/index.php?page=post&s=list&pid=0&tags=tagme
+```
+
+Resulting live request against an RSS-Bridge instance:
+```
+GET /?action=display&format=Atom&bridge=Booruproject&t=tagme&i=169.254.169.254%2Flatest%2Fmeta-data%2F
+```
+causes the server to issue a GET request to `https://169.254.169.254/latest/meta-data/.booru.org/index.php?...` -- i.e. to the AWS instance-metadata IP, or any other internal/attacker host of the requester's choosing, not to any `*.booru.org` host as the bridge's own parameter label promises.
+
+## Areas checked, confirmed clean (same shape, correctly guarded)
+- `bridges/NewgroundsBridge.php` -- same host-concatenation shape, but `collectData()` runs `preg_match('/^\w+$/', $username)` before use, rejecting `/`. Not exploitable.
+- `GroupBundNaturschutzBridge.php`, `OnVaSortirBridge.php`, `NewOnNetflixBridge.php`, `WebfailBridge.php` -- same shape, but all use `type: list` parameters restricted server-side to a hardcoded `values` array. Not exploitable.
+
+## Possible sibling instance, not separately verified here
+`bridges/CraigslistBridge.php` -- `region` is free-text feeding `'https://' . region . '.craigslist.org/search/'`, structurally identical. Worth checking with the same fix.
+
+## Impact
+An RSS-Bridge operator who whitelists `BooruprojectBridge` -- believing (per the bridge's own UI label) that it can only reach `*.booru.org` -- can be made to issue arbitrary outbound HTTP requests to cloud metadata endpoints (credential theft on AWS/GCP/Azure-hosted instances), internal/private network services, or arbitrary external hosts as a proxy/redirector. Since RSS-Bridge caches and returns fetched content as a feed, response content may also be partially reflected back to the requester.
+
+## Suggested Fix
+Add a `pattern` (e.g. `'pattern' => '[\w-]+'`) to the `i` parameter in `BooruprojectBridge::PARAMETERS`, mirroring the `\w+` validation already used in `NewgroundsBridge`. More generally, any bridge parameter concatenated into a URL's authority/host component before validation should be restricted to `^[\w-]+$` at the parameter-definition level, since `type: text` performs no sanitization by default. Worth auditing all `PARAMETERS` entries used in host-position string concatenation (see `CraigslistBridge.php` noted above).
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5095"
+                    >403 on ArsTechnica bridge</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-17 21:56:45">
+                                2026-09-17 21:56:45                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Zlewness                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+Details
+Type: HttpException
+Code: 403
+Message: https://arstechnica.com/ai/2026/09/apple-reportedly-building-server-packed-with-m-series-ultra-chips-for-ai/ resulted in 403 Forbidden
+File: lib/http.php
+Line: 34
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to 'https://rss-bridge.org/bridge01/?action=display&bridge=ArsTechnicaBridge&section=index&format=Html'
+2. See error
+
+**Additional context**
+If you change the scraper to impersonate a browser better, with browser headers like a `User-Agent`, and `Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1` 
+then ArsTechnica allows readers to scrape it without 403.
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5094"
+                    >Username ur._.sanyaaa - Posts, Stories & Tags - Imgsed Bridge failed with: Unable to find user `ur._.sanyaaa`</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-15 03:45:47">
+                                2026-09-15 03:45:47                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Kamoksh                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+Exception: Unable to find user `ur._.sanyaaa` in bridges/ImgsedBridge.php line 62
+
+index.php(68): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(90): ImgsedBridge->collectData()
+bridges/ImgsedBridge.php(62)
+
+Query string: action=display&bridge=ImgsedBridge&context=Username&u=ur._.sanyaaa&post=on&story=on&tagged=on&format=Html
+Version: 2025-01-26 (git.master.b52f015)
+Os: Linux
+PHP version: 7.4.33
+```
+Maintainer: @sysadminstory                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5093"
+                    >Reddit r/selfhosted failed with: Syntax error</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-13 12:54:53">
+                                2026-09-13 12:54:53                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: brimwats                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+JsonException: Syntax error in lib/utils.php line 20
+
+index.php(73): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(89): RedditBridge->collectData()
+bridges/RedditBridge.php(128): RedditBridge->collectDataInternal()
+bridges/RedditBridge.php(180): Json::decode()
+lib/utils.php(20): json_decode()
+lib/utils.php(20)
+
+Query string: action=display&bridge=RedditBridge&context=single&r=selfhosted&f=&score=100&min_comments=-1&d=hot&t=week&search=&frontend=https%3A%2F%2Fold.reddit.com&format=Html
+Version: 2025-08-05
+Os: Linux
+PHP version: 8.3.33
+```
+Maintainer: @dawidsowa                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5092"
+                    >Bridge request for clipx.org</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-13 08:05:21">
+                                2026-09-13 08:05:21                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Yolakalemowa                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    # Bridge request
+
+<!--
+This is a bridge request. Start by adding a descriptive title (i.e. `Bridge request for GitHub`). Use the "Preview" button to see a preview of your request. Make sure your request is complete before submitting!
+
+Notice: This comment is only visible to you while you work on your request. Please do not remove any of the lines in the template (you may add your own outside the "<!--" and "- ->" lines!)
+-->
+
+## General information
+
+<!--
+Please describe what you expect from the bridge. Whenever possible provide sample links and screenshots (you can just paste them here) to express your expectations and help others understand your request. If possible, mark relevant areas in your screenshot. Use the following questions for reference:
+-->
+
+- _Host URI for the bridge_: https://clipx.org/
+
+- Which information would you like to see?
+I'm most interested in the [Changelog](https://clipx.org/changelog.php) section. I'd like to see whenever a new version is released and then to be able to read the changelog points.
+
+
+- How should the information be displayed/formatted?
+The title should be the version number (red square in screenshot below). Then the actual content when one clicks on the feed to read more (green square in same screenshot below)
+
+<img width="738" height="495" alt="Image" src="https://github.com/user-attachments/assets/5f7cd1ff-2ac4-43ed-abd3-71486bff0bcb" />
+
+
+- Which of the following parameters do you expect?
+
+  - [X] Title
+  - [X] URI (link to the original article)
+  - [ ] Author
+  - [ ] Timestamp
+  - [X] Content (the content of the article)
+  - [ ] Enclosures (pictures, videos, etc...)
+  - [ ] Categories (categories, tags, etc...)
+
+## Options
+
+<!--Select options from the list below. Add your own option if one is missing:-->
+
+- [ ] Limit number of returned items
+  - _Default limit_: 5
+- [ ] Load full articles
+  - _Cache articles_ (articles are stored in a local cache on first request): yes
+  - _Cache timeout_ : 24 hours
+- [X] Balance requests (RSS-Bridge uses cached versions to reduce bandwith usage)
+  - _Timeout_ (default = 5 minutes): 5 minutes
+
+<!--Be aware that some options might not be available for your specific request due to technical limitations!-->
+
+<!--
+## Additional notes
+
+Keep in mind that opening a request does not guarantee the bridge being implemented! That depends entirely on the interest and time of others to make the bridge for you.
+
+You can also implement your own bridge (with support of the community if needed). Find more information in the [RSS-Bridge Documentation](https://rss-bridge.github.io/rss-bridge/For_Developers/index.html) developer section.
+-->
+
+Thank you so much <3                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5091"
+                    >Username miss_divya_singh014 - Posts, Stories & Tags - Imgsed Bridge failed with: Unable to find user `miss_divya_singh014`</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-13 02:59:42">
+                                2026-09-13 02:59:42                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Kamoksh                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+Exception: Unable to find user `miss_divya_singh014` in bridges/ImgsedBridge.php line 62
+
+index.php(68): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(90): ImgsedBridge->collectData()
+bridges/ImgsedBridge.php(62)
+
+Query string: action=display&post=on&story=on&tagged=on&context=Username&u=miss_divya_singh014&bridge=ImgsedBridge&format=Html
+Version: 2025-01-26 (git.master.b52f015)
+Os: Linux
+PHP version: 7.4.33
+```
+Maintainer: @sysadminstory                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5089"
+                    >Reddit "Sort By" & "Time" - Same Description</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-09 09:45:03">
+                                2026-09-09 09:45:03                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: ClwnMan76                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+When filling out the form for reddit if you mouse over the blue information icon the "Sort By" has the correct info, but it has been duplicated under the "Time" option.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Scroll Down to 'Reddit'
+2. Click on 'Show More'
+3. Scroll down to 'Time' under the first section 'single'
+4. Mouse over the "i" on the right.
+
+**Expected behavior**
+An explanation of what time frame was referring to. If it was pulling only the "new" or "hot" items from the last week, month, year, etc.
+
+**Screenshots**
+
+<img width="636" height="98" alt="Image" src="https://github.com/user-attachments/assets/438f762f-a72c-4930-9b20-acc6035df75f" />
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5086"
+                    >Konachan failed with error 403</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-06 17:39:07">
+                                2026-09-06 17:39:07                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: euphfo                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    Error message: 403 Forbidden
+Type: CloudFlareException
+Query: action=display&bridge=KonachanBridge&p=1&t=oumae_kumiko&format=Html 
+Version: Version: 2025-08-05                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5085"
+                    >Danbooru failed with error 403</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-09-06 17:36:33">
+                                2026-09-06 17:36:33                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: euphfo                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    Error message: 403 Forbidden
+Type: CloudFlareException
+Query: action=display&bridge=DanbooruBridge&p=1&t=oumae_kumiko&format=Html
+Version: Version: 2025-08-05                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5077"
+                    >[InstagramBridge] HTML escape codes in Instagram Bridge.</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-08-20 04:43:10">
+                                2026-08-20 04:43:10                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: jacksaturn                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    There are HTML escape codes appearing in the content_html field of RSS feeds created with the Instagram Bridge.
+
+So far I've seen numerous examples of
+`'` being replaced by `&#039;`
+and
+`’` being replaced by '&rsquo;'
+
+In some cases, a word like "y'all" is replaced by `y&<a href="https://www.instagram.com/explore/tags/039">#039</a>;all` because the hashtag in the escape code is being detected as an Instagram tag.
+
+I'm assuming that these HTML escape codes are in place to prevent the apostrophes from breaking the JSON layout, but I'm wondering if there might be an elegant way to achieve the same goal. Would `\'` work, for example?
+
+I'm self-hosting the newest version of RSS-Bridge in a Docker container. So far I haven't hit any restrictions due to rate limiting. Thanks for this excellent bridge!                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5069"
+                    >Generic Bridge returns  404 "Bridge Not found" in latest docker</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-08-14 09:10:55">
+                                2026-08-14 09:10:55                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: ghost                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Title:** [Bug] GenericBridge returns 404 "Bridge not found" in latest Docker image despite explicit WHITELIST env vars
+
+**Describe the bug**
+When running the latest `rssbridge/rss-bridge:latest` Docker image, the `GenericBridge` consistently returns a 404 error ("Bridge not found"), even when explicitly enabled via the `WHITELIST` environment variable or a mounted `config.ini.php` file. 
+
+Rolling back to the `rssbridge/rss-bridge:2023-03-24` image resolves the issue, suggesting a regression or undocumented breaking change in the latest Docker build regarding bridge initialization or whitelist parsing.
+
+**To Reproduce**
+1. Run the latest Docker image with explicit whitelist:
+   ```bash
+   docker run -d --name rss-bridge -p 8080:80 \
+     -e 'HTTP_USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+     -e 'WHITELIST=GenericBridge,RedditBridge,YouTubeBridge' \
+     rssbridge/rss-bridge:latest
+
+Request the GenericBridge via curl:
+   curl -s "http://127.0.0.1:8080/?action=display&bridge=GenericBridge&url=https%3A%2F%2Fexample.com&format=Atom&item=body&title=h1&content=p"
+
+Expected behavior
+The endpoint should return a valid Atom XML feed.
+Actual behavior
+The endpoint returns an HTML page with a 404 status code. The Docker logs show:
+- - [Date] "GET /index.php" 404
+172.17.0.1 - - [Date] "GET /?action=display&bridge=GenericBridge&url=... HTTP/1.1" 404 678 "-" "curl/..."
+12
+Environment
+RSS-Bridge version: latest (and tested failing), 2023-03-24 (working)
+Deployment method: Docker (rssbridge/rss-bridge)
+OS: Linux (Parrot OS / Debian-based)
+Additional context
+We also attempted to bypass the env var by mounting a config.ini.php with [whitelist] bridges = "*", but the latest image still returned 404 for the GenericBridge. The issue seems specific to how the latest Docker entrypoint or PHP initialization handles the GenericBridge whitelist.                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5023"
+                    >"Generate Feed" for Instructables.com throws an exception</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-07-01 17:38:24">
+                                2026-07-01 17:38:24                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: valerialevenets                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+"Generate feed" button doesn't generate feed for instructables.com. Instead it throws an exception.
+This bug appears on https://rss-bridge.org/bridge01/ itself. 
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Scroll down untill you reach instructables generator.
+2. Select literally any category
+3. Select literally any filter
+4. Press "Generate Feed" button
+5. See error
+**Expected behavior**
+Generated feed is an expected behavior.
+
+**Additional context**
+
+<img width="1431" height="1000" alt="Image" src="https://github.com/user-attachments/assets/d4d11231-45ab-43a0-8f55-9f86d7fbec56" />
+
+**Text you can see on screenshot**
+
+Details
+Type: HttpException
+Code: 400
+Message: https://www.instructables.com/api_proxy/search/collections/projects/documents/search?q=%2A&query_by=title%2CstepBody%2CscreenName&page=1&sort_by=publishDate%3Adesc&include_fields=title%2CurlString%2CcoverImageUrl%2CscreenName%2Cfavorites%2Cviews%2CprimaryClassification%2CfeatureFlag%2CprizeLevel%2CIMadeItCount&filter_by=featureFlag%3A%3Dtrue+%26%26+category%3A%3DCircuits&per_page=50 resulted in 400 Bad Request
+File: lib/http.php
+Line: 34
+------
+Trace
+#0 index.php(73): RssBridge->main()
+#1 lib/RssBridge.php(39): RssBridge->{closure}()
+#2 lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+#3 middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+#4 lib/RssBridge.php(37): CacheMiddleware->__invoke()
+#5 middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+#6 lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+#7 middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+#8 lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+#9 middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+#10 lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+#11 middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+#12 lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+#13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+#14 lib/RssBridge.php(34): DisplayAction->__invoke()
+#15 actions/DisplayAction.php(54): DisplayAction->createResponse()
+#16 actions/DisplayAction.php(90): InstructablesBridge->collectData()
+#17 bridges/InstructablesBridge.php(263): getContents()
+#18 lib/contents.php(131): HttpException::fromResponse()
+#19 lib/http.php(34)
+-----
+Context
+Query: action=display&bridge=InstructablesBridge&context=Category&category=/circuits/&filter= &format=Html
+Version: 2025-08-05 (git.master.e19e96c)
+OS: Linux
+PHP: 7.4.33                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/5009"
+                    >[BlueskyBridge] Image carousel is unsupported</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-06-22 22:26:48">
+                                2026-06-22 22:26:48                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: linoth                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Is your feature request related to a problem? Please describe.**
+On 6/8, Bluesky rolled out the ability for users to attach up to 10 images to a single post.  Because any number of images greater than 4 uses this new carousel format, rss-bridge does not seem to recognize or attach these to feed entries, or show any indication that images are present on the original site.
+
+**Describe the solution you'd like**
+Attaching the images would be ideal, but even some sort of indicator that images are present on the post but not displayed would help.
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4993"
+                    >The Google Search bridge and the DuckDuckGo bridge are not returning any results</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-26 18:00:17">
+                                2026-05-26 18:00:17                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Pepepy                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    The Google Search bridge and the DuckDuckGo bridge are not returning any results. They don't give an error message, they just remain blank.
+
+
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4985"
+                    >TelegramBridge includes Telegram web fallback text in post content</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-13 20:53:50">
+                                2026-05-13 20:53:50                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: 78kfb                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    TelegramBridge currently includes Telegram's web fallback block in item content for many public channel posts:
+
+"Please open Telegram to view this post"
+"VIEW IN TELEGRAM"
+
+Example public channel:
+https://t.me/s/skidka_13
+
+This text appears in the generated RSS/MRSS item content and is visible in RSS readers, even though it is only Telegram's web preview fallback UI, not the actual post content.
+
+It looks like this comes from `div.message_media_not_supported_wrap` / `message_media_not_supported_label`, and TelegramBridge intentionally appends it in `processContent()` / `processNotSupported()`.
+
+Expected behavior:
+TelegramBridge should probably omit this fallback UI text from feed content, or expose an option to hide unsupported-media fallback blocks.
+
+Actual behavior:
+Many Telegram feed items contain the extra text before or around the real post content:
+
+Please open Telegram to view this post
+VIEW IN TELEGRAM
+
+This makes feeds noisy, especially for Telegram channels where Telegram frequently emits this fallback block on `t.me/s/...` pages.
+
+<img width="589" height="105" alt="Image" src="https://github.com/user-attachments/assets/d1bfccc1-6cdd-466e-9072-f4dab7ee71ef" />
+<img width="589" height="1280" alt="Image" src="https://github.com/user-attachments/assets/dcf56e37-5647-4e39-aef9-f4c8e9a755a6" />                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4974"
+                    >eBay Bridge failed with error 403</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-02 04:46:24">
+                                2026-05-02 04:46:24                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Aasemoon                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    For the past few days all my eBay feeds are failing with various errors, the 303 being the most common. Is anyone else seeing the same thing? Any solutions?
+
+
+```
+HttpException: https://www.ebay.com/sch/i.html?_........... resulted in 403 Forbidden in lib/contents.php line 110
+
+index.php(11): RssBridge->main()
+lib/RssBridge.php(110): DisplayAction->execute()
+actions/DisplayAction.php(71): DisplayAction->createResponse()
+actions/DisplayAction.php(106): EBayBridge->collectData()
+bridges/EbayBridge.php(54): getSimpleHTMLDOM()
+lib/contents.php(164): getContents()
+lib/contents.php(110)
+
+Query string: action=display&bridge=EbayBridge&url=https%3A%2F%2Fwww.ebay.com..........................0&format=Atom
+Version: 2023-09-24
+Os: Linux
+PHP version: 8.0.30
+```                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4973"
+                    >[InstagramBridge] Carousel post videos have no audio (video-only DASH stream)</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-05-01 13:38:35">
+                                2026-05-01 13:38:35                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: VBVerduijn                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+
+For Instagram posts of type `GraphSidecar` (carousel posts) that contain
+videos, the URL emitted in the `<video><source>` and `<enclosure>` points
+to a video-only DASH stream. Playback is silent — the served MP4 has no
+audio track. Single videos (Reels) are not affected: their `video_url` is
+a progressive MP4 with audio and video muxed.
+
+**To Reproduce**
+
+Steps to reproduce the behavior:
+1. Generate two Atom feeds against any RSS-Bridge instance — one user who
+   posts mostly Reels, another who posts carousels with videos. Examples:
+   - `?action=display&bridge=InstagramBridge&context=Username&u=jetvdsteen&media_type=all&direct_links=on&format=atom` (Reels)
+   - `?action=display&bridge=InstagramBridge&context=Username&u=froknroll&media_type=all&direct_links=on&format=atom` (carousels with video)
+2. From the carousel feed, take the `<source src="...">` URL of any
+   carousel-video entry and URL-decode it.
+3. Open that URL directly in a browser tab or in VLC. The video plays
+   silently.
+4. Do the same with any Reel URL from the first feed — it plays with
+   audio.
+
+**Expected behavior**
+
+Carousel-post videos should play with audio, like Reels do.
+
+**Screenshots**
+
+N/A — this is an audio bug; nothing visible to screenshot. The relevant
+artefact is the URL itself. Comparison of the two `video_url` values:
+
+- Reel (audio works): `vencode_tag=xpv_progressive.INSTAGRAM.CLIPS.C3.720.dash_baseline_1_v1`,
+  `vi_usecase_id=10099`. The base64-encoded `_nc_vs` parameter references
+  **both** `..._video_dashinit.mp4` and `..._audio_dashinit.mp4`; the
+  served file is muxed.
+- Carousel item (silent): `vencode_tag=xpv_progressive.INSTAGRAM.CAROUSEL_ITEM.C3.720.dash_baseline_1_v1`,
+  `vi_usecase_id=10146`. `_nc_vs` references **only**
+  `..._video_dashinit.mp4`. The audio track lives at a separate URL not
+  surfaced via `video_url`.
+
+**Desktop (please complete the following information):**
+
+N/A — reproduces independent of client. Verified by opening the
+`video_url` directly in Firefox on Windows 11 and in VLC; both play the
+carousel video silently.
+
+**Smartphone (please complete the following information):**
+
+N/A — same as above. This is a server-side bridge output bug, not a
+client rendering issue.
+
+**Additional context**
+
+In `bridges/InstagramBridge.php`, both the carousel and single-video code
+paths read `$singleMedia->video_url` / `$mediaInfo->video_url`. The bridge
+is faithful to what Instagram returns — Instagram simply uses different
+delivery formats per post type: a muxed progressive MP4 for Reels, a
+video-only DASH segment for `GraphSidecar` items.
+
+Related: #1361 enabled video rendering for `GraphSidecar` carousel posts
+in the first place; this bug is downstream of that — videos render now,
+but without audio.
+                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4965"
+                    >Reuters Bridge 401 Unauthorized</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-04-24 12:00:35">
+                                2026-04-24 12:00:35                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: trvny                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    ```
+HttpException: https://www.reuters.com/pf/api/v3/content/fetch/articles-by-section-alias-or-id-v1?query={"section_id":"\/home","size":30,"website":"reuters"} resulted in 401 Unauthorized in lib/http.php line 34
+
+index.php(73): RssBridge->main()
+lib/RssBridge.php(39): RssBridge->{closure}()
+lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+lib/RssBridge.php(37): CacheMiddleware->__invoke()
+middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+lib/RssBridge.php(34): DisplayAction->__invoke()
+actions/DisplayAction.php(54): DisplayAction->createResponse()
+actions/DisplayAction.php(89): ReutersBridge->collectData()
+bridges/ReutersBridge.php(150): getContents()
+lib/contents.php(106): HttpException::fromResponse()
+lib/http.php(34)
+
+Query string: action=display&bridge=ReutersBridge&feed=home%2Ftopnews&format=Html
+Version: 2025-08-05 (git.master.e9f6aef)
+Os: Linux
+PHP version: 8.2.29
+```
+Maintainer: @hollowleviathan, @spraynard, @csisoap                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/issues/4959"
+                    >Google Scholar 403 error</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-04-10 00:29:42">
+                                2026-04-10 00:29:42                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: tyler000000                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    **Describe the bug**
+Getting a 403 error on the Google Scholar bridge using a User ID, even for a PhD student author with <10 publications.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to the Google Scholar bridge
+2. Input any User ID
+
+**Expected behavior**
+403 error
+
+**Screenshots**
+```
+2026-03-17: Non-commercial usage only.
+Excessive usage not allowed.
+Open github ticket to resolve problems.
+403 Forbidden
+
+The HTTP 403 Forbidden response status code indicates that the server understands the request but refuses to authorize it.
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+Details
+Type: HttpException
+Code: 403
+Message: https://scholar.google.com//citations?hl=en&view_op=list_works&sortby=pubdate&user=(redacted for privacy) resulted in 403 Forbidden
+File: lib/http.php
+Line: 34
+Trace
+#0 index.php(73): RssBridge->main()
+#1 lib/RssBridge.php(39): RssBridge->{closure}()
+#2 lib/RssBridge.php(37): BasicAuthMiddleware->__invoke()
+#3 middlewares/BasicAuthMiddleware.php(13): RssBridge->{closure}()
+#4 lib/RssBridge.php(37): CacheMiddleware->__invoke()
+#5 middlewares/CacheMiddleware.php(44): RssBridge->{closure}()
+#6 lib/RssBridge.php(37): ExceptionMiddleware->__invoke()
+#7 middlewares/ExceptionMiddleware.php(17): RssBridge->{closure}()
+#8 lib/RssBridge.php(37): SecurityMiddleware->__invoke()
+#9 middlewares/SecurityMiddleware.php(19): RssBridge->{closure}()
+#10 lib/RssBridge.php(37): MaintenanceMiddleware->__invoke()
+#11 middlewares/MaintenanceMiddleware.php(10): RssBridge->{closure}()
+#12 lib/RssBridge.php(37): TokenAuthenticationMiddleware->__invoke()
+#13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge->{closure}()
+#14 lib/RssBridge.php(34): DisplayAction->__invoke()
+#15 actions/DisplayAction.php(54): DisplayAction->createResponse()
+#16 actions/DisplayAction.php(90): GoogleScholarBridge->collectData()
+#17 bridges/GoogleScholarBridge.php(112): getSimpleHTMLDOM()
+#18 lib/contents.php(176): getContents()
+#19 lib/contents.php(131): HttpException::fromResponse()
+#20 lib/http.php(34)
+
+Context
+Query: action=display&bridge=GoogleScholarBridge&context=user&userId=(redacted for privacy)&format=Html
+Version: 2025-08-05 (git.master.6f5676e)
+OS: Linux
+PHP: 7.4.33
+
+[Go back](https://rss-bridge.org/)
+```
+
+**Desktop (please complete the following information):**
+ - OS: Ubuntu
+ - Browser: Waterfox
+ - Version: 6.6.6.
+
+**Additional context**
+Thanks!
+                </div>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>

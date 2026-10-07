@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>GitHub Pull Request RSS-Bridge/rss-bridge #2100</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://github.com/RSS-Bridge/rss-bridge/pull/2100" target="_blank">GitHub Pull Request RSS-Bridge/rss-bridge #2100</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-GithubPullRequestBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=GithubPullRequestBridge&amp;context=Pull+Request+comments&amp;i=2100&amp;u=RSS-Bridge&amp;p=rss-bridge&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issue-875005327"
+                    >/ Bockiii commented May 4, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-04 00:23:25">
+                                2021-05-04 00:23:25                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Greetings,</p> <p dir="auto">First draft of the feature for <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="874859681" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2099" data-hovercard-type="issue" data-hovercard-url="/RSS-Bridge/rss-bridge/issues/2099/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/issues/2099">#2099</a> .</p> <p dir="auto">This will look for environment variables with the naming scheme "RSS_AUTHENTICATION_USERNAME=bob" (Prefix_Section_Key=value) and replace the configuration values with the value from the env variable. It is setup to be the third (and currently last) point in the configuration loader, after the default and then the custom .ini. This means: Env variable will beat default and custom file!</p> <p dir="auto">I assume this can be made prettier and/or shorter, but this is the first shot and it's readable.</p> <p dir="auto">What I have tested:</p> <ul dir="auto"> <li>Boolean values get recognized</li> <li>Added values (eg RSS_SOMETHING_STUPID=TOKTOK) do not cause errors and if they are not picked up later, dont matter.</li> <li>Misformed values will be picked up by the quality checking in the config (e.g: putting in "RSS_AUTHENTICATION_ENABLE=yesplease" will throw the error that its not a valid boolean value)</li> <li>Backwards compatibility should be 100% since this only overwrites config items if you define the specific item to be overwritten.</li> </ul> <p dir="auto">During testing I found some odd behavior that needs to be checked, but this is not down to the config but the general setup. e.g: You can enable authentication, set a password and then dont set a username. rss bridge will still work (leave the user name empty and put in the password). It does not work the other way around though (username but no password). But as I said... nothing to do with this implementation.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-831616296"
+                    >/ Bockiii commented May 4, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-04 00:26:26">
+                                2021-05-04 00:26:26                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">You could go in and check if there is a second and third (and also not a fourth, fifth etc) array member in order to not import things like "RSS_AUTHENTICATION=Yes", but since this does not seem to cause any errors (you can import that to config and it doesnt mind), I didnt do it for the first shot. It might make sense for the sake of security.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-833841291"
+                    >/ Bockiii commented May 6, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-06 20:33:29">
+                                2021-05-06 20:33:29                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">I need reviewers on this as well btw. I will adapt the dockerfile to the new multiarch setup, but that wont change anything about this functionality. <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/captn3m0/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/captn3m0">@captn3m0</a> you?</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-841789644"
+                    >/ em92 commented May 16, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-16 09:06:20">
+                                2021-05-16 09:06:20                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Hello, @Kwbmm! We discussed this in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="857338728" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2071" data-hovercard-type="issue" data-hovercard-url="/RSS-Bridge/rss-bridge/issues/2071/hovercard?comment_id=821169173&amp;comment_type=issue_comment" href="https://github.com/RSS-Bridge/rss-bridge/issues/2071#issuecomment-821169173">#2071 (comment)</a></p> <p dir="auto">Could you review it, please?</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-841791183"
+                    >/ captn3m0 commented May 16, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-16 09:22:32">
+                                2021-05-16 09:22:32                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: captn3m0                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Minor suggestion: changing <code class="notranslate">RSS</code> to <code class="notranslate">RSSBRIDGE</code> in favor of being explicit.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-841825613"
+                    >/ Bockiii commented May 16, 2021 • edited Loading Uh oh! There was an error while loading. Please reload this page. </a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-16 14:33:04">
+                                2021-05-16 14:33:04                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Doesn't that just needlessly inflate the config?<br> RSSBRIDGE_AUTHENTICATION_USERNAME is already quite a handful.<br> I would argue for the other end :<br> RB_AUTHENTICATION_USERNAME</p> <p dir="auto">Since the env variables are for this single container anyways, I don't see a value in making the variable longer.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-841850704"
+                    >/ IAM-marco commented May 16, 2021 • edited Loading Uh oh! There was an error while loading. Please reload this page. </a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-16 17:44:10">
+                                2021-05-16 17:44:10                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: IAM-marco                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Looks good to me. I've personally implemented something slightly different for authenticating on my fork here: <a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/RSS-Bridge/rss-bridge/commit/4c2691897f0162015aad9c2c3d7ddbe6539aa75b/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/commit/4c2691897f0162015aad9c2c3d7ddbe6539aa75b"><tt>4c26918</tt></a> (and a fix for the spelling mistake here: <a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/RSS-Bridge/rss-bridge/commit/0dbe21b54471ff37ec238db4892543b8e47ca997/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/commit/0dbe21b54471ff37ec238db4892543b8e47ca997"><tt>0dbe21b</tt></a>). The idea is that each section of the config file can have a <code class="notranslate">from_env</code> key and if set to <code class="notranslate">true</code> then you'll read the vars (for that section) from the environment.</p> <p dir="auto">But this works as well I guess. :)</p> <p dir="auto">EDIT: I'm no php programmer here, so I'll let others get into the details of the implementation. Can't really tell if it's better to read all envs or read just when the section in the config specifies so. Maybe with too many env variables this implementation gets heavy? 🤷</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-841871812"
+                    >/ Bockiii commented May 16, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-16 20:17:57">
+                                2021-05-16 20:17:57                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Even if you add 50 env vars, it's going to loop for about 70 times (because off the default env vars). That should take php about 0.7 seconds :) so it's all good.</p> <p dir="auto">This way you also don't have to change your config at all. It's all in the env.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-843058104"
+                    >/ Bockiii commented May 18, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-05-18 10:36:57">
+                                2021-05-18 10:36:57                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">So current request would be "Discuss if it should be "RSS" or "RSSBRIDGE" (I'll retract my "RB" since I dont even like that myself).</p> <p dir="auto">I am for RSS but I'm also not against the RSSBRIDGE version. In my opinion it's just not necessary to write it out.</p> <p dir="auto">Someone decide, I will change it to whatever <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/em92/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/em92">@em92</a> or so wants. I think the technical part is working, its just a question of which prefix to use.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#commits-pushed-35c91c5"
+                    >/ repopush</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-01 13:33:11">
+                                2021-06-01 13:33:11                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     Bockiii added 2 commits June 1, 2021 15:33                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-01 14:09:25">
+                                2021-06-01 14:09:25                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     Bockiii mentioned this pull request Jun 1, 2021 Improvement: Automatic Heroku PR builds #2143 Closed                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-852378795"
+                    >/ Bockiii commented Jun 1, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-01 19:11:21">
+                                2021-06-01 19:11:21                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">I'm not sure on how to fix the issue that the test has.</p> <p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/em92/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/em92">@em92</a> ?</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-862413936"
+                    >/ Bockiii commented Jun 16, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-16 14:10:07">
+                                2021-06-16 14:10:07                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/em92/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/em92">@em92</a> this will also fix the heroku build problem in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="919576420" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2159" data-hovercard-type="issue" data-hovercard-url="/RSS-Bridge/rss-bridge/issues/2159/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/issues/2159">#2159</a> . Another solution would be to implement <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="873771604" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2098" data-hovercard-type="pull_request" data-hovercard-url="/RSS-Bridge/rss-bridge/pull/2098/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/pull/2098">#2098</a></p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#commits-pushed-062194d"
+                    >/ repopush</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-28 17:24:55">
+                                2021-06-28 17:24:55                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     Bockiii added 2 commits June 28, 2021 19:24                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-869880716"
+                    >/ Bockiii commented Jun 28, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-28 17:38:17">
+                                2021-06-28 17:38:17                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/em92/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/em92">@em92</a> it seems like I cant use the CONFIGURATION:: call there. Can you fix the code so I can pull from the config in that if-clause?</p> <p dir="auto">Other than that, it should be mergeable. This will fix a bunch of deployment issues (or rather: This can be the base for a fix for many deployment issues)</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-06-28 17:40:32">
+                                2021-06-28 17:40:32                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     Bockiii mentioned this pull request Jun 28, 2021 [BridgeFactory.php] Add RSSBRIDGE_WHITELIST environment variable support #2058 Closed                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#commits-pushed-99d6203"
+                    >/ repopush</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-27 18:36:09">
+                                2021-07-27 18:36:09                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     em92 added 5 commits July 27, 2021 23:36                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-27 19:29:36">
+                                2021-07-27 19:29:36                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     em92 mentioned this pull request Jul 27, 2021 [core] Drop php 5.6 and php 7.0 support #2224 Merged                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#event-5076286101"
+                    >/ pencil colorfginherit</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-27 19:31:14">
+                                2021-07-27 19:31:14                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     em92 changed the title [Core] Added Feature to config from Env Variable [core] Implemented feature to read config from environment variables Jul 27, 2021                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-887782573"
+                    >/ em92 commented Jul 27, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-27 19:39:09">
+                                2021-07-27 19:39:09                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Hi, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Bockiii/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Bockiii">@Bockiii</a>!</p> <ul dir="auto"> <li> <p dir="auto">I have removed whitelistall config because (1) it is not related to this PR (2) original PR <span class="reference"><svg data-component="Octicon" class="octicon octicon-git-pull-request-closed closed color-fg-closed mr-1" title="Closed" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M3.25 1A2.25 2.25 0 0 1 4 5.372v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.251 2.251 0 0 1 3.25 1Zm9.5 5.5a.75.75 0 0 1 .75.75v3.378a2.251 2.251 0 1 1-1.5 0V7.25a.75.75 0 0 1 .75-.75Zm-2.03-5.273a.75.75 0 0 1 1.06 0l.97.97.97-.97a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.97.97.97.97a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-.97-.97-.97.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l.97-.97-.97-.97a.75.75 0 0 1 0-1.06ZM2.5 3.25a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0ZM3.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm9.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="853335123" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2058" data-hovercard-type="pull_request" data-hovercard-url="/RSS-Bridge/rss-bridge/pull/2058/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/pull/2058">[BridgeFactory.php] Add RSSBRIDGE_WHITELIST environment variable support<span class="issue-shorthand"> #2058</span></a></span> allows to list certain bridge names, while "whitelistall" does not.</p> </li> <li> <p dir="auto">There is a blocker <a href="https://github.com/RSS-Bridge/rss-bridge/pull/2100/checks?check_run_id=3174948101">https://github.com/RSS-Bridge/rss-bridge/pull/2100/checks?check_run_id=3174948101</a> which made me to drop php7.0- support. I started <span class="reference"><svg data-component="Octicon" class="octicon octicon-git-merge merged color-fg-done mr-1" title="Merged" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"></path></svg><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="954200918" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2224" data-hovercard-type="pull_request" data-hovercard-url="/RSS-Bridge/rss-bridge/pull/2224/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/pull/2224">[core] Drop php 5.6 and php 7.0 support<span class="issue-shorthand"> #2224</span></a></span>. When that PR is ready, I will merge this PR.</p> </li> </ul>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-887783067"
+                    >/ em92 commented Jul 27, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-27 19:40:03">
+                                2021-07-27 19:40:03                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <blockquote> <p dir="auto">it seems like I cant use the CONFIGURATION:: call there. Can you fix the code so I can pull from the config in that if-clause?</p> </blockquote> <p dir="auto">Why do you need it?</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-888019734"
+                    >/ Bockiii commented Jul 28, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-28 05:23:23">
+                                2021-07-28 05:23:23                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">With the removed whitelistall functionality, I don't need it anymore.</p> <p dir="auto">It was an extention to the idea of configuring rss ridge through environment variables, that's why I included it here. But if you don't wants that, no problem.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-07-28 08:16:47">
+                                2021-07-28 08:16:47                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     csisoap mentioned this pull request Jul 28, 2021 [YoutubeBridge] Fix bridge #2208 Merged                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-09-14 09:11:07">
+                                2021-09-14 09:11:07                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     csisoap mentioned this pull request Sep 14, 2021 [YoutubeBridge] Add API support, option to skip using RSS feed #2265 Closed                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-985084246"
+                    >/ em92 commented Dec 2, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-12-02 23:27:25">
+                                2021-12-02 23:27:25                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Hey, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Bockiii/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Bockiii">@Bockiii</a>! Please pull my changes in this PR and rebase on latest master. We just dropped 5.6 support, so automatic tests should be green now.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-985090651"
+                    >/ Bockiii commented Dec 2, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-12-02 23:41:30">
+                                2021-12-02 23:41:30                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Bockiii                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/em92/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/em92">@em92</a> I dont think there needs to be anything done right? Your changes are in (namely the removal of the whitelist and the rename to "RSSBRIDGE") and all checks passed. I think you can merge this.</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#event-5710131535"
+                    >/ gitmerge</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-12-03 06:15:08">
+                                2021-12-03 06:15:08                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     em92 merged commit b395fe2 into RSS-Bridge :master Dec 3, 2021                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#issuecomment-985246045"
+                    >/ em92 commented Dec 3, 2021</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2021-12-03 06:15:18">
+                                2021-12-03 06:15:18                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: em92                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     <p dir="auto">Actually you are right!</p>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2022-01-25 23:55:01">
+                                2022-01-25 23:55:01                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: floviolleau                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     floviolleau pushed a commit to floviolleau/rss-bridge that referenced this pull request Jan 25, 2022 <a title="[core] Implemented feature to read config from environment variables (#2100)" data-pjax="true" class="Link--secondary markdown-title" href="https://github.com/floviolleau/rss-bridge/commit/42e675510851977a0a09bdc88d2c0c159b106fd4">[core] Implemented feature to read config from environment variables (</a><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="875005327" data-permission-text="Title is private" data-url="https://github.com/RSS-Bridge/rss-bridge/issues/2100" data-hovercard-type="pull_request" data-hovercard-url="/RSS-Bridge/rss-bridge/pull/2100/hovercard" href="https://github.com/RSS-Bridge/rss-bridge/pull/2100">R…</a> &hellip; <a href="https://github.com/floviolleau/rss-bridge/commit/42e675510851977a0a09bdc88d2c0c159b106fd4" class="Link--secondary">42e6755</a>                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2022-07-23 19:16:17">
+                                2022-07-23 19:16:17                            </time>
+                        </p>
+                    
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     dot-mike mentioned this pull request Jul 23, 2022 Twitter V2 bridge not able to load settings from environment #2935 Closed                 </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://github.com/RSS-Bridge/rss-bridge/pull/#"
+                    >/ crossreference</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2024-04-03 21:07:07">
+                                2024-04-03 21:07:07                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: SuperSandro2000                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                     SuperSandro2000 added a commit to NixOS/nixpkgs that referenced this pull request Apr 3, 2024 <a title="rss-bridge: add config option This allows managing rss-bridge&#39;s config with nix. It leverages the environment variable way of setting the config options, introduced quite [some time ago](https://github.com/RSS-Bridge/rss-bridge/pull/2100) It is the only existing way to set config options independent of the document root, and upstream is [hesitant](https://github.com/RSS-Bridge/rss-bridge/pull/3842) to change the config loading methods. Co-authored-by: Sandro &lt;sandro.jaeckel@gmail.com&gt;" data-pjax="true" class="Link--secondary markdown-title" href="https://github.com/NixOS/nixpkgs/commit/f2201789fe442282c7ec17c225a9a78dd1973a09">rss-bridge: add config option</a> &hellip; <a href="https://github.com/NixOS/nixpkgs/commit/f2201789fe442282c7ec17c225a9a78dd1973a09" class="Link--secondary">f220178</a>                 </div>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
