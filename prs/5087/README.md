@@ -4,4 +4,4 @@
 | FeedMerge | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5087/FeedMerge_1_current.html) | ✔️ |
 | FeedMerge | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5087/FeedMerge_1_pr.html) | ✔️ |
 
-*last change: Sunday 2026-10-11 14:38:38*
+*last change: Sunday 2026-10-11 16:53:25*
