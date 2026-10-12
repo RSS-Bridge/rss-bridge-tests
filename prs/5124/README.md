@@ -2,6 +2,6 @@
 | Bridge | Context | Status |
 | - | - | - |
 | CMetropolitana | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5124/CMetropolitana_1_current.html) | ❌ `Bridge returned error 0! (20738)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "alert_id"` |
-| CMetropolitana | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5124/CMetropolitana_1_pr.html) | ❌ `Bridge returned error 0! (20738)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key "description_text"` |
+| CMetropolitana | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5124/CMetropolitana_1_pr.html) | ✔️ |
 
-*last change: Monday 2026-10-12 12:21:20*
+*last change: Monday 2026-10-12 12:26:20*
