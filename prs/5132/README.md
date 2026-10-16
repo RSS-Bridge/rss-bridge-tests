@@ -1,0 +1,7 @@
+## Pull request artifacts
+| Bridge | Context | Status |
+| - | - | - |
+| FeedMerge | [1 *untitled* (current)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5132/FeedMerge_1_current.html) | ✔️ |
+| FeedMerge | [1 *untitled* (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5132/FeedMerge_1_pr.html) | ✔️ |
+
+*last change: Friday 2026-10-16 17:05:01*
