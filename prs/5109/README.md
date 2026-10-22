@@ -3,4 +3,4 @@
 | - | - | - |
 | FLZ | [1 Feed zusammenstellen (pr)](https://RSS-Bridge.github.io/rss-bridge-tests/prs/5109/FLZ_1_pr.html) | ✔️ |
 
-*last change: Saturday 2026-10-17 17:17:39*
+*last change: Thursday 2026-10-22 20:53:04*
