@@ -1,0 +1,3057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>LWN Free Weekly Edition</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=LWNprevBridge&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=LWNprevBridge&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=LWNprevBridge&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=LWNprevBridge&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=LWNprevBridge&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://lwn.net/free/bigpage" target="_blank">LWN Free Weekly Edition</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-LWNprevBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=LWNprevBridge&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=LWNprevBridge&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=LWNprevBridge&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=LWNprevBridge&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=LWNprevBridge&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1102549/"
+                    >Synaptics patent claims stop work on DisplayLink drivers</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-12 00:00:00">
+                                2026-11-12 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Joe Brockmeier                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Joe Brockmeier</b><br></br>November 10, 2026
+           </div>
+<p>Mike Lothian owns a docking station (or dock) that uses a <a href="https://en.wikipedia.org/wiki/DisplayLink">DisplayLink</a> chipset
+that had, at least in his opinion, subpar performance on Linux. He
+decided to try improving the Linux driver, with LLM assistance, but ran into one
+problem that he could not solve—so he asked for help, hoping that
+Synaptics's developers would lend a hand. (DisplayLink was <a href="https://www.synaptics.com/company/news/displaylink">acquired by
+Synaptics</a> in 2022.) Rather than help him in improving the
+driver, however, the Synaptics legal team responded with patent infringement
+claims, a <a href="https://lists.freedesktop.org/archives/dri-devel/attachments/20261006/d690bb16/attachment-0001.pdf">demand</a>
+that he cease unauthorized implementation of DisplayLink technology, and threats
+of expensive legal penalties. For now, it appears that Linux users of the
+company's docks will have to continue to live without feature parity with other
+platforms.</p>
+
+<h4>Synaptics and Displaylink</h4>
+
+<p>The dock that he was trying to support is a Dell device that connects to
+a system via USB 3 and allows users to connect multiple monitors and other
+devices to their computer. It provides its <a href="https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu">DisplayLink
+Manager (DLM) software for Linux</a> for the devices via an APT repository for
+Ubuntu.</p>
+
+<p>The company only provides DLM software in binary form, and only for x86-based
+platforms. The software is proprietary, but the company does maintain an
+open-source, out-of-tree kernel module that is included with DLM, the
+<a href="https://github.com/DisplayLink/evdi#readme">Extensible Virtual Display
+Interface</a> (EVDI) project. It provides a driver that's compatible with <a href="https://docs.kernel.org/gpu/introduction.html">Linux DRM</a> and
+allows users to manage their docked displays with standard tools used for 
+display settings, such as <a href="https://linux.die.net/man/1/xrandr"><tt>xrandr</tt></a> or GNOME and KDE Plasma's
+utilities.</p>
+
+<p>A <a href="https://support.displaylink.com/knowledgebase/articles/1104056-why-has-displaylink-not-released-source-code-for-t">short
+article</a> explains why the company has not released source code for DLM: the
+software uses a proprietary graphics technology called DL3 to create a compressed stream
+of the various channels (e.g., USB, DisplayLink video, audio) over a
+communication channel (USB 3 in this case) and decode it again for output
+to the user's devices.</p>
+
+<p>Unfortunately, the vendor-supplied software did not work well for Lothian. I
+spoke and chatted with him via Signal while writing this article; he said that
+the driver kept crashing under Linux, so he decided to use his Claude
+subscription to try to develop a new driver and support software.</p>
+
+<h4>Vino</h4>
+
+<p>He posted the <a href="https://lwn.net/ml/all/20260617151249.2937-1-mike%40fireburn.co.uk/">first
+patch series</a> for Vino—his Rust-based DRM/KMS driver—to the kernel's
+dri-devel list as an RFC on June 17. Lothian noted that it was in an
+incomplete state, and asked for help with a blocker that
+he had run into trying to communicate with the dock's control plane. "<q>If you have
+knowledge of the DisplayLink DL3 control-plane engagement sequence, or ideas for
+isolating a whole-bus timing/ordering property a per-channel diff cannot see,
+help would be very welcome.</q>" He received feedback from a few developers, including <a href="https://lwn.net/ml/all/DJBG3H7N9GS9.7AMMRJIHGHRN@kernel.org/">guidance</a>
+from Danilo Krummrich to rework the driver to use the Rust <a href="https://lwn.net/Articles/997850/#kms">KMS bindings</a>, but no advice
+specific to the problem he was trying to solve.</p>
+
+<p>Lothian also opened <a href="https://github.com/DisplayLink/evdi/issues/577">an issue</a> on the EVDI 
+GitHub repository on June 17. It explained the work he'd done so far, outlined the
+approach in trying to reverse-engineer the DL3 protocol, provided links to
+his GitHub repository with the Vino code, and asked for clarification on a few
+issues. There was no reply to his issue.</p>
+
+<p>He also reached out to Łukasz Spintzyk of Synaptics directly by email; his
+correspondence with the company between July 5 and October 7 is
+available in <a href="/images/pdf/synaptics-correspondence-jul-oct-2026.pdf">this PDF compiled
+by Lothian</a>. He noted that he had found a few bugs in EVDI and opened a <a href="https://github.com/DisplayLink/evdi/pull/581">pull request</a> (that went
+unreviewed for several months), and also asked for assistance where he was blocked on Vino. On
+July 20, he received a reply, not from Spintzyk, but from Michal Lukaszek of
+Synaptics:</p>
+
+<blockquote class="bq">
+<p>The reason I'm writing is that DisplayLink is not an open standard. The
+protocol, codec, and other technologies used by DisplayLink devices are
+proprietary to Synaptics and are protected by a substantial portfolio of patents
+in a number of jurisdictions, including the UK.</p>
+
+<p>From what you've published, it appears that the VINO project is progressing
+beyond interoperability work and toward implementing technology that we believe
+is covered by those patents. While many developers understandably focus on
+avoiding copyrighted source code, patent law is different. An independently
+written or clean-room implementation does not necessarily avoid patent
+infringement if it implements patented inventions.</p>
+</blockquote>
+
+<p>Lukaszek said it was entirely possible that Lothian was unaware of the
+"<q>intellectual property landscape surrounding DisplayLink</q>", so he wanted
+to make him aware now rather than "<q>have the situation become more formal
+later</q>". Lothian lives in Scotland and has a ".co.uk" email address, which
+explains why the email made reference to the UK.</p>
+
+<h4>Cease and desist</h4>
+
+<p>On August 17, Andrew Bateman, an assistant general council of
+intellectual property for Synaptics, sent a <a href="/images/pdf/Cease_and_Desist_Notice_Mike_Lothian_08-17-2026.pdf">cease-and-desist notice</a>. The letter stated that Lothian had not
+"<q>substantially responded</q>" to Lukaszek's communication, and had continued
+with "<q>public statements and further development activities</q>". It included
+an appendix with a list of 125 patents that "<q>cover fundamental aspects of
+DisplayLink's architecture and operation</q>", but did not specify which patents
+might be infringed by the work.</p>
+
+<p>Synaptics included a list of eight demands it expected immediate compliance
+with, including ceasing development of "<q>any software or other
+implementation that infringes any Synaptics patent</q>", withdrawing submissions of
+materials "<q>made to Linux kernel maintainers, mailing
+lists, code-hosting platforms, package maintainers, distributions, or any other person or
+organization</q>", and to identify in writing every location "<q>in which the
+relevant materials have been published, submitted, stored, or
+distributed</q>". It also demanded that he provide Synaptics with a signed
+confirmation, by August 28, that he had complied with its demands.</p>
+
+<p>Lothian, instead, posted <a href="https://lwn.net/ml/all/20260826163913.7052-1-mike@fireburn.co.uk/">version
+three of his Vino</a> work for the DisplayLink docks to the dri-devel list on
+August 26. He said that the previous two versions had "<q>never lit a
+panel</q>", but the new work could control three generations of DL3 docks
+without any vendor software. There were no substantive reviews of the patch set
+posted to the list, though there were some automated reviews from Sashiko.</p>
+
+<p>On August 27, Lothian responded to Bateman and asked him to elaborate
+on the patents that Synaptics thought were being infringed. "<q>A claim chart
+mapping the relevant claims to the relevant code would make it much easier for
+me to understand and properly respond to your concerns.</q>"</p>
+
+<p>He also expressed confusion about Synaptics's position that his work was
+being treated as patent infringement. Synaptics is a member of the <a href="https://openinventionnetwork.com/">Open Invention Network</a> (OIN), which
+was <a href="https://lwn.net/Articles/163038/">created</a> to help open-source
+developers and vendors deal with the threats of expensive patent litigation. It
+holds a large, cross-licensed portfolio that serves to provide patent protection
+to individuals, open-source projects, and large vendors alike. Lothian said that
+he was now an OIN licensee as well, and he thought that it was supposed to
+"<q>reduce exactly this sort of patent problem around Linux and open source
+software</q>".</p>
+
+<p>He asked Bateman to explain how Synaptics claims "<q>interact with our
+respective OIN commitments</q>", and expressed a desire to sort things out with
+Synaptics constructively. "<q>I don't think a public dispute between Synaptics
+and an individual open source developer would be particularly helpful for either
+of us, especially within the Linux and open source communities</q>".
+
+</p><p>Lothian did not think he could "<q>reasonably provide the signed undertaking</q>"
+Synaptics had demanded by August 28 without understanding which patent
+claims it was alleging. He asked for an extension to the deadline. There was no
+response from Bateman, so Lothian sent a follow-up email on
+September 18. He said he was concerned there was no acknowledgment to his 
+last email, and wondered it was safe to assume he could continue his work. He
+had been running the Vino driver himself for quite a while, and was eager to
+move it upstream without having patent threats hanging over the work.</p>
+
+<p>Bateman responded the next day and said that he should be concerned:</p>
+
+<blockquote class="bq">
+As you previously requested, we have been documenting your ongoing patent
+infringement by mapping your Vino driver to specific claims of our DisplayLink
+patents. I will provide this claim mapping documentation to you within the next
+two weeks. I will also be sending to you our demand for substantial monetary
+compensation to recoup the cost and effort required to create such documentation
+of your infringing acts. I previously gave you the opportunity to stop your
+infringement, but you decided to push back and not heed my warnings, and so now
+we are escalating as we deem appropriate.
+</blockquote>
+
+<p>The letter continued to claim that Lothian would be "<q>single-handedly
+eviscerating DisplayLink's competitive advantage in this crowded market by
+educating our competitors and other third parties as to how we implement our
+proprietary technology</q>". He said that DisplayLink is not a member of OIN,
+and none of its technology is licensable through OIN or any other
+organization.</p>
+
+<p>Bateman sent a <a href="/images/pdf/Cease_and_Desist_Notice_Mike_Lothian_10-05-2026.pdf">follow-up
+letter</a>, dated October 5, that included two claim charts for UK patents: <a href="/images/pdf/GB2484736.pdf">GB2484736B</a> ("Display control device") and <a href="/images/pdf/GB2485613.pdf">GB2485613B</a> ("Image generation"), both filed in 2010
+and published in 2012. He reiterated Synaptics's demands from its previous
+letter, and said that the deadline was now October 11; failure to comply
+would result in the company seeking "<q>monetary
+compensation from you in the amount of US$25,000 to recoup the costs and effort required to
+create the attached documentation of your infringing acts</q>". That amount
+would be increased by $25,000 each week until the company's demands were
+complied with.</p>
+
+<p>Lothian responded the next day, by email, to say that he was on
+vacation, and would not be back home until October 13. He asked for an extension
+of the deadline to return home and go through the claim charts "<q>ideally with
+someone qualified to help me read them</q>". Bateman <a href="https://lwn.net/ml/all/MW4PR03MB6540F02E3810CC632C82302598952%40MW4PR03MB6540.namprd03.prod.outlook.com/">replied</a>
+that Synaptics would agree to extend the deadline to October 18, though no
+further extensions would be granted. He reiterated that "<q>DisplayLink is not a
+member of OIN</q>" and none of its technology was licensable through OIN.</p>
+
+<h4>OIN to the rescue?</h4>
+
+<p>Synaptics <em>is</em> a member of OIN, and is listed in the <a href="https://openinventionnetwork.com/community-directory-alphabetical/">community
+directory</a>. In addition to joining OIN, Lothian had reached out to the
+organization to try to solicit its help and has been in communication with some of
+the staff there. OIN indicated that it would look into the matter and see if he
+had any protection as an OIN member. That process took longer than Lothian
+hoped, though OIN did eventually provide its conclusion.</p>
+
+<p>OIN's portfolio covers a wide range of software that matches its <a href="https://openinventionnetwork.com/linux-system/">Linux System
+Definition</a>, but it does not cover everything that might be implemented for a
+Linux system. In particular, its definition specifies that codecs ("<q>a
+component of a program capable of performing transformations of a video, still
+image or audio data stream or signal</q>") are not covered unless specifically
+mentioned in <a href="https://definition.openinventionnetwork.com/table-0/">this
+list</a> of components.</p>
+
+<p>I spoke briefly to OIN CEO Keith Bergelt on October 23, shortly after
+OIN staff informed Lothian of the result of their research. Bergelt said that
+OIN's conclusion was that, since codecs are explicitly not covered by OIN's
+Linux System Definition, its protections did not extend to Lothian's attempted
+kernel contributions. OIN had recommended that Lothian reach out to a lawyer in
+the UK, and provided a recommendation.</p>
+
+<h4>Status</h4>
+
+<p>Unfortunately, that referral did not pan out, Lothian said. He has not given up
+entirely, but he has taken down the GitHub repository to comply with Synaptics's
+demands. For now, he may continue working on some of the components that are not
+affected by the patent claims, but the work on Vino will not be submitted
+to the kernel. "<q>Vino itself has to remain local until this is sorted out, I
+just can't afford to defend myself against Synaptics.</q>"</p>
+
+<p>Perhaps amusingly, Lothian told me that someone from Synaptics <a href="https://github.com/DisplayLink/evdi/pull/581#pullrequestreview-5439551411">finally
+replied</a> to the pull request on October 7. Lothian told me he does not
+intend to follow up on the comments: "<q>You can't threaten to sue me and then
+say 'can you update your pull request?'</q>"</p>
+
+<p>For the time being, Synaptics has succeeded in shutting down an effort to
+improve the way DisplayLink docks work with Linux. It is an unpleasant reminder
+that, while much of the current conversations in open-source communities are
+concerned with LLM-driven development, software patents still pose problems for
+free-software developers and users.</p>
+
+<p></p>
+<p><a href="/Articles/1102549/#Comments">Comments (64 posted)</a>
+</p><p>
+<a name="1104195"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1104195/"
+                    >Git considers voting to determine its LLM policy</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-12 00:00:00">
+                                2026-11-12 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Jonathan Corbet                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Jonathan Corbet</b><br></br>November 9, 2026
+           </div>
+One of the dominant themes of 2026 has been the debate within development
+projects about the terms under which LLM-written contributions should be
+accepted — if, indeed, they should be accepted at all.  The <a href="https://git-scm.com/">Git project</a> has not been immune to this
+trend; the topic was <a href="/ml/all/summit-2026.94e33e9ddf234334.06@ttaylorr.com">discussed</a>
+at the recent Git Contributor's Summit.  In this case, the path to a
+resolution may be somewhat circuitous; the project, which has never been
+governed as a democracy, is considering adopting a voting process as a way
+of bringing the discussion to an acceptable conclusion.
+<p>
+Like most projects, the Git community has been considering its policy
+toward LLM-written contributions for a while.  In October 2025, the project
+updated <a href="https://git-scm.com/docs/SubmittingPatches#ai">its
+SubmittingPatches document</a> to include this policy:
+</p><p>
+</p><blockquote class="bq">
+	The Developer's Certificate of Origin requires contributors to
+	certify that they know the origin of their contributions to the
+	project and that they have the right to submit it under the
+	project's license. It's not yet clear that this can be legally
+	satisfied when submitting significant amount of content that has
+	been generated by AI tools.
+<p>
+	Another issue with AI generated content is that AIs still often
+	hallucinate or just produce bad code, commit messages,
+	documentation or output, even when you point out their mistakes.
+</p><p>
+	To avoid these issues, we will reject anything that looks AI
+	generated, that sounds overly formal or bloated, that looks like AI
+	slop, that looks good on the surface but makes no sense, or that
+	senders don't understand or cannot explain.
+</p></blockquote>
+<p>
+This policy was reconsidered at the Contributors Summit, but without any
+clear conclusion.  Some participants seem to be open to relaxing the
+policy, while others raised the ongoing copyright concerns or worries
+that accepting LLM-written contributions will erode some people's trust in
+the project.  About the only consensus that, seemingly, was reached was
+that it would not be possible to come to a consensus on the topic.
+</p><p>
+The idea of putting the question to a vote was raised in that same session,
+and Emily Shaffer agreed to take on the task of creating a process within
+which such a vote could be held.  A draft version of that process was <a href="/ml/all/20261021200341.378978-1-emilyshaffer@google.com">posted</a>
+for consideration on October 21.
+
+</p><p>
+The voting proposal seems to be somewhat influenced by Debian's process, but
+it is not exactly the same.  When the time comes to vote on a topic (the
+determination of that time is left to the Git maintainer), proposals are to
+be formatted as patches to the project's documentation.  Each proposal
+would be posted and discussed individually, with the intent of polishing
+it, rather than transforming it into something substantially different.
+Anybody who is eligible to vote (eligibility is discussed later) can put
+forward a proposal; any given proposal will only be added to the ballot if
+it is seconded by another eligible voter.
+</p><p>
+The discussion period is expected to last "<q>around 4 weeks</q>" as the
+proposals are reworked into their final form.  At the end of that period,
+the proposals will be collected into a ballot, and voting will take place
+over a two-week period.  The proposal says nothing about how the votes will
+be counted — whether the proposal with the most direct votes wins, or
+whether some sort of ranked-choice process will be used.
+</p><p>
+Eligibility to vote, as described in the proposal, would be:
+</p><p>
+</p><blockquote class="bq">
+	Votes are welcome from contributors who have authored a commit
+	which has been merged to next, or who have provided 2 or more code
+	reviews, and who have not been banned from participation in the
+	project.
+</blockquote>
+<p>
+As was pointed out in the ensuing discussion, that was a rather more
+inclusive set of criteria than was discussed at the Summit, where a
+requirement of at least 50 commits in the Git history was tossed out.
+There was no real agreement on what the correct threshold should be;
+Patrick Steinhardt <a href="/ml/all/at8IBMQZtJP3bQ9-@pks.im">suggested</a>
+that a commit count of 25 or 30 might make sense, Jeff King <a href="/ml/all/20261026011731.GA3575069@coredump.intra.peff.net">proposed</a>
+a more complex rule that gives some weight to longer-term contributors, and
+brian m. carlson just <a href="/ml/all/atqVZYU3YfuyFdvU@fruit.crustytoothpaste.net">wanted</a> a
+threshold "<q>where people are not incentivized to contribute only to
+vote</q>".  Fortunately, nobody suggested setting up a process to vote on
+that question.
+</p><p>
+Kristoffer Haugsbakk <a href="/ml/all/3fe1dc57-5bb2-4e12-8876-a4969e5201cb@app.fastmail.com">claimed</a>
+that the vote process would lead to a foreordained conclusion for the issue
+at hand:
+</p><p>
+</p><blockquote class="bq">
+	The vote will pass. Those who work on Git at least once a month
+	work for tech companies. Those tech companies are now AI
+	companies. The votes will happen to drift towards agreement with
+	their management.
+</blockquote>
+<p>
+That led to objections from developers like <a href="/ml/all/atoFKhUaM3b38n-b@pks.im">Steinhardt</a> and <a href="/ml/all/atqTWKaRQfvH0Xbm@fruit.crustytoothpaste.net">carlson</a>, who
+insisted that they would vote based on their own conclusions rather than
+those of their employers.  They both agreed, though, that the voting
+process should be secret so that employers could not force their developers
+to vote a certain way.
+</p><p>
+The conversation has slowed down without any firm conclusions.  There are
+<a href="/ml/all/CAJoAoZmyADCU8VdVDrvR-OuDKybSnT2pMOKbrofRBg6YdpxZ0A@mail.gmail.com">numerous
+open questions</a> still, including the eligibility rules and the system
+that would be used to count the votes.  For the latter, Debian's <a href="https://salsa.debian.org/debian/devotee/-/blob/master/README?ref_type=heads">devotee</a>
+and the <a href="https://civs1.civs.us/">Condorcet Internet Voting
+Service</a> (which is used for elections to the Linux Foundation Technical
+Advisory Board) have been proposed.  The Git project is considering the
+addition of a fundamental piece of governance policy, which is not
+something to be done lightly, so a conclusion may be some time in coming.
+The voting process is meant to help in situations where a consensus seems
+unlikely to emerge, but that process itself almost needs a consensus behind
+it before it can be adopted.
+</p><p><a href="/Articles/1104195/#Comments">Comments (12 posted)</a>
+</p><p>
+<a name="1103190"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1103190/"
+                    >Locking down hibernation for the winter</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-12 00:00:00">
+                                2026-11-12 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Daroc Alden                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Daroc Alden</b><br></br>November 6, 2026
+           </div>
+<p>
+When a computer hibernates, the kernel writes the contents of memory to disk and
+then shuts the system down. Resuming from hibernation involves reading that data
+back into memory, and then having the kernel pick up where it left off.
+Unfortunately, the kernel does not have
+any way to know that the data it is reading back has not been tampered with,
+which is why <a href="/Articles/791863/">lockdown</a>, an optional kernel
+feature that attempts to prevent modifications to the running kernel, disables hibernation.
+Matthew Garrett, who has been working on lockdown for many years, has shared
+<a href="/ml/linux-pm/20261008132532.1155166-1-matthewg@nvidia.com/">
+a patch set</a> that aims to fix this problem. His solution must also protect
+against downgrade attacks (where an attacker reboots the computer with an older
+kernel version to bypass new protections), which complicates the implementation.
+</p>
+
+<p>
+The basic idea of Garrett's patch set is not complicated: sign the saved
+hibernation data with a cryptographic key that only the kernel has access to.
+The problem turns out to be figuring out how to obtain such a key.
+A static, known key is useless for this purpose, since it could be used
+to forge the signature. A key stored in the computer's
+<a href="https://en.wikipedia.org/wiki/Trusted_Platform_Module">
+trusted
+platform module</a> (TPM) is a better choice. The kernel sits between the TPM and
+user space, and so it can forbid user space to read the chosen key, keeping it
+secure. Additionally, the TPM can be configured to withhold the key when booted
+from a different kernel, although this is not as straightforward as it may seem,
+because older kernels will still, for example, possess correct secure-boot
+signatures.
+</p>
+
+<p>
+The primary motivation behind involving the TPM is to avoid downgrade attacks.
+Given that
+older kernels won't know to forbid TPM access, an attacker could, theoretically:
+</p>
+
+<ol class="spacylist">
+<li>From a newer kernel with lockdown enabled, trigger hibernation.</li>
+<li>Boot an older kernel, with resume and swap disabled.</li>
+<li>Ask the older kernel for access to the chosen TPM key.</li>
+<li>Tamper with the saved hibernation data and re-sign it.</li>
+<li>Reboot into the newer kernel, allowing the system to resume from the
+tampered data.</li>
+</ol>
+
+<p>
+One of the core features of a TPM is the ability to lock down secrets such that
+they can only be read when the hardware is in a known state.
+The TPM
+relies on platform-configuration registers (PCRs) to keep track of hardware
+state. These registers cannot be
+written directly. Instead, the TPM resets them to zero when the system boots,
+and then software running on the system can provide values that are hashed with
+the current state of the PCR to produce a new value.
+</p>
+
+<p>
+So, for example, when the
+computer's firmware starts executing, it can check a signature on the
+bootloader, and add a marker to a specific PCR to indicate that it validated the
+signature against a particular secure-boot key.
+Then the bootloader can do the same thing to check the state of the
+operating system and the attached hardware, and so on. In theory, this ensures
+that the PCR can only reach
+a particular state when the operating system and hardware have not been tampered
+with.
+</p>
+
+<p>
+In practice, the implementation is more complicated. There are multiple
+PCRs that are used for different purposes. For example, systemd
+<a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-pcrphase.service.html">
+uses PCR 11</a> to indicate which boot phase the system is in. This can be used
+to ensure that a key stored in the TPM (a disk-encryption key, for example)
+is only accessible while the initial ramdisk (initrd) is running. When the system is about to
+transition to the normal root filesystem, systemd writes <tt>"leave-initrd"</tt> to the
+PCR, changing its hash in a way that cannot be undone until the system is
+rebooted.
+The process of writing an additional piece of information to a PCR to invalidate
+a key associated with it is called "capping" the PCR.
+</p>
+
+<p>
+If the kernel had a PCR that it capped prior to starting user space, it could
+extend that PCR with a new value, bind a key to the resulting PCR state, and
+thereby ensure that the key was only readable by new versions of the kernel and
+not by old versions. The kernel does not currently cap any PCRs, however,
+leaving that up to user space. So, a malicious user-space application running on an old
+kernel could still extend a PCR with the value that the new kernel expects,
+thereby putting the TPM into the "new kernel" state even on an old kernel.
+</p>
+
+<p>
+The solution is "<q>something horrifying</q>" that Garrett came up with. PCR 5
+is used by the
+<a href="https://uefi.org/">
+UEFI</a> firmware to perform hardware measurements, and is capped
+when
+<a href="https://uefi.org/specs/UEFI/2.10/07_Services_Boot_Services.html#efi-boot-services-exitbootservices"><tt>ExitBootServices()</tt></a>
+is called, to prevent later components from faking hardware information. The
+kernel starts executing its boot stub before UEFI exits, since it may need to
+communicate with the firmware to bring the system up. Therefore, Garrett has
+added code to the boot stub to insert a marker into PCR 5 indicating that the kernel
+supports blocking user-space access to a TPM key before the firmware caps it.
+Since user space is not started until after that point, it has no way to
+fake the marker, even on an older kernel.
+</p>
+
+<p>
+On its own, however, this is not enough. The state of PCR 5 only demonstrates
+that the computer booted with a new-enough kernel; it doesn't prevent user-space
+from creating its own key that is bound to that state of PCR 5, and then signing
+the hibernation data with that key. When the new kernel boots after hibernation,
+it would see a signature by a key bound to PCR 5, but it would still not be able
+to prove that key was created inside the kernel (and therefore hidden from user
+space).
+</p>
+
+<p>
+So, Garrett's patch set goes further. Interactions with the TPM can be divided
+into individual sessions. His code allows those sessions to be audited,
+generating a signed digest. Those digests are signed by the TPM
+itself, which means that having a signed digest proves that, at some point,
+those commands really were sent to that particular TPM, and produced those
+particular results.
+</p>
+
+<p>
+Combined with the use of PCR 5, the entire procedure to produce a signed
+hibernation image becomes:
+</p>
+
+<ol class="spacylist">
+<li>The new kernel boots, writing a marker to PCR 5.
+</li><li>The firmware caps PCR 5, preventing user space from mimicking the kernel's
+marker.
+</li><li>The kernel starts a new session with the TPM, where it checks that PCR 5 is
+in that state and then generates a new signing key.
+</li><li>The transcript of the session is hashed, signed by the TPM, and stored alongside the hibernation
+data.
+</li><li>The hibernation data is signed with the newly created key.
+</li></ol>
+
+<p>
+Then, on reboot, the kernel goes through a number of verification steps before
+loading the hibernation image:
+</p>
+
+<ol class="spacylist">
+<li>The kernel checks that the signed transcript digest was signed by the
+current TPM.
+</li><li>It checks that replaying the transcript produces the same digest.
+</li><li>It checks that the transcript holds the correct commands to the TPM, and
+only those.
+</li><li>It checks that the transcript read PCR 5, and that the value matches the
+current value of PCR 5.
+</li><li>Finally, it checks that the key produced by the transcript is a valid
+signing key that was used to sign the hibernation data.
+</li></ol>
+
+<p>
+The end result of all of this work is that users running lockdown kernels should
+be able to enable hibernation, and trust that the kernel cannot be tampered with
+between the computer shutting down and resuming from hibernation. Attackers
+cannot change the data directly, because it is signed; cannot access the key
+used to do the signing, because the kernel prevents it; cannot work around
+that restriction with an old kernel, because the TPM binds the key to a state
+that only new kernels can produce; and cannot create their own key that would be
+accepted, because they cannot forge the key-creation transcript.
+</p>
+
+<p>
+Garrett's patch set has received a small amount of comment. James Bottomley
+<a href="https://lwn.net/ml/linux-pm/435907614242e82ecde1767a967a3110fca6fb37.camel@HansenPartnership.com/">asked</a>
+about using a hardware feature called "localities" (an access-control mechanism
+that restricts operations to specific CPU privilege levels)
+to implement something like
+this more simply. Garrett <a href="https://lwn.net/ml/linux-pm/asqthz69ohnMVCye@srcf.ucam.org/">agreed</a>
+that localities "<q>are very clearly the Right Way to deal with this,</q>" but
+did not think that the kernel could make use of them, because hardware support
+is typically limited to specialty devices. Most consumer devices have
+a TPM, but not one that supports the necessary extensions.
+</p>
+
+<p>
+Bottomley also pointed out that having the firmware cap PCR 5 is not universal;
+his XPS-13 9380 Core i7 (released in 2019)
+<a href="https://lwn.net/ml/linux-pm/f002fc613bf0bdcf895e5be02dfd2524b7608787.camel@HansenPartnership.com/">
+does not cap that register</a>. Garrett was
+<a href="https://lwn.net/ml/linux-pm/asty4acE2B94t5q6@srcf.ucam.org/">disappointed</a>
+to hear that, but still thought the patch set was worthwhile, given that newer
+computers do tend to cap PCR 5. Also, the implementation could potentially be
+swapped out for other hardware-specific solutions, if needed.
+</p>
+
+<p>
+The patch set will need a second version to respond to the reviews.
+Garrett has been working on enabling hibernation under lockdown
+<a href="https://lwn.net/ml/all/20210220013255.1083202-1-matthewgarrett%40google.com/">since
+2021</a>, but this time it seems that he's settled on a design that
+systematically prevents downgrade attacks. It
+may not be too much longer until his goal is finally realized.
+</p>
+<p><a href="/Articles/1103190/#Comments">Comments (21 posted)</a>
+</p><p>
+<a name="1103429"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1103429/"
+                    >User namespaces + file capabilities = trouble</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-12 00:00:00">
+                                2026-11-12 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Jonathan Corbet                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Jonathan Corbet</b><br></br>November 5, 2026
+           </div>
+<a href="/Articles/532593/">User namespaces</a> are a key part of the
+kernel's toolkit for assembling containers; processes within a user
+namespace can appear to have full root access to the system while gaining
+no extra privileges in the wider system.  At least, that is the intent.  In
+practice, keeping privilege contained within a user namespace has often
+turned out to be difficult.  As an example, consider <a href="/ml/all/20261027-b4-setfcap-userns-v8-0-2674adc63f3c@toxicpanda.com">this
+small patch series</a> from Josef Bacik, which is intended to address some
+situations where a process within a user namespace can elevate the
+privileges of processes outside of it.
+<p>
+</p><h4>Some background</h4>
+<p>
+The first process that is placed into a user namespace is treated much like
+the init process in the base system; it runs with user ID zero and has full
+root privileges.  The kernel, though, remaps all user IDs before using them
+for any access decisions outside of the container.  By default, all user
+IDs are mapped to the "unknown user" ID 65534 before, say, accessing a
+filesystem mounted outside of the namespace.  So root access within the
+namespace may translate to no access at all outside.  If namespaces have been
+nested, there may be multiple levels of remapping applied before reaching
+the initial namespace created when the system boots.
+</p><p>
+It is possible to change the user (and group) ID mappings for a user
+namespace by writing to the <tt>uid_map</tt> or <tt>gid_map</tt> file in
+the <tt>/proc</tt> directory of any process running inside that namespace.
+Without root privilege, though, it is not possible to remap IDs to anything
+other than that of the process that created the namespace.  If an
+unprivileged process with user ID 1000 creates a user namespace, it can set
+up a mapping from any ID within the namespace, but only to ID 1000 outside.
+Changing the mappings is also a one-time operation; once the mappings have
+been set, they cannot be changed again.
+</p><p>
+One other bit of important background is <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities</a>,
+which describe the privileges that any given process has.  The root user,
+by default, has all capabilities; other processes have none.  There are
+times, as we will see, where a process running as root will drop some of
+its capabilities to prevent certain actions from taking place.
+</p><p>
+Finally, <i>file</i> capabilities can be thought of as a way to create a
+form of setuid executable. A given set of capabilities can be attached to a
+file with the <a href="https://man7.org/linux/man-pages/man8/setcap.8.html"><tt>setcap</tt></a>
+command; thereafter, any process running the program in that file will be
+given the named capabilities.  Needless to say, attaching capabilities to a
+file in this way is a privileged operation; specifically, any process
+attempting to do so must have the <tt>CAP_SETFCAP</tt> capability.  The
+kernel has some elaborate mechanisms to allow file capabilities to work
+within a user namespace while being ignored outside.  Specifically,
+"version 3 extended attributes" can encode a non-root user ID that can
+map to root inside a namespace owned by that ID.  The curious can see <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html#:~:text=File%20capability%20extended%20attribute%20versioning">this
+subsection of the capabilities man page</a> for the gory details.
+</p><p>
+</p><h4>The trouble with file capabilities</h4>
+<p>
+User namespaces were designed to map the root user internally to an
+unprivileged user externally.  But it is possible to map root within a
+namespace to root in the containing namespace as well.  Doing so clearly
+presents a number of security challenges but, with sufficient care, a
+root-mapped user namespace can still provide a fair amount of containment.
+This is especially true if the code that runs as the init process within
+the namespace is trusted by whoever manages the containing namespace.  That
+code can do whatever setup is needed, then drop privileges (capabilities)
+before transferring control to whatever workload the container was meant to
+run.
+</p><p>
+If the root user within a user namespace adds file capabilities to an
+executable file that is visible in the containing namespace, those
+capabilities will normally be qualified by the user ID that root maps to in
+the containing namespace.  As a result, those capabilities will not be
+effective if an unprivileged user runs the executable in the containing
+namespace.  If, however, the contained namespace is root-mapped, this
+qualification does not happen and the capabilities <i>are</i> effective in
+the containing namespace.  Letting root add capabilities to a file in
+this way could, thus, allow privilege to escape the namespace.
+</p><p>
+The way to prevent this from happening is to take care to drop
+<tt>CAP_SETFCAP</tt> from the root process running within the namespace;
+that process can no longer create file capabilities, and the privilege
+escape goes away.  At least, that happens until this root process creates a
+root-mapped user namespace of its own.  Remember that the initial process
+running in a new user namespace has all capabilities, so that process will
+have regained <tt>CAP_SETFCAP</tt>.  It can then add file capabilities to a
+file in the containing namespace which, being root-mapped as well, will
+propagate the change through to its containing namespace.  At that point,
+there is, once again, a file with elevated capabilities, accessible outside
+the namespace, that an unprivileged user could execute.
+</p><p>
+<a href="https://git.kernel.org/linus/db2e718a4798">This commit</a>, merged
+just before the 5.12 kernel release in 2021, is meant to address that
+problem.  If a process tries to create a root-to-root mapping by writing to
+a namespace's <tt>uid_map</tt> file, the attempt will fail unless that
+process possesses <tt>CAP_SETFCAP</tt>.  That alone does not suffice,
+though, since the root process within a newly created user namespace does
+hold that capability, and could write to its own <tt>uid_map</tt> file (an
+operation that is allowed if the effective UID within and outside of the
+namespace are the same).  So that patch also records whether the creator of
+the namespace in question had <tt>CAP_SETFCAP</tt>; in the absence of that
+capability, an attempt to create a root-to-root mapping from within the
+namespace will fail.  Problem solved.
+</p><p>
+</p><h4>More leaks</h4>
+<p>
+Naturally, the problem is not truly solved, or this patch set (you remember
+the patch set...this is an article about Bacik's patch set) would not
+exist.  It turns out that requiring <tt>CAP_SETFCAP</tt> to create a
+root-mapped user namespace is not enough to prevent privilege leaks in some
+situations.
+</p><p>
+Imagine a root-mapped user namespace with two root processes; one of them
+(call it "A") holds the full set of capabilities, while the other ("B")
+does not have <tt>CAP_SETFCAP</tt>.  If A creates a user namespace of its
+own, that namespace will have the "creator held <tt>CAP_SETFCAP</tt>" flag
+set.  B can then enter that namespace with a <a href="https://man7.org/linux/man-pages/man2/setns.2.html"><tt>setns()</tt></a>
+call; since its UID matches that of the creator of the namespace, that
+entry will be allowed, and B will have the full set of capabilities in that
+namespace.  At that point, B can write a root mapping into the
+<tt>uid_map</tt> file, then start attaching file capabilities that will be
+visible outside of the containing namespace.  In other words, B will
+have regained the <tt>CAP_SETFCAP</tt> capability that had been dropped.
+</p><p>
+There are other scenarios as well.  If A were to open the <tt>uid_map</tt>
+file without writing to it, then somehow transfer the file descriptor
+to B, it would be possible for B to write a root-to-root mapping
+there.  The check for <tt>CAP_SETFCAP</tt> is done when the
+<tt>uid_map</tt> file is opened, not when it is written, so that mapping
+will be allowed.  One might argue that A should not be giving away a
+privileged file descriptor that way, but it could happen if A simply fails
+to close it before dropping <tt>CAP_SETFCAP</tt>.
+</p><p>
+If B creates a user namespace, the <tt>CAP_SETFCAP</tt> flag will not be
+set, so B will not be able to create a root mapping for that namespace.
+A, however, has that capability, so it can write a root mapping into
+B's new user namespace.  Once again, that will enable B to set file
+capabilities that are effective in the containing namespace.  In some
+cases, there can be multiple levels of mappings that involve non-root UIDs
+in the middle.  <a href="/Articles/837566/">ID-mapped mounts</a>, which are
+often used with containers, add a twist of their own, since a non-root UID
+on the underlying filesystem may appear to be root within a give mount
+namespace.
+</p><p>
+Finally, B could simply attach to A with <a href="https://man7.org/linux/man-pages/man2/ptrace.2.html"><tt>ptrace()</tt></a>,
+an operation that is allowed because the effective UIDs are the same, then
+cause A to write its <tt>uid_map</tt> file or set file capabilities
+directly.  Since A holds <tt>CAP_SETFCAP</tt>, those operations will be
+allowed.
+</p><p>
+</p><h4>Plugging the holes</h4>
+<p>
+Preventing these privilege leaks requires enhancing the tracking of
+<tt>CAP_SETFCAP</tt> and some changes that are visible to user space.  The
+<a href="/ml/all/20261027-b4-setfcap-userns-v8-1-2674adc63f3c@toxicpanda.com">first
+patch</a> in the series replaces the <tt>parent_could_setfcap</tt> boolean
+in the <a href="https://elixir.bootlin.com/linux/v7.3/source/include/linux/user_namespace.h#L79"><tt>user_namespace</tt>
+structure</a> with an integer <tt>setfcap_level</tt> field.  While the old
+boolean recorded whether the creator of the user namespace had
+<tt>CAP_SETFCAP</tt>, the new one records how far up that capability was
+present — how many levels of parent user namespace where it was also held.
+This new variable accounts for the fact that <tt>CAP_SETFCAP</tt> in the
+current user namespace is effective in that many parent namespaces as well.
+</p><p>
+<a href="/ml/all/20261027-b4-setfcap-userns-v8-2-2674adc63f3c@toxicpanda.com">This
+patch</a> is intended to prevent a process from gaining
+<tt>CAP_SETFCAP</tt> on an ancestor user namespace by using
+<tt>setns()</tt>.  Specifically, it adds a check to ensure that, when a
+process calls <tt>setns()</tt> to enter a user namespace that is
+root-mapped at some higher level, the <tt>setfcap_level</tt> of that
+process extends at least as far as that of the target user namespace.  The
+test for root-mapped user namespaces includes namespaces that have not yet
+had a mapping set at all, since they still <i>could</i> become root-mapped
+in the future.  If the <tt>setns()</tt>-calling process does not have
+<tt>CAP_SETFCAP</tt> with sufficient reach, the call will fail with an
+<tt>EPERM</tt> error.  This is one of the visible changes; that call would
+succeed in current kernels.
+</p><p>
+A similar change is made by <a href="/ml/all/20261027-b4-setfcap-userns-v8-3-2674adc63f3c@toxicpanda.com">this
+patch</a> to control setting a root mapping by writing to the
+<tt>uid_map</tt> file.  If the attempted write creates a mapping to the
+root user in any ancestor user namespace, then the writer's
+<tt>setfcap_level</tt> must extend at least that far, or the operation will
+fail.  <a href="/ml/all/20261027-b4-setfcap-userns-v8-4-2674adc63f3c@toxicpanda.com">This
+patch</a> addresses the case where a <tt>CAP_SETFCAP</tt>-holding process
+writes the <tt>uid_map</tt> file; it checks attempts to write file
+capabilities and ensures that the writing process has a
+<tt>setfcap_level</tt> that is high enough to reach any root-mapped
+ancestor.  Finally, <a href="/ml/all/20261027-b4-setfcap-userns-v8-5-2674adc63f3c@toxicpanda.com">this
+patch</a> applies a similar check to <tt>ptrace()</tt> calls; if the tracer
+does not have a <tt>setfcap_level</tt> that reaches at least as far as that
+of the target, the call will fail.
+</p><p>
+This series has been through eight revisions as of this writing; it has
+evolved considerably, though the last few versions have been mostly focused
+on adding tests.  In theory, with these patches applied, the ability to
+leak privilege out of user namespace with file capabilities should no
+longer exist.  In practice, there is enough complexity here that one might
+still have cause to wonder.  Ensuring that user namespaces are truly secure
+has been a multi-year endeavor; mapping root access outside of these
+namespaces is only going to make that task more challenging.
+</p><p><a href="/Articles/1103429/#Comments">Comments (9 posted)</a>
+</p><p>
+<a name="1105134"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1105134/"
+                    >Additional hardening for the glibc dynamic linker</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-12 00:00:00">
+                                2026-11-12 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Daroc Alden                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Daroc Alden</b><br></br>November 11, 2026
+           </div>
+<p>
+The
+<a href="https://nodejs.org/en">
+Node.js project</a> recently had a
+<a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high">
+security vulnerability</a> that
+affected its
+<a href="https://brotli.org/">
+Brotli</a> decoder. The bug
+<a href="https://project-zero.issues.chromium.org/issues/565308158">
+was a buffer overflow</a>,
+but the particular way that official Node.js binaries are built for Linux meant that one of the
+main protections against turning a buffer overflow into remote code execution,
+<a href="https://en.wikipedia.org/wiki/Address_space_layout_randomization">
+address space layout randomization</a> (ASLR) could not be turned on. If ASLR had been
+enabled, the bug would still be exploitable in theory, but much more difficult
+to exploit in practice. In response, the GNU C Library (glibc) is
+<a href="https://lwn.net/ml/all/20261028175613.3779425-1-adhemerval.zanella@linaro.org/">
+considering</a> a new set of
+<a href="https://sourceware.org/glibc/manual/latest/html_node/Tunables.html">
+tunable settings</a> to allow administrators to forbid programs that do not
+support ASLR. The new settings, while a welcome hardening measure, may not
+address the root problem.
+</p>
+
+<h4>Background</h4>
+
+<p>
+When a program contains a buffer overflow, it is frequently possible to use that
+buffer overflow to take control of the program's execution, turning a
+data-corruption bug into a remote-code-execution vulnerability. Generally, this is
+done by overwriting a pointer that the program later jumps to, redirecting
+the program's flow of control to an attacker-chosen address. From there, it is
+straightforward to, for example, call <a href="https://man7.org/linux/man-pages/man3/execv.3.html"><tt>execv()</tt></a> with
+attacker-controlled arguments. The pointer that is overwritten is
+often a return address on the stack, but similar attacks have been demonstrated
+with callbacks, indirect jumps within a function, and C++ virtual method tables.
+</p>
+
+<p>
+There are many mitigations intended to make this more difficult for attackers,
+including
+<a href="https://en.wikipedia.org/wiki/Control-flow_integrity">
+control-flow integrity</a>,
+<a href="https://en.wikipedia.org/wiki/Shadow_stack">
+shadow stacks</a>, and even
+<a href="https://www.openbsd.org/papers/asiabsdcon2019-rop-paper.pdf">
+tweaking code
+generation to reduce the number of useful places to jump to</a>. ASLR is arguably
+the simplest such mitigation. It uses the fact that modern compilers can emit
+relocatable code to place the program in a randomly chosen part of virtual
+memory. Attackers wishing to overwrite a function pointer must figure out the
+program's base address in order to divert control flow anywhere useful.
+</p>
+
+<p>
+Compiling to position-independent code
+does have an impact: such code is often slightly larger and
+slightly slower than position-dependent code. In 2020, Node.js contributor
+"woodfairy"
+<a href="https://github.com/nodejs/node/issues/33425#issuecomment-711443427">
+measured</a> the impact on Node.js in particular at a slowdown of 5-10%,
+depending on workload. That slowdown was judged
+<a href="https://github.com/nodejs/node/pull/35704">acceptable on macOS</a>, but
+not on Linux (except for Android, which forbids position-dependent code, forcing
+the choice).
+</p>
+
+<p>
+Several Linux distributions, including Debian, Ubuntu, Arch, Alpine, and Gentoo,
+enable position-independent executables by default. On those
+distributions, compiling Node.js from source or installing the distribution
+packages will enable ASLR. The official
+Node.js binary packages, which are compiled on a system running Red Hat
+Enterprise Linux 8, still do not.
+</p>
+
+<h4>Dynamic linking</h4>
+
+<p>
+Dynamically linked programs rely on the dynamic linker
+<a href="/Articles/961117/">
+to initialize a new process</a>. On
+Linux, the linker is typically provided by the glibc project,
+although there are distributions that make other arrangements. That linker
+supports configuration options known as
+tunables to affect its operation. These can be set by environment variables,
+or system-wide in a file at <tt>/etc/tunables.conf</tt>.
+</p>
+
+<p>
+On October 26, Daniel Colascione
+<a href="https://lwn.net/ml/all/87v76pq8oj.fsf%40dancol.org/">asked</a> the
+glibc development mailing list whether it made sense to add a new tunable
+that would forbid position-dependent executables. Adhemerval Zanella Netto
+<a href="https://lwn.net/ml/all/5f6c2165-e7d8-43d8-b821-5bad42453fd8@linaro.org/">
+responded</a> with a list of hardening-related tunables that he hoped to
+implement, saying that they were all on his to-do list. He also suggested adding a
+single <tt>glibc.hardened</tt> tunable to enable all of them as a batch, similar
+to GCC's <tt>-fhardened</tt> option.
+</p>
+
+<p>
+Zack Weinberg <a href="https://lwn.net/ml/all/ded92b1a-2079-400e-80ba-edc316893a7b@app.fastmail.com/">
+noted</a> that, because most fixed-position executables are linked at low
+addresses, users can ask the kernel to refuse them by setting the minimum
+<a href="https://man7.org/linux/man-pages/man2/mmap.2.html"><tt>mmap()</tt></a>
+address (the
+<a href="https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html#mmap-min-addr">
+<tt>vm.mmap_min_addr</tt></a> sysctl) to a higher
+number. He did note there were some problems with the idea, and Maciej Rozycki
+<a href="https://lwn.net/ml/all/alpine.DEB.2.21.2610262115340.42255@angie.orcam.me.uk/">
+pointed out more</a>.
+</p>
+
+<p>
+Zanella
+posted the implementation of his promised tunables on October 28. The
+project's default behavior remains the same, but each option can be set to 0 or
+1 (depending on its wording) to enable the new protections. The new
+options include:
+</p>
+
+<ul class="spacylist">
+<li><tt>glibc.rtld.require_pie=1</tt>, which requires loaded programs to be
+position-independent.
+</li><li><tt>glibc.rtld.textrel=0</tt>, which forbids programs that ask the linker to
+perform a relocation targeting a section of the executable that is not mapped as
+writable.
+</li><li><tt>glibc.rtld.wx_segments=0</tt>, which forbids programs that ask for some
+segments to be mapped as both writable and executable at startup.
+</li><li><tt>glibc.rtld.bind_now=1</tt>, which disables the use of lazy global offset
+table resolution (equivalent to the use of the <tt>LD_BIND_NOW</tt> environment variable).
+</li><li><tt>glibc.rtld.relative_rpath=0</tt>, which prevents dynamic libraries from
+being found via relative paths.
+</li><li><tt>glibc.rtld.relro={1,2}</tt>, which requires the use of
+<a href="https://www.redhat.com/en/blog/hardening-elf-binaries-using-relocation-read-only-relro">relocation
+read-only</a> (RELRO) or <tt>-z now</tt>, respectively.
+</li></ul>
+
+<p>
+All six of the options can be set to the hardened behavior at once with <tt>glibc.rtld.hardened=1</tt>.
+Yury Khrustalev found
+<a href="https://lwn.net/ml/all/auMy3ivznxmfrxGN@arm.com/">many of the names
+overly terse</a>, and suggested that longer names, such as
+<tt>allow_textrel</tt>, might be clearer. Zanella
+<a href="https://lwn.net/ml/all/32f676ef-73bc-493b-8aa3-617d035dffd4@linaro.org/">
+agreed</a> to elongate them in the next version of the patch set.
+</p>
+
+<p>
+The changes themselves drew little comment. Most of them should be
+possible for distributions to enable with minimal disruption. In particular, the
+distributions that already enable position-independent executables by default
+can enable the tunables without impacting any distribution packages.
+The more difficult problem will come from executables built outside the
+distribution. Unless widespread adoption of these tunables motivates projects
+like Node.js to abandon position-dependent code,
+users may need to disable the tunables for those programs that the tunables are
+intended to address.
+</p>
+<p><a href="/Articles/1105134/#Comments">Comments (26 posted)</a>
+</p><p>
+</p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1102593/"
+                    >Containers as a recognized kernel object</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Jonathan Corbet                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Jonathan Corbet</b><br></br>October 29, 2026
+           </div>
+The foundation of the design for containers in the kernel is that there
+isn't one; there is no container abstraction that the kernel recognizes.
+Instead, the kernel provides a long list of components — namespaces,
+control groups, sandboxing mechanisms, and more — along with a note that
+says, in effect, "some assembly required".  There have been <a href="/Articles/723477/">attempts</a> (<a href="/Articles/780364/">repeatedly</a>) over the years to turn containers
+into first-class objects with kernel support, but they have never gotten
+far.  Now Josef Bacik is <a href="/ml/all/20261026-cells-rfc-v2-b41d7e0c95a3@toxicpanda.com">making a
+try</a> with a concept that he calls "cells".
+<p>
+Some years ago, the lack of any sort of kernel-supported container object
+was arguably the right approach; there was still a lot to be learned about
+how this concept should be integrated into Linux.  Some would surely argue
+that it is still a good idea.  But there are downsides as well, starting
+with the complexity of creating a container.  Beyond that, though, since
+the kernel has no notion of containers, it cannot enforce a container's
+properties and cannot even answer questions about which container a process
+might belong to.  Containers are created by walling off parts of the larger
+system.  Namespaces are created then entered, filesystems are unmounted or
+overmounted to make them inaccessible inside the container, and so on.
+This sequence means that any given process might be only partly inside a
+container, a situation that, according to Bacik, "<q>is where a depressing
+number of our bugs come from</q>".  The current approach to container
+creation also makes it easy to let unwanted resources leak into the
+container from the outside.
+</p><p>
+
+</p><h4>Introducing cells</h4>
+<p>
+Bacik's proposal is an attempt to address these problems.  A container
+(called a "cell" in this series), when created, contains nothing at all.
+No processes or filesystems show up there by default.  Anything that the
+creator wants to exist in a cell must be explicitly put there.  Processes
+and other resources created within a cell are not allowed to to leave that
+cell.  In theory, cells should be easier to manage and easier to keep
+secure than containers as they exist in Linux now.
+</p><p>
+A cell's life starts with a call to <tt>cell_create()</tt>:
+</p><p>
+</p><pre>
+    int cell_create(int parent, unsigned int flags);
+</pre>
+<p>
+The <tt>parent</tt> parameter is seemingly meant to designate which process
+will be the parent of the new cell, but in the current implementation the
+only allowed value is <tt>CELL_SELF</tt>, meaning that the creator is the
+parent.  The <tt>flags</tt> argument must be zero.  The return value, if
+all goes well, is a "cellfd" — a file descriptor referring to this cell.
+The cellfd is special, in that it is the handle that is used to perform all
+other operations on the cell.  There is no way to create a duplicate cellfd
+that possesses the same capabilities.  Creating a cell is an unprivileged
+operation.
+</p><p>
+If the cellfd is closed, the cell (and anything contained within it) is
+immediately killed.  There is also a system call to kill a cell explicitly:
+</p><p>
+</p><pre>
+    int cell_kill(int cellfd, unsigned int flags);
+</pre>
+<p>
+Where <tt>cellfd</tt> identifies the cell to kill, and <tt>flags</tt> must
+be zero.
+</p><p>
+An empty cell is secure and bug-free, but it is also rather boring.  There
+is another system call that is used to set various properties of this cell to
+make it more interesting:
+</p><p>
+</p><pre>
+    int cell_configure(int cellfd, unsigned int cmd, const char *key,
+    		       const void *value, int aux);
+</pre>
+<p>
+This system call applies the given configuration <tt>cmd</tt> to the cell
+identified by <tt>cellfd</tt>; the <tt>key</tt> string identifies which
+property is to be changed.  The available commands are:
+</p><p>
+</p><blockquote>
+<dl class="spacylist">
+<dt><tt>CELL_SET_FLAG</tt></dt>
+<dd>Sets the flag named by <tt>key</tt>; there are no flags defined in the
+    current proposal, though.
+</dd>
+<dt><tt>CELL_SET_STRING</tt></dt>
+<dd>Sets the string value given by <tt>key</tt> to the given
+    <tt>value</tt>.  Two strings are supported in the initial patch set:
+    <tt>hostname</tt> to set the host name within the cell, and
+    <tt>net</tt>, which sets the network namespace for the cell.  By
+    default, the cell has no network access, and only <tt>AF_UNIX</tt>
+    sockets can be created within it.  Setting the <tt>net</tt> key to
+    <tt>new</tt> creates a new network namespace that the builder will
+    subsequently configure, while <tt>own</tt> creates a network namespace
+    owned by the cell itself and configured internally.  In the
+    <tt>new</tt> case, there is another new system call
+    (<tt>cell_open()</tt>) that  must be used to
+    obtain a file descriptor for the newly created namespace.  The network
+    namespace can also be explicitly set with <tt>CELL_SET_FD</tt>,
+    described below.
+</dd>
+<dt><tt>CELL_SET_BINARY</tt></dt>
+<dd>Sets the property identified by <tt>key</tt> to the provided binary data.  The only value
+    accepted is <tt>ids</tt>, which is used to define which user IDs will
+    be used within the cell.  There are only two allowed values.  Setting
+    it to one causes processes within the cell to run with the same user ID
+    as the creator; this mode is not allowed for the root user.
+    <p>
+    Otherwise, the <tt>ids</tt> key must be set to 65,536, which causes a
+    block of that many IDs to be allocated from the upper part of the
+    32-bit user-ID space.  These IDs will be unique on the running
+    system, and the cell creator has no control over what they will be.  It
+    is not possible to create files owned by those IDs in any filesystem
+    outside of the cell.  This part of the design has drawn some comments
+    and may change (perhaps by providing an entirely separate user-ID
+    space for cell inmates) in the future.
+</p></dd>
+<dt><tt>CELL_SET_FD</tt></dt>
+<dd>Sets a value requiring a file descriptor.  There are three of those
+    implemented in this patch set.  <tt>root</tt> is a filesystem namespace
+    that contains the root filesystem within the cell, <tt>net</tt> is a network
+    namespace to be used by the cell, and <tt>budget</tt> is a
+    control-group directory.  The <tt>budget</tt> is mandatory, and each
+    cell must have its own control group.
+</dd>
+<dt><tt>CELL_CMD_SEAL</tt></dt>
+<dd>Once the configuration of the cell is complete, this command must be
+    issued; it completes the initialization of the cell and prevents any
+    further configuration changes.
+</dd>
+</dl>
+</blockquote>
+<p>
+Once the cell is sealed, it is set up with a filesystem tree, control-group
+membership, and the rest of the namespaces that control its interactions
+with the rest of the system.  It is still otherwise empty, though, with no
+processes running within it.  In Bacik's design, there is no way for an
+existing process to enter a cell; <a href="https://man7.org/linux/man-pages/man2/setns.2.html"><tt>setns()</tt></a>
+cannot be used to enter its namespaces.  Instead, processes must be born
+within the cell from the beginning, and they can never exit the cell.
+</p><p>
+</p><h4>Creating inmate processes</h4>
+<p>
+Allowing the creation of processes with life sentences inside a cell
+involves yet another proposal for a process-builder API; the last such attempt
+was <a href="/Articles/1086330/">covered here</a> in August.  Here, the
+first step is to create the process within the cell with a variant of the
+<a href="https://man7.org/linux/man-pages/man2/pidfd_open.2.html"><tt>pidfd_open()</tt></a>
+system call.  Rather than passing a process ID to <tt>pidfd_open()</tt>,
+the cell creator passes the cellfd and the <tt>PIDFD_EMPTY</tt> flag.  The
+return value is a pidfd that does not, yet, refer to a running task; it is
+in the "embryo" state at this point.
+</p><p>
+Once the pidfd is created, it must be configured with another new system
+call before it can run anything useful:
+</p><p>
+</p><pre>
+    int pidfd_configure(int pidfd, unsigned int cmd, const char *key,
+    		        const void *value, int aux);
+</pre>
+<p>
+The interface looks much like that of <tt>cell_configure()</tt>, and it
+operates in mostly the same way.  The process to configure (which must be
+in the embryo state) is specified by <tt>pidfd</tt>; the <tt>cmd</tt> value
+is one of:
+</p><p>
+</p><blockquote>
+<dl class="spacylist">
+<dt><tt>PIDFD_SET_STRING</tt></dt>
+<dd>The only supported key is <tt>exec</tt>, which names the executable
+    file (within the cell's mount namespace) that the process will run.
+</dd>
+<dt><tt>PIDFD_SET_BINARY</tt></dt>
+<dd>Sets a key to binary data.  Recognized keys are <tt>argv</tt> to set
+    the processes argument vector, <tt>envp</tt> to set its environment
+    variables, and <tt>cred</tt>, which sets the process's user and group
+    IDs within the cell's user namespace.
+</dd>
+<dt><tt>PIDFD_SET_FD</tt></dt>
+<dd>Sets a file descriptor in the embryo process; the <tt>key</tt> is the
+    file-descriptor number (as a string), and the <tt>aux</tt> parameter is
+    an open file descriptor in the caller's file table.  The only open file
+    descriptors the process will have are those set up with
+    <tt>PIDFD_SET_FD</tt>, so there should be no problems with file
+    descriptors accidentally leaking into the cell.
+</dd>
+<dt><tt>PIDFD_CMD_START</tt></dt>
+<dd>This command sets the process running once all of the necessary
+    parameters have been configured.  After that, it is no longer an
+    embryo, and <tt>pidfd_configure()</tt> can no longer be used with it.
+</dd>
+</dl>
+</blockquote>
+<p>
+The first process to be started within the cell becomes the init process
+for the cell; if it dies, the cell dies with it.  It is possible to inject
+other processes into a running cell using this API, so the owner can, for example, start a
+shell within the cell if need be.  But that must be done by creating a new
+process; existing processes are forbidden from crossing that boundary.
+</p><p>
+</p><h4>Other details</h4>
+<p>
+A lot of other restrictions at the cell boundary exist as well.  Every
+process within the cell runs with <a href="https://docs.kernel.org/userspace-api/no_new_privs.html">the "no new
+privileges" flag</a> set, so it cannot gain new capabilities.  It is not
+possible to send open file descriptors across the boundary (in either
+direction) using Unix-domain sockets.  Cells cannot share a control group
+with any other processes.  And so on; the purpose is to make the
+containment of cells as tight and controlled as it can be.
+</p><p>
+There are a lot of details to this proposal that have not been covered
+here; it also contains a long list of open issues and shortcomings.  As
+Bacik noted, the purpose is not to provide a complete implementation;
+instead, it "<q>exists so that there is code to argue about</q>".  Readers
+wanting to know more should read through his entire proposal.  The code
+exists in <a href="https://github.com/josefbacik/linux/commits/cells/">a
+GitHub branch</a>; it contains <a href="https://github.com/josefbacik/linux/blob/cells/Documentation/userspace-api/cells.rst">a
+design document</a> that covers much of what was discussed here and more as well.
+</p><p>
+So far, there has been little discussion of this proposal, perhaps because
+it was only posted to the linux-fsdevel mailing list.  Nonetheless, it has
+evolved somewhat since <a href="/ml/all/20261019-cells-rfc-6f4c85415f29@toxicpanda.com">the first
+version</a> was posted in mid-October.  This is not a small proposal, and
+it is trying to make changes that have proved controversial in the past, so
+it is not hard to imagine that discussion will eventually happen.  At the
+far end of it, though, the kernel might just have the container abstraction
+that its community has resisted for so long.
+</p><p><a href="/Articles/1102593/#Comments">Comments (27 posted)</a>
+</p><p>
+<a name="1103674"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1103674/"
+                    >LLM reviews for Debian's new queue spark debate</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Joe Brockmeier                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Joe Brockmeier</b><br></br>November 3, 2026
+           </div>
+<p>The Debian project has wrestled with the topic of LLM usage for years, which
+culminated in a <a href="https://lwn.net/Articles/1087134/">general-resolution
+vote</a> this August. The project <a href="https://lwn.net/Articles/1091231/">voted in favor</a> of the fifth, out of
+eight, option: "<a href="https://www.debian.org/vote/2026/vote_002#texte">Responsible Use of
+Generative AI</a>". With the door open to LLM use, the <a href="https://wiki.debian.org/Teams/DFSG">DFSG, Licensing &amp; New Packages
+Team</a> (usually shortened to "DFSG team"), which is <a href="https://lwn.net/Articles/1043364/">relatively new</a>, has started to employ LLMs in
+sending out reviews of packages entering Debian's <a href="https://wiki.debian.org/NewQueue?pow_referer=https%3A%2F%2Fkagi.com%2F">new queue</a>. The practice has
+raised a number of objections and questions about where lines should be drawn in
+the use of LLM-generated output.</p>
+
+<h4>New queue dashboard</h4>
+
+<p>The new queue name may be a bit misleading to those outside of the Debian
+project. "New", in this case, refers not only to brand-new packages that have
+never before been distributed by Debian, but also to various updates of existing
+packages.</p>
+
+<p>The DFSG team's Reinhard Tartler <a href="https://lwn.net/ml/all/20260212132552.46C7013F903%40x1.int.tauware.de/">announced</a>
+the <a href="https://dfsg-new-queue.debian.org/dashboard">new queue
+dashboard</a> in February, calling it "<q>a fundamental shift in how we
+prioritize and process packages</q>". He said that this would be the first time
+that everyone could have a high-level view of what is happening in the new
+queue; packages entering the queue would be prioritized by "<q>a set of signals
+designed to improve overall project health</q>" including the time they had been
+in the queue, how popular the package is judged by its <a href="https://popcon.debian.org/">popcon score</a>, and whether a package update
+unblocks other issues. For example, a package in the new queue might address
+bugs or security problems in other packages.</p>
+
+<p>According to the <a href="https://dfsg-new-queue.debian.org/docs/FAQ">dashboard FAQ</a>, packages in
+the queue are sorted by a priority score; those with a higher score are placed
+at the top of the queue. That is not a guarantee that packages will be reviewed
+in order, though. DFSG team members can <a href="https://dfsg-new-queue.debian.org/docs/FAQ#order">pick any package to
+review</a>, they are not bound to choose from the top of the list. DFSG team
+member Andrew McMillan <a href="https://lwn.net/Articles/1084499/#priorities">talked about priorities for
+reviews</a> in his report on the DFSG team at <a href="https://debconf26.debconf.org/">DebConf26</a>. "<q>The ones that come to
+the top of my list tend to be languages that I'm more familiar with, like
+Go. And the ones that go to the bottom of my list tend to be languages that I'm
+less familiar with, like Python.</q>"</p>
+
+<p>The <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue#dfsg-new-queue">repository
+for the new-queue tooling</a> is hosted on <a href="https://wiki.debian.org/Salsa">Salsa</a>,
+the Debian project's GitLab-based collaborative development
+server. The LLM-review agent seems to have been added (<a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/commit/14ecdc439819046144ef5f6ac0f452c1c0d90e8a">commit</a>)
+on September 29, by McMillan, with additional work to enable LLM reviews
+following that.</p>
+
+<p>Uploaders receive an email generated by the LLM that states the review was
+performed by an LLM and is not a review by a member of the DFSG team, with a
+disclaimer that its review may be incorrect or incomplete. According to
+McMillan's commit message, if the LLM review claims that there is a blocker or
+important licensing issue in an upload then it is held from the queue for 24
+hours. That seems to be in conflict with the FAQ, though, which <a href="https://dfsg-new-queue.debian.org/docs/FAQ#updates">states</a> that
+uploads appear on the dashboard within "<q>a little more than an hour</q>". A
+feature to allow uploaders to answer or reject the LLM review was <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/commit/0e54c9f3da60af25b9a322275b6b3acb549073a2">added</a>
+on October 19. If the uploader comments, the hold is ended. If there is no
+comment, then the upload is docked 50 points under the DFSG queue scoring
+system. According to <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/commit/3c209feded7ddf5b1d3bbe0bf9cca9d1ffa86aaa">another
+commit</a> a response adds 25 points. Note that the scoring system is somewhat
+opaque, there is no list I could find that spelled out the scoring
+explicitly. At the moment, the package at the top of the dashboard (<a href="https://dfsg-new-queue.debian.org/reviews/bucklespring"><tt>bucklespring</tt></a>)
+has been in the queue for three days, and it has 424 points. At the bottom of
+the board is a package with only 23 points (<a href="https://dfsg-new-queue.debian.org/reviews/openbor"><tt>openbor</tt></a>)
+that has been in the queue for seven hours.</p>
+
+<h4>Endorsing LLMs?</h4>
+
+<p>The first project-wide communication about the addition of LLM reviews in new
+queue processing came not from the DFSG team, but from Debian developer Johannes
+Schauer Marin Rodrigues on October 26. He <a href="https://lwn.net/ml/all/179302216094.684046.13205251635294909716%40localhost/">declared</a>
+that he would no longer be uploading packages to the new queue after learning
+that submissions to the queue are processed by an LLM. It seemed to him 
+that adopting LLM usage in this way, by a team and process that is core to
+contributing to Debian, it was effectively a project endorsement of LLMs.</p>
+
+
+
+<p>The "responsible use" option the project chose states that Debian "<q>neither
+endorses nor prohibits the use of generative AI tools</q>". Instead, it says that
+it relies on the judgment and responsibility of its individual contributors, but
+cautions that contributors should "<q>exercise appropriate care when designing
+and implementing workflows that incorporate generative AI tools</q>". It also
+says that actions utilizing LLMs that have "<q>broad impact</q>" should be taken
+only after "<q>prior discussion and consensus through the appropriate project
+channels before proceeding</q>".</p>
+
+<p>Schauer complained that the DFSG team had not announced this addition to its
+process, and asked where the team had conducted any discussion or gotten
+consensus:</p>
+
+<blockquote class="bq">
+I *am* grateful for the (mostly thankless) work done by the DFSG team but I
+[would] rather wait a year before my package makes it through NEW (yes, that happened)
+than have my strong opposition to LLMs be ignored and all my uploads being
+automatically screened without my consent. I think seeking prior discussion for
+this is especially warranted because (I hope) we learned in the GR discussion
+on debian-vote that there are developers with strong opinions in either
+direction. Why not talk about it first?
+</blockquote>
+
+<p>He thought that packagers should have to opt-in to LLM reviews, and said he
+would not upload anything to the new queue without a way to opt out of
+them. Mathias Gibbens <a href="https://lwn.net/ml/all/6b52d64914dac63f0ddc0440baad34ecf01d9a08.camel@debian.org">also
+noticed</a> the change, and seconded Rodrigues's concerns. It was fine with him
+if individuals on the DFSG team used LLMs in reviewing packages, but he wanted a
+"<q>succinct and to the point</q>" review. He pointed to some of the reviews
+shown in the DSFG team's dashboard and noted that <a href="https://dfsg-new-queue.debian.org/reviews/node-comlink#assistant-report">one
+report chosen at random</a> weighed in at 734 words, and <a href="https://dfsg-new-queue.debian.org/reviews/gumbo-parser/0.14.1+dfsg-1/d6d8eeaa665a5de675852125618e4a141646c2e6732bb62ecbc09ae712abc05c">another
+one</a> was 1,535 words. He had not tried to read through them, but he wanted to
+emphasize "<q>the many orders of magnitude change in review size that's being
+generated</q>".</p>
+
+<p>Gibbens noted that the process now appears to be weighted against people
+who ignored the LLM reviews, and in favor of those who replied to the LLM
+review. He was concerned that the DFSG team's new practices meant that everyone
+uploading to the new queue is now forced to interact with LLM-generated
+content. "<q>As best as I know, this is the first such significant change to any
+Debian-wide process since the passing of the GR.</q>"</p>
+
+<h4>Terms &amp; conditions?</h4>
+
+<p>Martin Steigerwald <a href="http://lwn.net/ml/all/HRqMFmarQZuyYHIElNt6bw@lichtvoll.de">wanted to know
+more</a> about the services and technology behind the LLM-generated
+output. He was concerned about the terms and conditions of the service, whether
+LLMs would be trained on data from the automatic review process, and wondered
+which models were being used.</p>
+
+<p>The service being used by the DFSG team for the LLM reviews is the <a href="https://inference.debian.net">Debian Inference Portal</a>, which was <a href="https://lwn.net/ml/all/arQ5HTtAs1TAaroZ%40grub.nussbaum.fr/">announced</a>
+by Lucas Nussbaum in September. That service provides Debian contributors
+self-service access to an API that various coding agents, editors, and other tools
+can use to query the hosted LLMs. Currently the service is being provided by
+ScaleWay, a European cloud provider, which is donating a set number of credits
+each month to the Debian project.</p>
+
+<p>Many of the questions Steigerwald had were answered by the <a href="https://inference.debian.net/doc">documentation</a>
+for the portal. It explains <a href="https://inference.debian.net/doc#available-models-and-providers">which
+models are available</a>, and that the company has a <a href="https://inference.debian.net/doc#who-owns-the-output-and-does-scaleway-train-on-my-data">policy
+of zero data retention</a>. "<q>Prompt content is not stored, and is explicitly
+not used for training, retraining, or improving the base models. Data is not
+accessible to the LLM creators or to third parties.</q>" Some metadata, such as
+token counts and HTTP status codes, is retained up to six months for performance
+monitoring, according to the documentation.</p>
+
+<h4>Discussion</h4>
+
+<p>As one might expect, there was a fair bit of discussion about the use of LLM
+reviews and whether it was in the spirit of the general resolution. Matthias
+Geiger <a href="https://lwn.net/ml/all/tniszr.780qmg6iypw6@riseup.net">said</a>
+that it was a "<q>blatant waste of maintainer time</q>". He said that
+"<q>dumping a generated generic review text on maintainers feels highly
+disrespectful</q>". The reason he contributed to, and loved, Debian was due to
+its community. He did not want "<q>the equivalent to an automatic answering
+machine</q>" involved in reviewing his packages.</p>
+
+<p>Richard Laager, however, <a href="https://lwn.net/ml/all/237d1abe-2e49-4196-a5f4-105d3fe5f4c9@debian.org">defended</a>
+the LLM's output. He said that the lengthy review was due to "<q>a whole bunch
+of specific examples of copyright mismatches</q>", and he found the report to be
+"<q>reasonable, helpful, and actionable</q>". Ted Ts'o <a href="https://lwn.net/ml/all/at_0HxOSGZYukNim@mit.edu">pointed out</a> that
+"<q>[unreliable] and non-deterministic</q>" humans are capable of giving
+bad reviews too. He thought that the automated reports could save time by
+allowing maintainers to resolve problems before a human had to review the
+package. "<q>If it's pointing out things that humans later have validated to be
+true, wouldn't you rather have first access if it allows your NEW package to get
+accepted faster?</q>" But people could ignore the reports if they wanted, he
+said. It <a href="https://lwn.net/ml/all/87ld7jhj1o.fsf@benfinney.id.au">troubled
+Ben Finney</a> that Ts'o was comparing humans and machines in the
+conversation:</p>
+
+<blockquote class="bq">
+Humans are our peers. As such, we must acknowledge they are fallible
+like ourselves, and accord them much generosity and work with them,
+expecting they have needs and wants and a desire to improve and help us
+in return.
+</blockquote>
+
+<p>LLMs, on the other hand, did not deserve the same consideration. "<q>We are
+right to complain that it is used to impose on our work and our attention.</q>"
+Finney said that it was not good enough to suggest that the reports could be
+ignored. "<q>If the messages are imposed unilaterally on us by the agency of
+someone else, that is obnoxious and we are right to demand that it
+cease.</q>"</p>
+
+<p>Nussbaum <a href="https://lwn.net/ml/all/auECV7TFUakmQq9j@grub.nussbaum.fr">reasoned</a>
+that the DFSG team was using the LLM reviews anyway, and that it made sense to
+provide the report to maintainers "<q>so they can react without waiting for a
+human review, similarly to how maintainers react to CI results</q>". He did not
+see the point in "<q>hiding those reports</q>". It was fine if some maintainers
+wanted to wait for a human to confirm the results, "<q>by why penalize those who
+welcome early feedback?</q>" Bill Allombert <a href="https://lwn.net/ml/all/auPN43b66foer1yD@master.debian.org">argued</a> that
+developers would feel that packages would be rejected unless they comply with
+the LLM's suggestions.</p>
+
+<p>Marvin Renich <a href="https://lwn.net/ml/all/auiY91UgZtxEvKUR@basil.wdw">said</a> there seemed
+to be two disparate points of view: that of people receiving LLM feedback, and
+the DFSG team. He thought that the DFSG team "<q>intended to use the output from
+the LLM as one input in their review process</q>", whether a submitter used it
+or not. From that point of view, "<q>it is unnecessary for a submitter to feel
+that they have any control over whether or not an LLM is used when they
+upload</q>". But they do, he said, have a right not to see the LLM output:</p>
+
+<blockquote class="bq">
+What the DFSG team did not seem to take into account, however, was the
+substantial controversial nature of the most recent GR.  I feel they
+should have known that there would be people who would truly _not_ want
+to see the direct output from the LLM, at least not without human review
+first.
+</blockquote>
+
+<h4>Opt-out please</h4>
+
+<p>Chris Hofstaedtler <a href="https://lwn.net/ml/all/auCaladUlnzM6jSc@zeha.at/">wondered</a> if the DFSG
+team was just not interacting with the debian-devel mailing list, "<q>i.e., the
+one place we expect contributors to read</q>". That was on October 27,
+early on in the discussion. To date, none of the DFSG team have responded to the
+discussion on debian-devel, nor has Debian Project Leader Sruthi Chandran, who <a href="https://lwn.net/ml/all/6dc7aca9df5381cb9abd3025090dfd62677e7ec5.camel%40disroot.org/">renewed
+the delegation</a> for the DFSG team, on October 25, for another year. They
+have, however, taken some feedback via issues filed against the new-queue
+repository on Salsa.</p>
+
+<p>Antonio Terceiro opened <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/work_items/56">an
+issue</a> asking that developers be allowed to opt-out of LLM
+reviews on October 26. He said he did not want to have an argument about
+the merits of LLMs, but the reality was that some project members were
+uncomfortable or even offended by LLMs and should have the ability to
+opt-out. Colin Watson <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/work_items/56#note_823913">said</a>
+that opt-in would be better: "<q>But opt-out would be better than nothing.</q>"</p>
+
+<p>There was no direct response from the DFSG team, but Nilesh Patra <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/work_items/56#note_824482">pointed
+out</a> that the request had been addressed by a <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/commit/6790ee440eef80c25f4025386eee40cd25040715">commit</a>
+from McMillan that allows uploaders to opt-out of review. Terceiro <a href="https://salsa.debian.org/dfsg-team/dfsg-new-queue/-/work_items/56#note_824794">posted
+a screenshot</a> of the opt-out button on the dashboard and said, "<q>I guess that's the best we
+can get for now</q>".</p>
+
+<p>Discussion on the topic continues, though it has slowed down
+significantly. The opt-out option may not satisfy all Debian uploaders who
+dislike the use of LLMs, but it seems to have mollified many of the people who
+complained about unwanted LLM reviews for now.</p>
+<p><a href="/Articles/1103674/#Comments">Comments (40 posted)</a>
+</p><p>
+<a name="1101647"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1101647/"
+                    >System-call wrappers for glibc</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Jake Edge                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Jake Edge</b><br></br>October 30, 2026
+           <hr></hr>
+<a href="/Archives/ConferenceByYear/#2026-Linux_Plumbers_Conference">LPC</a>
+</div>
+<p>
+In a followup to his 
+<a href="https://lpc.events/event/19/contributions/2220/">session at the
+2025 Linux Plumbers Conference</a> (LPC), Carlos O'Donell returned to the topic
+of <a href="https://lpc.events/event/20/contributions/2397/">system-call
+wrappers for the GNU C library</a> (glibc) at this year's event.  This time
+around, he was joined by Florian Weimer, who is another glibc maintainer.
+The idea was to give an update on what has happened over the last year with
+regard to Linux system calls that lack a glibc wrapper, thus are only
+accessible via
+<a href="https://man7.org/linux/man-pages/man2/syscall.2.html"><tt>syscall()</tt></a>.  In addition, they wanted to hear from attendees about their
+needs in this area.
+</p>
+
+<h4>Background</h4>
+
+<p>
+O'Donell began by describing "<q>the problem we're trying to solve</q>",
+which is to make kernel functionality that is exposed by system calls easy
+to use from the C library.  If a system call is available, the feature has
+already been added to the kernel and there is an entry in a header file to
+access it.  There are lots of reasons developers want access to new
+system calls, for testing, examples, sorting out ABI issues, and so on, he
+said. 
+</p>
+
+
+
+<p>
+Currently, there are libraries "<q>that encapsulate entire sets of
+syscalls</q>", such as <a href="https://github.com/axboe/liburing">liburing</a> and <a href="https://liburcu.org/">liburcu</a> (which were listed in the <a href="https://lpc.events/event/20/contributions/2397/attachments/2113/4685/Adding%20C%20library%20wrappers%20for%20all%20syscalls%20Part%202%20-%20Linux%20Plumbers%20Conference%202026.pdf">slides</a>,
+but not explicitly mentioned at the time); the developers of those
+libraries "<q>have done a very good job of exposing that
+functionality</q>", but often not directly as system calls.  The
+specialized-library
+developers may choose to offer a different interface that may be easier for
+programmers to use.
+</p>
+
+<a href="/Articles/1103238/">
+<img align="right" alt="[Carlos O'Donell]" border="0" height="260" hspace="5" src="https://static.lwn.net/images/2026/lpc-odonell-sm.png" title="Carlos O'Donell" width="242"></img>
+</a>
+
+<p>
+What O'Donell wanted to talk about was all of the other system calls that
+are lacking any glibc interface (other than <tt>syscall()</tt>).  There is a
+bunch of complexity in creating system-call wrappers, "<q>because
+of ABI issues, procedure-call standards, the way in which parameters are
+passed to the kernel, the special kernel parameter-calling interfaces that
+you have</q>", and so on.  Due to that, it is difficult to write portable
+versions of system-call wrappers, which means they end up as "<q>weird,
+per-architecture-specific things</q>".  Creating those wrappers should not
+require understanding all of that, he said.
+</p>
+
+<p>
+So, at last year's session, he offered to "<q>review, coach, [and] mentor
+syscall wrappers through the process</q>".  When kernel developers
+add a system call, there are multiple communities they need to work with in
+order to actually
+provide the feature to users, such as <a href="https://musl.libc.org/">musl
+libc</a>, <a href="https://libc.llvm.org/">LLVM-libc</a>, and others.  His
+offer was to try to make that process easier for getting system-call
+wrappers into glibc.
+</p>
+
+<p>
+"<q>Ta-da</q>", he said, with a slide showing <a href="/ml/all/20260814183612.1780736-1-andrealmeid%40igalia.com/">an RFC
+patch set</a> from André Almeida to add a wrapper for <a href="/Articles/866112/"><tt>futex_waitv()</tt></a>.  O'Donell thanked
+Almeida, who was present, for
+taking him up on his offer, noting that the two of them have been <a href="/ml/all/20260825165039.917357-1-adhemerval.zanella@linaro.org/">working
+on a patch set</a> with Adhemerval Zanella.  The <a href="https://man7.org/linux/man-pages/man2/futex.2.html"><tt>futex</tt>
+interface</a> is complicated, O'Donell said; it is a "<q>multiplexed
+interface with really gnarly, fiddly pieces</q>", but the wrappers are a work
+in progress. "<q>I think this is the start of a beautiful series of
+patches, of collaborating with us to make sure that we get the wrappers in place.</q>"
+</p>
+
+<h4>Missing</h4>
+
+<p>
+Next, he turned to the specific system calls without wrappers.  He looked
+at the x86-64 architecture, which has 386 system calls in the Linux kernel
+tree.  Of those, glibc is exporting 292 "<q>same-named globals</q>", which
+means that there is a C function in glbc with the same name as the system
+call. That call "<q>basically does that functionality; I'm not saying that
+it's exact or identical</q>".  For example, some wrappers need to map
+kernel types into the equivalent user-space-ABI types.
+</p>
+
+<p>
+There is a mixture of mechanically created assembly language wrappers and
+manually created C wrappers, which is less than ideal, perhaps, but is
+where things stand, he said.  Since 2014, the glibc developers have been
+looking at ways of mechanically generating wrappers, "<q>but the
+mechanical-conversion process is so fiddly</q>" because there are so many
+different details that need to be taken into account.  So that project has
+never been completed.
+</p>
+
+<p>
+Beyond the 292, there are 16 glibc calls that have different names than the
+system calls because the behavior is different.  That leaves 77 system
+calls with no wrapper.  Toolchains track organizer Nick Desaulniers asked
+if there were any of those 77 that are "<q>dead and should be slated for
+removal</q>".  O'Donell enthusiastically agreed that there were: "<q>absolutely</q>"; he noted
+that Desaulniers had anticipated his next slide (seen below), which contained the answer.  The slide had an opinionated list of the priorities
+for adding wrappers that was compiled by O'Donell, Weimer, and Zanella.
+</p>
+
+<blockquote>
+<a href="/Articles/1103237/">
+<img alt="[Slide 6]" class="photo" src="https://static.lwn.net/images/2026/syscalls-sin-wrappers.png" title="Slide 6"></img>
+</a>
+</blockquote>
+
+<p>
+O'Donell said that he didn't expect attendees to really read the slide, but
+to just get a general idea of the different buckets that had been used to
+classify the system calls.  The first bucket was "core-kernel
+functionality", which Weimer and O'Donell went back and forth over, moving
+calls from there to the "domain-specific functionality" bucket and back
+again.  "<q>For the 'domain-specific functionality', I don't think we want
+wrappers for them</q>", O'Donell said.  At the top of that list is calls
+for <a href="https://man7.org/linux/man-pages/man7/io_uring.7.html">io_uring</a>,
+which are not a priority for wrappers because developers will simply use liburing.  If that turns out
+not to be true, thus kernel and user-space developers are asking for
+wrappers, the glibc developers may add them at some point, but there are
+higher priority targets.
+</p>
+
+<p>
+Another lower priority area is system calls that implement interfaces
+needed by C-library implementations.  Those can be called directly from the
+C-library code and are not functionality that many application developers
+will need, he said.  Then there are "<q>the things that are dead</q>"
+listed at the bottom of the slide "<q>that we'd never implement</q>".
+</p>
+
+<h4>Concurrency</h4>
+
+<p>
+Going back to the top-priority system calls, he noted that there are a
+number of concurrency primitives, such as <tt>futex_waitv()</tt>, that the
+kernel exposes which need wrappers.  That is what is behind Almeida's
+efforts and those wrappers are needed elsewhere, such as in <a href="https://gcc.gnu.org/onlinedocs/libstdc++/">libstdc++</a>, O'Donell
+said.  Since they were not available, "<q>we hack it up and libstdc++ calls
+<tt>futex()</tt> directly</q>", which should not have happened.
+</p>
+
+<p>
+Beyond the concurrency primitives, there are various calls for scheduling,
+isolation, memory management, filesystems, and so on.  At the bottom of
+core-kernel functionality section is <a href="/Articles/926649/"><tt>map_shadow_stack()</tt></a>, which may not
+quite have the same priority, O'Donell said.  But once
+<tt>futex_waitv()</tt> gets in, it makes sense to start working on more of
+the concurrency calls as part of the core-kernel functionality category.
+</p>
+
+<p>
+O'Donell noted that Weimer wants to add wrappers for <a href="/Articles/728795/"><tt>membarrier()</tt></a> and <a href="/Articles/1038235/"><tt>rseq_slice_yield()</tt></a>, but asked about
+<a href="https://docs.kernel.org/locking/robust-futex-ABI.html"><tt>get_robust_list()</tt>
+and <tt>set_robust_list()</tt></a> (which came up in <a href="/Articles/1056387/">Almeida's session at LPC 2025</a>).  Weimer said
+that those calls should not have glibc wrappers; "<q>that needs to be
+more efficient, because you can't do a syscall when you need it</q>". 
+</p>
+
+<p>
+O'Donell asked Almeida if he would sort the list of concurrency primitives
+differently, but Almeida said that it looked good to him.  He wants
+to get <tt>futex_waitv()</tt> wrapped because it is used for emulation, but
+"<q>eventually I would like to have some sort of pthread_wait_on_multiple()
+as well and I think this is the first step</q>".  That would be like the
+Windows <a href="https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitformultipleobjects"><tt>WaitForMultipleObjects()</tt></a>
+function, O'Donell suggested, which is a powerful primitive that is lacking
+in Linux.  Almeida agreed and said that the hard part has already been done
+in the kernel; O'Donell and he agreed that a collaboration between glibc
+and kernel developers to determine how that interface would work is a
+good next step.
+</p>
+
+<p>
+There are legacy system calls that the kernel has to support forever,
+Steven Rostedt said, in order to keep running code that was written in the
+1990s. 
+But that does not mean that they need to be available for code bases that
+are newer and do not require those calls, which may have a security benefit since
+the legacy calls are less scrutinized.  So he suggested that a list of these
+system calls be collected and then a kernel-configuration option could be
+added to remove them from some kernel builds.
+</p>
+
+<p>
+O'Donell said that the glibc maintainers have discussed ways to harden the
+library, including removing system calls from it. "<q>If you never call
+<tt>exec()</tt>, why are you allowing <tt>exec()</tt> to exist as a
+callable global symbol?</q>"  Weimer noted that some people have started
+removing the 32-bit time system calls from glibc, in favor of the 64-bit
+calls, but that is problematic for the glibc developers because the 32-bit
+versions are used internally.  Glibc still needs to run on kernels that only have
+32-bit time values.  "<q>If you disable the support for reasons, then stuff
+breaks because we are actually using them for compatibility with older kernels.</q>"
+</p>
+
+<h4>Conflicting symbols</h4>
+
+<p>
+Earlier, Almeida had asked about symbol conflicts, which O'Donell
+acknowledged as a difficult problem.  He does not think there is a silver
+bullet for handling symbol conflicts between different libraries and header
+files; it is "<q>possibly an ecosystem problem where we have to work [it]
+out with individual projects</q>".  He likened it to the effort he and
+Weimer were involved in to <a href="/Articles/913505/">move all of the
+Fedora packages to C99</a>, which was a "<q>cross-cutting ecosystem
+project</q>" that required lots of volunteers fixing each problem as it
+arose. 
+</p>
+
+<a href="/Articles/1103239/">
+<img align="left" alt="[Florian Weimer]" border="0" height="260" hspace="5" src="https://static.lwn.net/images/2026/lpc-weimer-sm.png" title="Florian Weimer" width="247"></img>
+</a>
+
+<p>
+Weimer said that the conflicts most often occur when someone wants to use
+"<q>the official libc functionality</q>" so they include the appropriate
+glibc header file but also need something from kernel header files in the
+same compilation unit.  That may cause conflicts.  Fixing those problems
+requires more coordination between the glibc and kernel projects.
+</p>
+
+<p>
+Weimer said that his highest priority is to complete the wrappers for existing
+functionality, <a href="/Articles/883104/">restartable sequences</a> in
+particular.  Another high priority is on "<q>system calls that have a
+strong C library dependency</q>" because there is a global object that
+needs to be accessed in a coordinated way.  His example was for system
+calls that affect the <a href="https://en.wikipedia.org/wiki/Thread_control_block">thread control
+block</a> (TCB), which should not be manipulated from two separate
+user-space libraries.  Right now, the C library uses the TCB for locking,
+while web browsers use the <a href="https://man7.org/linux/man-pages/man2/clone.2.html"><tt>clone()</tt>
+system call</a> wrapper from glibc, but "<q>then do a <a href="https://man7.org/linux/man-pages/man3/longjmp.3.html"><tt>longjmp()</tt></a>
+out of that and then patch the TCB so that the rest of the C library works
+and that is horrible for backwards compatibility</q>".  The browsers need
+to know the structure offsets in the TCB in order to do that; his hope is
+that working on system calls with a TCB dependency will allow moving the
+browsers to "<q>a model that's supportable longer term</q>". 
+</p>
+
+<p>
+Another area he would like to see dealt with is system calls that have
+non-portable signatures; <tt>futex()</tt> is a good example because there
+is also the incompatible <tt>futex_time64()</tt>.  On some architectures you have to
+use <tt>futex()</tt> and others <tt>futex_time64()</tt> but having an
+<tt>#ifdef</tt> on every call site is not really going to happen.
+Arnd Bergmann said that the older, 32-bit-only calls will be going away
+anyway, because the kernel cannot support 32-bit times.  Weimer seemed to
+be hoping that <tt>futex()</tt> was not slated for removal from the kernel,
+but Bergmann was adamant that it was.  Weimer suggested making
+timestamps unsigned, which would extend the life of 32-bit times (at the
+expense of being able to represent times before 1970), but there was no response to that.
+</p>
+
+<h4>Enumeration</h4>
+
+<p>
+H. Peter Anvin said that the kernel needed to provide a mechanism for
+enumerating system calls, which would allow using the <a href="https://sourceware.org/glibc/wiki/GNU_IFUNC">GNU indirect
+function</a> (IFUNC) feature.  Right now, a program does not know that a
+system call is not implemented until it gets an <tt>ENOSYS</tt> error, and
+"<q>the opportunity to use IFUNC has already long since passed</q>".
+Weimer did not think that would help much because <a href="https://man7.org/linux/man-pages/man2/seccomp.2.html"><tt>seccomp()</tt></a>
+filters can also return <tt>ENOSYS</tt>; it would be nice if the kernel provided a complete
+view of what is permitted that included <tt>seccomp()</tt> restrictions. 
+</p>
+
+<p>
+It might make sense to have the kernel provide its own library for the
+simple and straightforward system calls, Anvin said.  That would decouple
+the release schedules for distributions; some conservative distributions
+want to update glibc less frequently than the kernel, he said.  O'Donell
+suggested looking at the BSD design, where the kernel provides a
+system-call <a href="https://en.wikipedia.org/wiki/Dynamic_library">dynamic
+shared object</a> (DSO), which is used as a filter for the C library DSO.  If a
+call is not present in the kernel DSO, the one from the C library is used.
+If the kernel starts implementing new system calls, "<q>they just pop into
+existence</q>".  He thought it might be worth reviewing that mechanism to
+see if Linux could benefit from that approach.
+</p>
+
+<p>
+Kees Cook returned to the <tt>seccomp()</tt> filters and wondered what kind
+of information was needed.  That code maintains an internal bitmap of
+system calls with three states indicating whether <tt>seccomp()</tt> will
+always allow it, always reject it, or "<q>I have no idea, there's a filter
+attached to it</q>".  That information could be exposed to the C library
+somehow, he said.  Weimer thought that might be useful, but "<q>that is
+more like the finishing touches, we have much more work to do before we get
+there</q>", he said to laughter.
+</p>
+
+<p>
+For example, Weimer said that <tt>map_shadow_stack()</tt> suffered from
+<tt>seccomp()</tt> filter problems too.  Glibc can use <a href="https://man7.org/linux/man-pages/man2/prctl.2.html"><tt>prctl()</tt></a>
+to enable shadow stacks, which succeeds.  Later it may try to create a new
+shadow stack, but <tt>map_shadow_stack()</tt> fails due to a
+<tt>seccomp()</tt> filter.  He would like to make that work.
+</p>
+
+<p>
+Another problematic system call is <tt>membarrier()</tt>, he said.  He had
+a patch set to add it to glibc, but while that was in progress, the kernel
+developers added a new parameter to the system call. "<q>That is a bit of a
+turn off for writing a wrapper when you don't know what the signature
+is.</q>"  Fixing the signature in stone while arguments are still being
+added is problematic on the glibc side.
+</p>
+
+<p>
+Once his high-priority items are addressed, Weimer said, he wants to
+"<q>basically get out of the wrapping business</q>" by improving the
+generic system-call wrappers.  There would be three variants, the existing
+<tt>_syscall()</tt>, one for system calls that return twice like <a href="https://man7.org/linux/man-pages/man2/vfork.2.html"><tt>vfork()</tt></a>
+(named <tt>_syscallr()</tt>), and one that allows canceling system calls
+(<tt>_sycallc()</tt>).  The return-twice variant needs an attribute so that
+GCC and Clang do not apply invalid optimizations. Cancellable system calls
+are not possible with the existing wrapper, but the new wrapper would
+arrange that the system call can be interrupted in a safe way, that the
+cancellation handlers are run, and that the thread exits.  In addition,
+the new wrappers would switch away from using <tt>long</tt> for register
+types, which is not the right type for some architectures.
+</p>
+
+<p>
+The wrappers would allow easier testing for new system calls, though they
+would not provide the type safety that the eventual full system-call
+wrappers will provide.  O'Donell said that it will allow developers to
+immediately start using new system calls.  Anvin was concerned that new testing
+features "<q>have a nasty nasty tendency to end up in production</q>".
+Weimer said that it is "<q>not worse than <a href="https://man7.org/linux/man-pages/man2/ioctl.2.html"><tt>ioctl()</tt></a></q>",
+which was met with laughter.  He is concerned that putting more friction
+into the paths of developers, in the form of requiring automatically generated system
+calls in the <a href="https://en.wikipedia.org/wiki/VDSO">virtual DSO</a>
+(vDSO) or similar, will just cause them to turn to <tt>ioctl()</tt>-style interfaces.
+</p>
+
+<p>
+Anvin thought that if the system-call wrapper was generated out of the
+kernel build, it would alleviate much of the problem.  O'Donell agreed,
+but thought that was a longer-term solution; until then, the new wrappers
+would effectively be "<q>a honeypot to catch people wanting to write
+syscall pieces</q>".  That can lead to a conversation about getting a
+proper wrapper added to glibc. In parallel, the discussion about other ways
+to improve the situation should be pursued, he thought.
+</p>
+
+<p>
+O'Donell and Weimer were out of time at that point, so they wrapped up
+quickly with a question for attendees to consider: what other system calls
+could be added to glibc to make their lives easier?  They suggested using
+the <a href="https://github.com/uapi-group/kernel-features#kernel-features---">kernel-features
+repository</a> that is part of the UAPI group at GitHub as a place to
+gather ideas.
+</p>
+
+<p>
+A <a href="https://www.youtube.com/watch?v=1G7Ag0WBwL4">YouTube video</a>
+of the session is available as well.
+</p>
+
+<p>
+[Thanks to the Linux Foundation, LWN's travel sponsor, for assistance in
+attending LPC in Prague.]
+</p><p><a href="/Articles/1101647/#Comments">Comments (7 posted)</a>
+</p><p>
+<a name="1102982"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1102982/"
+                    >Removing binder.c</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Daroc Alden                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Daroc Alden</b><br></br>October 30, 2026
+           <hr></hr>
+<a href="https://lwn.net/Archives/ConferenceIndex/#Kangrejos-2026">Kangrejos</a>
+</div>
+<p>
+The final talk at Kangrejos 2026 was about the removal of the C implementation
+of Android's
+<a href="https://source.android.com/docs/core/architecture/ipc/binder-overview">
+Binder driver</a>, the primary interprocess communication mechanism
+used on Android devices. Carlos Llamas announced that he had deleted the C
+code to general applause, and then shared some insights about what went into
+replacing the C implementation. Alice Ryhl, who has worked on the Rust
+implementation for some years, added her own thoughts about what the most
+difficult and interesting parts of the transition were.
+</p>
+
+<p>
+Binder was added to the kernel in 2008, Llamas said, as an interprocess
+communication mechanism for Android devices. Its design originated in
+<a href="https://en.wikipedia.org/wiki/BeOS">
+BeOS</a>, but
+it has grown significantly since then. It provides a rich set of operations for
+allowing processes to communicate with the minimum amount of overhead. It also,
+therefore, presents a large attack surface for Android. Many complicated chained
+attacks against Android have involved Binder at one step or another, Llamas
+explained. Google's internal "red team" (the team dedicated to proactive
+security research) deemed Binder to be the most vulnerability-dense component in
+the entire operating system, with more CVEs per line than anywhere else.
+</p>
+
+<a href="/Articles/1103187#llamas">
+<img alt="[Carlos Llamas]" class="rthumb" src="https://static.lwn.net/images/2026/carlos-llamas-kangrejos-small.png" title="Carlos Llamas"></img>
+</a>
+
+<p>
+That made it an obvious candidate for porting to Rust, Llamas said. Binder was the first user
+of Rust in the kernel, he added, although Ryhl did not
+<a href="/ml/linux-kernel/20231101-rust-binder-v1-0-08ba9197f637@google.com/">
+publicly post</a> the first version
+of what became the Rust implementation <a href="/Articles/953116/">until 2023</a>, well after the Rust experiment started
+in 2021. All told, the effort took more than
+five years. Binder is used for every single screen touch, permission check,
+and cross-application message on Android, which runs on more than three billion
+devices. In total, it works out to hundreds of billions of Binder transactions
+per second, globally, he added. That scale meant that even the smallest discrepancy between the
+interface provided by the C version and the one provided by the Rust version
+would cause problems and regressions for some use case.
+</p>
+
+<p>
+One particularly tricky aspect has been performance, Ryhl said. Throughput
+doesn't matter that much; what matters is the tail latencies. Most
+screen frames on Android have a Binder transaction in the critical path of the
+frame, she explained. So, a difference of two microseconds on average is not a
+real problem, but if Binder is ever twenty milliseconds slower, even once
+in a while, people will notice and care.
+</p>
+
+<a href="/Articles/1103187#ryhl">
+<img alt="[Alice Ryhl]" class="lthumb" src="https://static.lwn.net/images/2026/alice-ryhl-kangrejos-small.png" title="Alice Ryhl"></img>
+</a>
+
+<p>
+The actual algorithms that the C and Rust implementations use are identical, she
+continued, so there are no large differences in throughput. But, because Rust
+handles locking differently, there were problems with the tail latency
+from lock contention that she had to debug. For example, one user-reported
+traceback showed Binder attempting to take a mutex that was held by another
+process. That process was preempted, and did not resume executing for twenty
+milliseconds, well past the sixteen millisecond budget to render a single frame.
+</p>
+
+<p>
+It was a classic case of priority inversion. To solve the problem in Binder, Ryhl moved
+as many operations out from under the lock as possible, and was able
+to replace it with a spinlock, which made the problem go away. The equivalent
+lock in the C implementation was already a spinlock: "<q>I deviated from C
+Binder, and <em>pow</em>. It has eighteen years of accumulated quirks.</q>"
+</p>
+
+<p>
+Eventually, however, the Rust implementation was good enough for most use cases.
+And the C implementation was still producing new vulnerabilities every time
+someone tried to introduce a new feature. Eventually, Llamas and Ryhl decided to
+only add new features to the Rust implementation, in order to motivate people to
+switch and to avoid headaches from the C implementation. That policy has
+resulted in the Rust version becoming faster than the C version,
+because Ryhl was able to introduce an algorithmic improvement that reduced the
+number of needed system calls, a change that had been considered too complex for
+the C implementation. Now that the C implementation has been deleted, there are
+more of those coming, she promised.
+</p>
+
+<p>
+Another area that proved difficult was dealing with tracepoints. Users aren't
+supposed to rely on the presence or behavior of most kernel-internal
+tracepoints, but they do. This meant that Ryhl had to copy
+the existing tracepoints in Binder as a de facto part of the driver's API. That
+even extended into some of the data structures involved in the driver. In one
+case, she said, there was a reference-counted structure that had a slightly
+different reference count in the Rust implementation, because the Rust code was
+holding an additional pointer to the structure. That turned out to be a
+problem for one particular piece of client code, since it relied on checking the
+reference count via a tracepoint in order to determine when the C implementation
+had reached a particular state.
+</p>
+
+
+
+<p>
+There was also a lot of toolchain support needed, Ryhl continued. The Rust
+implementation had to work with kernel address-space layout randomization
+(KASLR), control-flow integrity (CFI), and profile-guided optimization.
+Production Android kernels are built with all of those enabled, and since they impact code
+generation, the Rust code needed to account for them.
+</p>
+
+<p>
+Llamas then went into more detail about the deployment plan that will be used
+to convert users to the Rust implementation. A major problem with just rolling
+the Rust implementation out is the existence of
+<a href="/Articles/1098493/">
+vendor hooks</a>: custom
+tracepoints used to inject vendor-specific behavior into the kernel. The Rust
+implementation of Binder was not able to reproduce those in every case, and
+therefore many vendors are stuck on the C implementation until they update their
+code. That's going to be a slow process.
+</p>
+
+<p>
+Old stable
+versions of the kernel will continue to have the C Binder, and receive security
+fixes, which gives the various Android vendors a little bit of leeway until
+they're forced to update. After the conference, the patch removing the C
+implementation
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fd2bc059ed46">
+was merged</a> as part of the 7.4 merge window, so that is the
+version past which the Rust implementation is required. 7.3 is the designated
+long-term-support release for 2026.
+</p>
+
+<p>
+One person asked whether this would pose a problem for people compiling
+the kernel with GCC. Miguel Ojeda responded that many distributions are using a
+workaround for the current lack of Rust support in GCC: they are building
+the C side of the kernel with GCC, and the Rust side with LLVM. He said that he
+had advised against compiling the kernel in that way, because it is "<q>a
+complete hack</q>", though people who use it are unlikely to complain about
+being forced onto Clang. Greg Kroah-Hartman added that it will take months or
+years to learn about anyone who has problems with the Rust version of the
+driver, given how slowly Android vendors update their kernels. Furthermore, the
+removal is a single patch that can be cleanly reverted, if someone needs
+to continue using the C version.
+</p>
+
+<p>
+Llamas thought that it was worth considering what the removal process should
+look like for other code that gets ported to Rust. He asked what people thought
+should happen to the C version of converted drivers on long-term-support
+branches. Ojeda said that the process would be exactly the same as the existing
+policy for replaced C code. The only difference
+between Rust and C in long-term-support releases is that the Rust maintainers
+backport fixes for soundness problems, he said.
+Kroah-Hartman told Llamas not to worry about code that has been replaced:
+"<q>Just delete it. I take patches for subsystems that have been deleted. It's
+fine.</q>"
+</p>
+
+<p>
+With that declaration, the session, the conference, and the presence of the C
+Binder driver in the kernel were all over. Binder is the first nontrivial component
+in the
+kernel to be ported to Rust, and its journey has revealed several pitfalls that
+don't apply to new drivers written in Rust from scratch. Still, the most
+difficult problems were not Rust-specific; they were the compatibility problems
+that any rewrite would face. Whether any other kernel components will find the hassle
+of a rewrite worth it, and how long they will take to accomplish it, remains to
+be seen.
+</p>
+
+<p>
+[ Thanks to the Linux Foundation, LWN's travel sponsor, for supporting my travel
+to Kangrejos. ]
+</p>
+<p><a href="/Articles/1102982/#Comments">Comments (11 posted)</a>
+</p><p>
+<a name="1100894"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1100894/"
+                    >Managing the kernel CVE flood</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Jonathan Corbet                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Jonathan Corbet</b><br></br>November 2, 2026
+           <hr></hr>
+<a href="/Archives/ConferenceByYear/#2026-Linux_Plumbers_Conference">LPC</a>
+</div>
+We recently <a href="/Articles/1096908/">looked</a> at how the
+kernel community is dealing with the firehose of vulnerability reports, but
+said little about how users of the kernel are responding.  At the  2026 <a href="https://lpc.events/">Linux Plumbers Conference</a>, Amazon employees
+Dylan Johnson and Justinien Bouron discussed the problem from the point of
+view of engineers trying to keep AWS running and secure in the face of a
+storm of CVE disclosures.  The kernel community's longstanding advice is to
+run current kernels, and that turns out to work — sort of.
+<p>
+Bouron started by reminding the audience that the kernel community <a href="/Articles/961961/">became its own CVE numbering authority
+(CNA)</a> in 2024.  The immediate result was the issuance of thousands of
+CVE numbers every year, forcing companies to rethink how they handle kernel
+vulnerabilities.  The engineers running the AWS cloud were not immune to
+this change.
+
+
+</p><p>
+</p><h4>Triage</h4>
+<p>
+Linux, he said, runs everything from crock pots to nuclear power plants;
+each type of deployment has its own threat model and fault tolerances.  The
+impact of any given CVE can vary considerably from one situation to the
+next.  It is thus necessary to triage CVEs as they arrive, assessing the
+impact of each on a specific environment; nobody else can do that work for
+you.
+</p><p>
+<a href="/Articles/1100900/"><img alt="[Justinien Bouron]" class="rthumb" src="https://static.lwn.net/images/conf/2026/lpc/JustinienBouron-sm.png" title="Justinien Bouron"></img></a>
+
+After triage, the next task is to determine how to mitigate the threat, if
+any.  One possible response is to do nothing, which may be fine when
+dealing with, for example, a CVE affecting an unused driver.  The recommended
+approach, usually, is to wait for a new long-term-support (LTS) kernel, but
+that can leave systems vulnerable until that kernel has arrived, been
+tested, and deployed.  Cherry-picking fixes can be faster, but has its own
+risks.  In other cases, the best response may be to work around the issue
+in some way, perhaps by disabling the vulnerable code.  The proper response
+has to be figured out for each incoming CVE.
+</p><p>
+Triaging of CVEs can help by speeding up the mitigation response, he said.
+Internal update schedules do not always align well with kernel-release
+schedules, or a new LTS update may arrive while the work to deploy the
+previous one is still underway.  If that new update contains a fix for a
+severe vulnerability, it might make sense to cherry-pick that fix rather
+than going through the whole testing process.
+</p><p>
+Other times, there may be important vulnerabilities that are not fixed in
+the specific LTS kernel series that one is running.  Fixes land in the
+mainline kernel first, and are subsequently backported to the stable
+releases.  Backporting is relatively easy when the target is a recent
+kernel, but it becomes harder with older kernels.  So the older LTS kernels
+will not receive all of the fixes that are applied to the mainline; the
+number of missing fixes grows over time.  The 5.10.267 stable kernel, he
+said, has over 1,700 open CVEs, of which 1,200 are at least 90 days
+old.  Most of those will probably never be fixed.  Sites running 5.10
+kernels thus have the unpleasant choice of remaining vulnerable or
+backporting the missing fixes themselves.
+</p><p>
+Backporting all 1,700 of those fixes is not possible, though; that is where
+the triage process comes in by helping to determine which patches merit
+that sort of effort.  Before 2024, there were roughly two kernel CVEs
+issued every week, so a manual triage process was workable.  After 2024,
+though, the rate went up to 16 — per day.  And that was before the
+LLM-driven tsunami hit; now there can be hundreds of new CVEs showing up in
+a single day.  At that rate, manual review simply is not possible.
+</p><p>
+So the triage process must be at least partially automated.  The first step
+in that direction is "autopruning" — filtering out the CVEs that are not
+applicable to a specific kernel configuration.  The CVE records issued by
+the kernel CNA include detailed JSON reports indicating which kernel
+versions and which files are affected.  Filtering on those parameters
+allows about 70% of the CVEs to be discarded.  This figure could probably
+be improved further by trimming down the AWS kernel configuration, which
+probably still enables a lot of unneeded features and subsystems.  This
+trimming can be effective, but it is a difficult problem, requiring a
+detailed knowledge of the deployment environment.  If one does not know
+about every use of the systems involved, it is hard to know what can be
+removed.  There are over 32,000 configuration options for the kernel;
+playing with them is an easy way to create bugs or performance regressions
+that only show up months later.  For environments running at a massive
+scale, the problem is almost impossible.
+</p><p>
+As the CVE rate increased, even the pruned stream involved far too much
+manual review.  The solution chosen was, perhaps inevitably, to involve an
+LLM.  This system is fed the pruned CVE stream, along with the active
+kernel configurations and threat-model documentation; it then generates a
+score for each CVE.  The output is a table with a description of each CVE
+and a decision on whether (and how badly) it impacts AWS; it is meant to be
+a resource that humans can then quickly review.  That review, he said, is
+now the only manual step in the whole process; it is the final bottleneck,
+and is hard to optimize further, but there is no desire to drop it and rely
+entirely on the automated system.
+</p><p>
+Is this system good enough to allow AWS to stick with older LTS kernels?
+No, he said, there are simply too many unpatched CVEs in those kernels,
+forcing sites to either accept vulnerabilities or backport fixes
+themselves.  If the backport path is taken, the result is a kernel that
+nobody else has tested, meaning that even more in-house testing is needed
+before deployment.  It is also necessary to be sure that the patched system
+is truly no longer vulnerable to the problem.  Whoever does this work will
+have to contend with a lot of difficult conflicts that probably need
+subsystem expertise to resolve.  For extra fun, the CVE reports may not
+list all of the patches needed to resolve an issue.
+</p><p>
+The end result, he said, is that this path is not sustainable; the model of
+following an older LTS kernel until it reaches end of life is obsolete.
+The only way to keep up with the stream of fixes is to upgrade to newer
+kernels.
+</p><p>
+</p><h4>Keeping up with stable</h4>
+<p>
+Johnson took over to talk about how those upgrades go.  In late 2024, AWS
+was still running kernels from the 5.10 series and had to decide whether to
+upgrade.  The lifetime of most stable kernels is two to three months he
+said, but it took AWS a full year to transition to a new kernel.  Upgrading
+to a random stable kernel would result in deploying a kernel that had gone
+out of support long before, so the only viable approach is to stick with
+the LTS kernels.
+</p><p>
+<a href="/Articles/1100901/"><img alt="[Dylan Johnson]" class="rthumb" src="https://static.lwn.net/images/conf/2026/lpc/DylanJohnson-sm.png" title="Dylan Johnson"></img></a>
+
+Which LTS should be chosen when upgrade time comes?  The newer LTS kernels
+are fixed more quickly and have less outstanding CVE debt — the number of unfixed
+CVEs grows more slowly with those kernels.  The median time for a patch to
+land in 6.18, he said, is 18 days, while for 5.10 it is 32 days.
+Since maintaining LTS kernels is not easy, the newer ones tend to be
+prioritized; the backports to those kernels are easier.  In other words, the
+newer LTS kernels are safer.  Since they have fewer unfixed CVEs, newer
+kernels are much less likely to force the in-house backporting of fixes.
+</p><p>
+So upgrading to the latest LTS kernel is the best option.  But it is still
+not easy.  In 2021, the upgrade from 4.19 to 5.10 took about
+24 months, much of which was spent forward-porting out-of-tree
+patches.  For the upgrade to 6.12, that had been reduced to 12 months,
+and the upgrade to 6.18 only took six months.  This upgrade time has been
+reduced through a combination of better tests and a more experienced team.
+An effort to reduce user-space dependencies has resulted in fewer
+regressions, which eases upgrades as well.
+</p><p>
+Every issue that came up in the upgrade to 6.12 was tracked; 45% of them
+turned out to be in the kernel itself, mostly in "<q>a few hundred</q>"
+out-of-tree patches.  User-space problems accounted for 43% of the
+problems, configuration problems were 7%, and firmware-related
+problems were the remaining 5%.  That last category is partly driven
+by improved error reporting for hardware problems, resulting in a higher
+error-detection rate.  Of the kernel-space fixes, he said, 15% were submitted
+upstream (he did not say how many were accepted); the hope is for that
+number to increase over time.
+</p><p>
+Johnson provided a few examples of the types of problems that were
+encountered in upgrades:
+</p><p>
+</p><ul class="spacylist">
+<li> The change within the memory-management subsystem from the virtual
+     memory area <a href="/Articles/184495/">red-black tree</a> to <a href="/Articles/845507/">maple trees</a> made <a href="https://man7.org/linux/man-pages/man2/mmap.2.html"><tt>mmap()</tt>
+     and <tt>munmap()</tt></a> operations slower.  This problem was
+     addressed by changing user space to perform fewer of those operations.
+</li><li> Switching from the completely fair scheduler to the <a href="/Articles/969062/">EEVDF scheduler</a> changed the timing of <a href="https://www.man7.org/linux/man-pages/man2/fork.2.html"><tt>fork()</tt></a>
+     operations.  The completely fair scheduler prioritized the parent
+     after a fork, and user space depended on the parent running first.
+     Again, the solution was to fix user space.
+</li><li> The default value of <a href="https://docs.kernel.org/5.10/block/queue-sysfs.html#max-sectors-kb-rw"><tt>max_sectors_kb</tt></a>
+     was increased, leading to firmware timeouts.  There is a great deal of
+     hardware diversity in the AWS fleet, and some of that hardware did not
+     react well to the larger size.  Some tuning addressed this problem.
+</li></ul>
+<p>
+In conclusion, he said, <a href="https://www.hyrumslaw.com/">Hyrum's
+Law</a> applies here as everywhere else; every visible change will break
+something for somebody.
+</p><p>
+Eventually it would be good to get to a point where AWS is always running
+the latest stable kernel.  With a six-month transition time, though, that
+is not yet possible.  There is a need for better tooling and faster
+qualification of kernels.  Even then, though, many problems turn up during
+the "<q>soak time</q>" while a new kernel is being tested; going faster
+risks missing those problems until after deployment.  One way of improving
+the situation is continuously running the current stable releases in a
+testing environment, then switching to the next LTS kernel once it is
+available.
+</p><p>
+He concluded by saying that, until AWS could run the latest stable release,
+it would have to continue triaging CVEs.  But perhaps even that will not be
+enough in a world where models can find and exploit vulnerabilities before a
+fix is made and a CVE issued.
+</p><p>
+Ben Herrenschmidt pointed out that the speakers worked on the hypervisor
+side of the AWS fleet, so they have a firm grip on everything that is
+running under their kernels.  On the distribution (user) side, 
+life is nowhere near as easy; there is no visibility into what features
+users need.  One thing that might help, he said, would be to split the
+kernel's modules into separate packages, forcing a conscious decision
+before installing each one rather than just dumping 2,000 of them onto the
+system at once.
+</p><p>
+Thorsten Leemhuis asked why they don't test mainline releases rather than
+the latest stable updates.  The answer was that the AWS upgrade process
+still is not fast enough to make that worthwhile, but it is the eventual
+goal.
+</p><p>
+The final question came from an audience member who said he works for
+Google and could have given the same talk.  He asked how the LLM-based
+triage was evaluated, and what the results were.  Johnson answered that the
+model makes bad decisions <span class="nobreak">5-10%</span> of the time,
+so the human review step is definitely needed.  Anybody developing such a
+model should plan on an extensive evaluation period before trusting it.
+</p><p>
+[Thanks to the Linux Foundation, LWN's travel sponsor, for supporting my
+travel to this event.]
+</p><p><a href="/Articles/1100894/#Comments">Comments (15 posted)</a>
+</p><p>
+<a name="1105130"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1105130/"
+                    >Plasma X11 session removal surprises some Fedora users</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Joe Brockmeier                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Joe Brockmeier</b><br></br>November 4, 2026
+           </div>
+<p>The KDE Project announced, in 2025, that <a href="https://kde.org/announcements/plasma/6/6.7.0/">Plasma 6.7</a> would
+be the last version of the desktop environment that would support X11
+sessions. Those who keep up with KDE's announcements no doubt expected it when
+<a href="https://kde.org/announcements/plasma/6/6.8.0/">Plasma 6.8</a>
+dropped X11 support as promised. What seems to have come as a surprise, at
+least to a number of <a href="https://fedoraproject.org/kde/">Fedora KDE Plasma
+Desktop</a> users, is that the Fedora 44 release—which shipped in
+April with <a href="https://kde.org/announcements/plasma/6/6.6.0/">Plasma 6.6</a>—received
+an update to Plasma 6.8 that swept away the X11 session without much warning.
+Despite the surprise, it is gone for good: the <a href="https://docs.fedoraproject.org/en-US/fesco/">Fedora Engineering Steering
+Committee</a> (FESCo) has <a href="https://forge.fedoraproject.org/fesco/tickets/issues/3707#issuecomment-1371370">voted
+against</a> a request to revert the update for Fedora 44 and the just-released
+Fedora 45.</p>
+
+<h4>Update</h4>
+
+<p>The cadence of Fedora Linux releases and Plasma releases do not line up
+particularly well. A new Fedora version is released roughly every six months,
+and supported until four weeks after the release of "Release N+2", or <a href="https://docs.fedoraproject.org/en-US/releases/lifecycle/#_end_of_life_eol">about
+13 months</a>. For example, Fedora 44 was released in April 2026, and
+will reach end of life about four weeks after Fedora 46 is released in
+April 2027. Feature releases
+of Plasma are released roughly every four months: 6.6 was released in
+February 2026, 6.7 in June 2026, and 6.8 in mid-October. Support for a
+feature release generally ends with the release of the next feature release,
+with the exception of long-term-support (LTS) releases; 6.6 is an <a href="https://community.kde.org/Schedules/Plasma_6#Long-term_support_releases">LTS
+release</a> and it is scheduled to receive support through
+February 2029.</p>
+
+<p>Since the release schedules do not align well, and because the members of
+Fedora's KDE SIG do not want to attempt supporting multiple Plasma
+releases, its <a href="https://fedoraproject.org/wiki/SIGs/KDE/Update_policy">update policy</a>
+is to maintain a single Plasma version across all Fedora releases. That means
+that a Fedora release is likely to see three Plasma feature releases during its
+lifecycle. This is somewhat unusual for Fedora; its <a href="https://docs.fedoraproject.org/en-US/fesco/Updates_Policy/#stable-releases">stable-release
+policy</a> says that "<q>we should avoid major updates of packages within a
+stable release</q>" and that software updates should "<q>aim to fix bugs, and
+not introduce features</q>".</p>
+
+<p>There are <a href="https://docs.fedoraproject.org/en-US/fesco/Updates_Policy/#_exceptions">exceptions</a>
+to the policy, though, for certain packages such as the <a href="https://docs.fedoraproject.org/en-US/fesco/Updates_Policy/#kernel-package">kernel</a>,
+the <a href="https://docs.fedoraproject.org/en-US/fesco/Updates_Policy/#golang">Go toolchain</a>, and KDE. As the KDE SIG's policy page notes, user-visible
+changes have slowed down with more recent Plasma 6.x releases. It's
+conceivable that many Fedora KDE users don't even notice that they have moved
+from one Plasma feature release to another.</p>
+
+<h4>6.8 update</h4>
+
+<p>When support for X11 went away, though, users did take notice. Tomáš Trnka <a href="https://discussion.fedoraproject.org/t/why-the-obsoletes-kwin-x11-and-plasma-workspace-x11-in-6-8/206847">asked</a>
+"<q>is there a compelling technical reason why the -x11 packages have to be
+obsoleted by 6.8, even on [Fedora] 44?</q>" He wondered if the breaking
+change, in the middle of the lifecycle, had been communicated, and he had just
+happened to miss it—or if the obsolescence was an accident that just
+slipped into Fedora 44. "<q>I would entirely understand that in F45 as a
+major upgrade often comes with forced feature retirement, but I certainly didn't
+expect a routine dnf upgrade on F44 to blow away the X11 session</q>".</p>
+
+<p>Adam Williamson <a href="https://discussion.fedoraproject.org/t/why-the-obsoletes-kwin-x11-and-plasma-workspace-x11-in-6-8/206847/2">asked</a>
+Neal Gompa, a member of the KDE SIG and FESCo, if there had been a discussion
+about whether this was an appropriate update for a stable release that had
+shipped with X11 support. Gompa <a href="https://discussion.fedoraproject.org/t/why-the-obsoletes-kwin-x11-and-plasma-workspace-x11-in-6-8/206847/4">said</a>
+that the X11 packages had been "<q>expressly deprecated</q>" and were expected
+to be removed as soon as support was dropped by KDE upstream. "<q>Plasma X11 has
+also been unsupported since Fedora 40 when Plasma 6 was introduced.</q>" That
+was in 2024, when the KDE SIG not only dropped its support for Plasma sessions
+on X11, but <a href="https://lwn.net/Articles/961899/">attempted to block</a>
+others from providing any X11 packages for Plasma. FESCo <a href="https://pagure.io/fesco/issue/3165/#comment-895243">allowed packages that
+reintroduced X11 support</a> in Fedora's repositories. Those packages, however,
+were not maintained by the KDE SIG. Since Plasma 6.8 is incompatible with
+X11 the <a href="https://packages.fedoraproject.org/pkgs/kwin-x11/kwin-x11/"><tt>kwin-x11</tt></a>
+and <a href="https://packages.fedoraproject.org/pkgs/plasma-workspace-x11/plasma-workspace-x11/"><tt>plasma-workspace-x11</tt></a>
+packages were obsoleted and removed by DNF when users upgraded to
+Plasma 6.8.</p>
+
+<p>Another user, "ab cd", <a href="https://discussion.fedoraproject.org/t/how-can-i-get-x11-back/206657">asked</a>
+how they could get the X11 session back. "<q>I know that Fedora hasn't
+officially supported X11 (with KDE) for a long time, but it worked fine, and now
+a number of things don't under Wayland.</q>" They wanted to know if there was
+any way to undo the update and keep X11 support. Allen Akin <a href="https://discussion.fedoraproject.org/t/how-can-i-get-x11-back/206657/21">complained</a>
+that "<q>session restore still doesn't work, even for a few plain-vanilla
+Konsole windows</q>", and that there were some glitches he had to work around due to
+having to switch from NVIDIA's proprietary drivers to the open-source Noveau
+drivers. He said he was thinking about switching distributions, or at least
+window managers, and that it was "<q>unnecessary pain caused by poor release
+strategy</q>".</p>
+
+<p>Sérgio Basto <a href="https://forge.fedoraproject.org/fesco/tickets/issues/3707">asked FESCo</a>
+to revert the changes for Fedora 44 and 45. FESCo member Timothée Ravier <a href="https://forge.fedoraproject.org/fesco/tickets/issues/3707#issuecomment-1370650">pointed
+to</a> the <a href="https://forge.fedoraproject.org/fesco/tickets/issues/3165#issuecomment-832626">earlier
+FESCo decision</a> that allowed X11 packages but said that the KDE SIG "<q>is
+not responsible for ensuring these packages adapt</q>". Ravier said that it was
+not realistic to keep Fedora 44 on Plasma 6.7, since its end-of-life
+date is expected to be in January 2027, while Fedora 44 will be
+supported until June 2027. Maintaining 6.7 for Fedora 45 was "<q>not
+even an option</q>". He said that he was against Basto's request. He suggested
+that one option would be to maintain Plasma 6.7 and its dependencies in a
+<a href="https://copr.fedorainfracloud.org/coprs/">Copr</a> repository.</p>
+
+<p>The FESCo decision that
+Ravier cited also said that the KDE SIG "<q>should provide a notice before major
+changes</q>". Steve Cossette had indeed <a href="https://lwn.net/ml/all/179260525702.3518346.7725916484591812920@mailman01.rdu3.fedoraproject.org/">sent</a>
+a notice to Fedora's devel mailing list on October 21:</p>
+
+<blockquote class="bq">
+<p>Despite the X11 subcomponents no longer being supported by the KDE SIG, an
+independent maintainer was offering those separately. These components remained
+deprecated in Fedora and were unsupported by the KDE SIG and now Plasma 6.8 no
+longer has the code for these components, so the Plasma 6.8 update will obsolete
+them on upgrade.</p>
+
+<p>For users of the x11 components, we recommend you run `dnf offline-upgrade`
+or use Discover, as the update may break the system otherwise.</p>
+</blockquote>
+
+<p>The reversion request was discussed and voted on during the <a href="https://meetbot.fedoraproject.org/meeting_matrix_fedoraproject-org/2026-11-03/fesco.2026-11-03-18.02.html">FESCo
+meeting on November 3</a>. FESCo rejected the request with eight members
+against; Zbigniew Jędrzejewski-Szmek cast a +0 vote. He said in the meeting that
+he thought the removal was unfortunate, and that the update "<q>could have been
+dragged out a bit</q>".</p>
+
+<p>Happily for users, there are still quite a few desktops and window managers
+that support X11—but Plasma is no longer one of them. There is a fork of
+Plasma, called <a href="https://sonicde.org/">SonicDE</a>, that preserves X11
+support. It is <a href="https://sonicde.org/installing">packaged for quite a few
+distributions</a>, but thus far there are no packages for Fedora from the project.</p>
+
+<p>In hindsight, the Fedora Project and KDE SIG could have communicated the
+pending removal of Plasma's X11 support during the Fedora 44 release cycle
+a bit more explicitly. While some users might have anticipated the removal, or
+known about the exceptions to the Fedora stable update policy for KDE, it is not
+unreasonable for a user who installs a major operating-system release to expect
+a major feature to exist throughout the life of that release.</p>
+
+<p>It also seems reasonable, though, that the KDE SIG is unwilling to go to
+great (or any) lengths to preserve Plasma X11 support once the upstream project
+has done away with it. The SIG made its position on X11 support clear years ago,
+and the clock has always been ticking.</p>
+
+<p></p>
+<p><a href="/Articles/1105130/#Comments">Comments (44 posted)</a>
+</p><p>
+<a name="1102739"></a></p>                </div>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://lwn.net//Articles/1102739/"
+                    >The second part of the 7.4 merge window</a>
+                </h2>
+
+                <div class="item-meta">
+                                            <p>
+                            <time datetime="2026-11-05 00:00:00">
+                                2026-11-05 00:00:00                            </time>
+                        </p>
+                    
+                                            <p class="author">
+                            by: Daroc Alden                        </p>
+                                    </div>
+
+                <div class="item-content">
+                    <!-- Intentionally not escaping for html context -->
+                    
+
+<div class="FeatureByline">
+           By <b>Daroc Alden</b><br></br>November 2, 2026
+           </div>
+<p>
+The 7.4 merge window, which
+<a href="/Articles/1104653/">closed</a> on November 1,
+included a record-breaking 18,591 non-merge changesets.
+That is almost as many as the entire 7.3 development cycle, which had 18,765, itself a record breaker. Of
+those, 11,838 landed after <a href="/Articles/1101211/">the article covering the
+first part of the merge window</a>. Most of those were bug fixes of
+various forms; it seems as though bug fixes may be crowding out feature
+additions <a href="/Articles/1104210/">across the open-source ecosystem</a> to
+some extent. Still, a good number of new features were included, and a handful
+removed, in the tail end of the merge window.
+</p>
+
+
+<p>
+The most important changes included in this release were:
+</p>
+<h4>Architecture-specific</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+Super-H <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=76a8eb24482e">no
+longer supports NUMA or sparse memory</a>. The sparse-memory support only provided an
+additional 128KB of memory on most systems (and 256KB on shx3), while
+complicating the kernel's general NUMA-handling code. Its removal
+decreases the size of a compiled kernel by almost enough to make up for
+the removal on its own.
+</li>
+</ul>
+
+
+<p>
+</p><h4>Core kernel</h4>
+<p>
+</p><ul class="spacylist">
+<li> The
+<a href="https://docs.kernel.org/mm/damon/index.html">
+DAMON subsystem</a> now supports additional DAMOS filters, including
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=95ece6b3b352">a
+filter for pages that are not access-idle</a> and <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=222636c8c139">one
+for huge pages of a given size</a>.
+</li>
+<li>
+DAMON can also now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e67684454bbe">track
+accesses to hugetlb-backed memory</a>, which is expected to specifically help
+machines running guest VMs on hugetlb-backed memory.
+</li>
+<li>
+DAMON target metric flags (which determine which memory metrics DAMON will
+attempt to keep within the configured bounds) can now be
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=18ab75fb3cd2">inverted</a>,
+which allows the existing metrics for active memory to also control the amount of
+inactive memory on the system. Every DAMOS filter can now be used in two ways.
+</li>
+<li>
+The unused-huge-folio shrinker
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=743e7d025d2f">is
+now memory-control-group aware</a>, which should prevent memory reclaim in one
+control group from causing the shrinker to break up folios in other control groups.
+</li>
+<li>
+The BPF verifier can now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6ccf49f79327">use
+scalar evolution</a> to
+<a href="/Articles/1076121/">
+understand more loops</a>. Currently, support is fairly
+limited, but it should still make it much easier to write traditional loops and
+have them directly accepted by the verifier.
+</li>
+<li>
+The new <tt>callx</tt> instruction allows BPF programs to
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24629aac43d2">make
+indirect calls to static BPF subprograms</a>. Indirect call support has been on
+the roadmap for BPF for some time; it should make writing programs that are best
+expressed using function pointers much easier. In particular, this lays the
+groundwork for supporting Rust's implementation of dynamic dispatch.
+</li>
+<li>
+Another Rust-friendly change is <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=221f119796f6">the
+addition of <tt>unwind_goto</tt> and <tt>unwind_exit</tt></a>, which allow Rust
+panics or C++ exceptions to be implemented correctly in BPF.
+</li>
+</ul>
+
+<p>
+</p><h4>Filesystems and block I/O</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+A new <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=bec2fa7bdf06"><tt>DM_VERITY_VERIFY_ROOTHASH_SIG_FORCE</tt></a>
+configuration option forces dm-verity to validate signatures on a device. In
+kernels built with the option, it will no longer be possible to override
+dm-verity's signature-checking behavior from the kernel command line.
+</li>
+<li>
+A set of
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b766aba70e16">long-awaited
+fixes</a> make it much safer to use untrusted floppy disks.
+</li>
+<li>
+User space can now control NFS's RPC registrations
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7b5c04bc5920">using
+a new set of flags</a>. This change both allows a management daemon to have more
+control over NFS's setup, and prevents an unresponsive rpcbind process from
+stalling NFSD administration.
+</li>
+<li>
+NTFS now supports
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=48996054b706">stream
+operations</a> for files that have associated named streams. The <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f8f026e3ab38">documentation</a>
+explains how to use them correctly.
+</li>
+<li>
+NTFS can also
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5656fea4d6aa">query
+file attributes</a>, although there is no support yet for writing them. NTFS
+attributes are used to mark files as immutable, append-only, or not to be
+included in core dumps, among other things.
+</li>
+<li>
+The ext4 filesystem has
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a304299a40d9">added
+support for buffered iomap access</a>. The feature needs to be enabled using the
+<tt>buffered_iomap</tt> mount option, and the filesystem does not support online
+defragmentation, inline data, fsverify, fscrypt, non-extent inodes, or data
+journaling while the option is enabled. Despite those drawbacks, users may want
+the feature because it does
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ac5feaad48f0910b3db4047c298dd11157aef1f4">
+make large writes much faster</a>.
+</li>
+<li>
+CephFS <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f8bbbb5801c">no
+longer supports inline data</a>. This feature was never fully enabled, being
+considered experimental, and was officially deprecated in 2020, so hopefully
+nobody is relying on it.
+</li>
+</ul>
+
+<p>
+</p><h4>Hardware support</h4>
+<p>
+</p><ul class="spacylist">
+<li> <b>Clock</b>: Raspberry Pi 5 realtime clocks.
+</li><li> <b>GPIO and pin control</b>: Toshiba TC9563 embedded GPIO controllers,
+Qualcomm Hawi SoC TLMM and LPASS LPI TLMM pin controllers, Qualcomm Kuno SoC
+TLMM pin controllers, Qualcomm MSM8952 SoC TLMM pin controllers, Qualcomm
+PMAU0102 SPMIO GPIO controllers, Starfive JHB100 pin controllers, Ambarella CV75
+GPIO controllers, Econet EN7528 controllers, Allwinner Sunxi A733 pin
+controllers, and Mediatek MT6735 pin controllers.
+</li><li> <b>Hardware monitoring</b>: Axiado AX3000 PWM fan controllers, AX3005 PWM
+fan controllers, AX3000/AX3005 TSADC controllers, Infineon TDA38740/TDA38725
+power-monitoring buses, and MAX20826/MAX20855B/MAX20908/MAX20912/MAX20826/MAX20916
+power-monitoring buses.
+</li><li> <b>Industrial I/O</b>: Analog Devices LTC3208 I2C LED drivers.
+</li><li> <b>Miscellaneous</b>: BCM2712 IOMMUs.
+</li><li> <b>Networking</b>: Qualcomm CSI2 C-PHY/DPHY devices.
+</li><li> <b>Power</b>: Texas Instruments bq27z746 power supplies, Texas Instruments
+bq28z620 power supplies, and AB8505
+power supplies.
+</li><li> <b>Sound</b>: Qualcomm WCD9378 SDCA codecs, ESS ES9039Q2M codecs, Nuvoton
+NAU83G60 amplifiers, Senary SN624x SoundWire SDCA codecs, TI TAS2573 DSPs, and Pioneer DJ DDJ-SZ USB
+audio devices.
+</li><li> <b>Storage</b>: Apple M4 ANS2 NVMe drives.
+</li></ul>
+
+<p>
+</p><h4>Miscellaneous</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+The Moxa serial interface driver
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=de7f683ff9e0">has
+been removed</a>, given that no known hardware for it still exists and the
+company that produced it no longer uses the driver.
+</li>
+<li>
+The C implementation of the binder driver has
+<a href="/Articles/1102982/">been
+removed</a> in favor of the Rust implementation, which is now considered stable.
+Fixes for the C implementation should be sent directly to the relevant stable
+trees, given that it will no longer be possible to simply submit them to the
+mainline marked for backporting.
+</li>
+<li>
+The CXL developers have <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d304df5f3293">started
+working toward support for devices with dynamic capacities</a>, although more
+follow-up work is required before the code will be usable.
+</li>
+<li>
+The I3C subsystem has added the <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9d60a0eafae1">core
+code</a> needed to support I3C hubs, although
+drivers for particular hubs are still in progress.
+</li>
+</ul>
+
+<p>
+</p><h4>Security-related</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+BPF security modules can now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b99f71407ce5">set
+a file's extended attributes</a> when it is first created, eliminating a small
+window of opportunity during which programs could have seen the files without
+the necessary extended attributes.
+</li>
+<li>
+User space now has a defined way to
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=503b65da9a7e">look up
+which keyrings are being used for fs-verity and dm-verity</a>, rather than trying to
+read the information out of <tt>/proc/keys</tt>. In turn, that allows user-space
+processes with appropriate permissions to add keys to the keyring and seal it
+against further modifications.
+</li>
+</ul>
+
+<p>
+</p><h4>Tools</h4>
+<p>
+</p><ul class="spacylist">
+<li>The <tt>tools/mm/page_owner_sort</tt> helper, which is used to sort the
+output of <tt>/sys/kernel/debug/page_owner</tt> in order to debug which processes are
+causing pages to remain in memory, can now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=67f96334148d">actually
+sort entries</a>, along with having better filters and clearer documentation.
+</li>
+<li>
+The <tt>rtla osnoise top</tt> command now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2ff4464e3283">accepts</a>
+an <tt>--ipi</tt> flag to report the sources of inter-processor interrupts
+observed while tracing with the tool.
+</li>
+<li>
+Ftrace can now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1054e526ce4e">
+report the maximum amount of time</a> that a given function in the kernel took,
+in addition to reporting the average and variance.
+</li>
+<li>
+The kernel's tracing subsystem can now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7884b0bf098c">be
+instructed to filter events based on whether they occur during the execution of
+a given function</a>. So, for example, it is now possible to search for trace
+events that occur during calls to <tt>vfs_read()</tt>, or, alternatively,
+everywhere except calls to <tt>vfs_read()</tt>.
+</li>
+<li>
+The <tt>perf</tt> command now supports <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6e9c063d8fd5">sampling
+x86 SIMD registers</a>, performing <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ee5e07b6c2cb">weighted
+sampling</a>, and separating out memory accesses
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6cdecad561ff">by
+assigned memory range</a>, among
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dd384658c738">
+many other small improvements</a>. The memory-range
+support, in particular, will help track which accesses go to persistent memory,
+high-bandwidth memory, CXL-attached memory, or any other special memory areas.
+</li>
+</ul>
+
+
+<p>
+</p><h4>Virtualization and containers</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+Arm hosts now support
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0ff05136bb0e">
+pKVM state isolation</a>, which protects a guest virtual
+machine's register state from being read by the host, except for what is
+necessary to handle a VM exit. This is part of a broader set of changes to
+enable confidential computing, although the work is still in the preliminary
+stages. 
+</li>
+<li>
+Hosts can also
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=537ec2b15fdd">disable
+per-VM memory attributes</a>. The main use for this is enabling in-place
+conversion between private and shared guest pages. The setting cannot be changed
+after KVM is loaded, so guests relying on pages remaining private can continue
+to rely on that behavior.
+</li>
+</ul>
+
+<p>
+</p><h4>Internal kernel changes</h4>
+<p>
+</p><ul class="spacylist">
+<li>
+The memory-management subsystem now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=47e725702b0b">uses
+per-VMA locks in all configurations</a>. This simplifies a lot of the code
+around modifying memory areas, because developers no longer have to think about two
+separate locking schemes.
+</li>
+<li>
+There are new
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3282d5916019">Rust
+bindings for DMA fences</a>. The bindings automatically enforce a number of
+rules that are required to use DMA fences correctly, which should make writing
+drivers that interact with them a bit less of a headache.
+</li>
+<li>
+Checkpatch is now
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=15c6173efb92">more
+aware of which code in the kernel repository runs in user space</a>. A new
+<tt>--userspace</tt> option can also be used to force checkpatch to use the
+user-space rules, when some new user-space code is added.
+</li>
+<li>
+The kselftests can now run
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ccedc5062f96">on
+architectures without an MMU</a>, which should help with embedded kernel development.
+</li>
+<li>
+There were 202 exported symbols removed in this merge window,
+     and 402 added; developers also removed one kfunc and added 58
+     others.  See <a href="/Articles/1104856/">this page</a> for the
+     full list of changes.
+</li>
+</ul>
+<p>
+The changes in 7.4-rc1 were contributed by 2,678 developers, 625 of whom were
+first-time contributors. Now comes the stabilization period, during which bugs
+are found and fixed before the release of the 7.4 kernel. At the time of
+writing, Linus Torvalds is still considering a few pull requests which he may
+bring into the -rc2 release. The release date of
+the 7.4 kernel is somewhat flexible, but can probably be expected around
+December 21. If the recent pattern of ever-growing numbers of bug fixes holds, we can
+probably expect more than 3,000 commits to find their way into the kernel by
+that time.
+</p>
+<p><a href="/Articles/1102739/#Comments">Comments (3 posted)</a>
+</p><p>
+<a name="1104646"></a></p>                </div>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
